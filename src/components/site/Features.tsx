@@ -30,7 +30,7 @@ export function Features() {
         <div className="mt-16 grid grid-cols-1 gap-px md:mt-20 md:grid-cols-6">
           {/* Wide: Crew profiles */}
           <Reveal className="md:col-span-4">
-            <article className="bg-surface border-rule-strong relative h-full overflow-hidden border p-7 md:min-h-[420px] md:p-10">
+            <article className="bg-surface border-rule-strong flex h-full flex-col overflow-hidden border p-7 md:min-h-[420px] md:p-10">
               <div className="label text-flare flex items-center justify-between">
                 <span>F-01</span>
                 <span className="text-dim">●</span>
@@ -44,7 +44,7 @@ export function Features() {
               </p>
 
               {/* Tiny crew row preview */}
-              <div className="border-rule-strong absolute right-7 bottom-7 left-7 border md:right-10 md:left-10">
+              <div className="border-rule-strong mt-auto border">
                 <div className="border-rule-strong label text-mute flex items-center justify-between border-b px-4 py-2">
                   <span>RESULTS · &quot;DOP · LDN · APR&quot;</span>
                   <span className="text-bone">12</span>
@@ -204,7 +204,7 @@ export function Features() {
 
           {/* Messaging */}
           <Reveal delay={0.2} className="md:col-span-4">
-            <article className="bg-surface border-rule-strong relative h-full overflow-hidden border p-7 md:min-h-[260px] md:p-10">
+            <article className="bg-surface border-rule-strong flex h-full flex-col overflow-hidden border p-7 md:min-h-[260px] md:p-10">
               <div className="label text-flare flex items-center justify-between">
                 <span>F-05</span>
                 <span className="text-dim">●</span>
@@ -217,7 +217,7 @@ export function Features() {
                 rates and confirmations stay where the conversation is.
               </p>
 
-              <div className="border-rule absolute right-7 bottom-7 left-7 border md:right-10 md:left-10">
+              <div className="border-rule mt-auto border">
                 <div className="border-rule label text-mute flex items-center justify-between border-b px-4 py-2">
                   <span>THREAD · SUNDOWN · DOP</span>
                   <span className="text-go">● BOOKED</span>
