@@ -40,7 +40,7 @@ export default function CirclesPage() {
           placeholder="Search circles or members…"
         />
 
-        <button className="border-rule-strong bg-surface text-bone hover:text-ink hover:bg-white/5 label flex w-full items-center justify-between border px-4 py-3.5 text-left">
+        <button className="border-rule-strong bg-surface text-bone hover:text-ink hover:bg-ink/5 label flex w-full items-center justify-between border px-4 py-3.5 text-left">
           <span className="inline-flex items-center gap-2">
             <Plus size={14} className="text-flare" />
             New circle

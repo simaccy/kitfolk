@@ -29,11 +29,11 @@ export function TrustBadge({
   const { label, Icon } = META[type];
   return (
     <span
-      className={`border-rule text-bone inline-flex items-center gap-1.5 border bg-white/[0.02] ${
+      className={`border-rule text-bone inline-flex items-center gap-1.5 border bg-ink/[0.02] ${
         compact ? "px-1.5 py-0.5" : "px-2 py-1"
       }`}
     >
-      <Icon size={compact ? 11 : 13} className="text-flare" />
+      <Icon size={compact ? 11 : 13} className="text-go" />
       <span className="label" style={{ fontSize: compact ? 9 : 10 }}>
         {label}
       </span>

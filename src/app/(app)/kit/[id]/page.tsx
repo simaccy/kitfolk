@@ -30,14 +30,14 @@ export default async function KitDetailPage({
 
       {/* Hero photo */}
       <div
-        className="relative aspect-[4/3] w-full overflow-hidden border-b border-white/[0.06]"
+        className="relative aspect-[4/3] w-full overflow-hidden border-b border-ink/[0.06]"
         style={{
-          background: `radial-gradient(circle at 30% 30%, hsl(${kit.hue} 60% 35% / 0.4), hsl(${kit.hue} 30% 10% / 0.85))`,
+          background: `linear-gradient(135deg, hsl(${kit.hue} 55% 90%), hsl(${kit.hue} 40% 76%))`,
         }}
       >
         <div className="grid-bg absolute inset-0 opacity-40" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <Package size={56} className="text-bone/60" />
+          <Package size={56} className="text-ink/40" />
         </div>
         <div className="absolute top-3 right-3 left-3 flex items-center justify-between">
           <span className="label text-mute">{kit.category.toUpperCase()}</span>
@@ -71,7 +71,7 @@ export default async function KitDetailPage({
           </Link>
         </p>
 
-        <div className="mt-4 grid grid-cols-3 gap-px overflow-hidden border border-white/[0.06]">
+        <div className="mt-4 grid grid-cols-3 gap-px overflow-hidden border border-ink/[0.06]">
           <RatePill label="Day" value={formatGBP(kit.dayRate)} />
           <RatePill label="Week" value={formatGBP(kit.weekRate)} />
           <RatePill label="Deposit" value={formatGBP(kit.deposit)} />
@@ -175,7 +175,7 @@ export default async function KitDetailPage({
       <div className="border-rule bg-bg/90 sticky bottom-16 z-20 grid grid-cols-2 border-t backdrop-blur-md">
         <Link
           href={`/messages?to=${kit.ownerId}`}
-          className="text-mute hover:text-ink hover:bg-white/5 label flex items-center justify-center gap-1.5 py-3.5"
+          className="text-mute hover:text-ink hover:bg-ink/5 label flex items-center justify-center gap-1.5 py-3.5"
         >
           <MessageCircle size={14} /> Message owner
         </Link>

@@ -66,7 +66,7 @@ export default async function CircleDetailPage({
             {circle.tags.map((t) => (
               <span
                 key={t}
-                className="border-rule text-bone label border bg-white/[0.02] px-2 py-1"
+                className="border-rule text-bone label border bg-ink/[0.02] px-2 py-1"
               >
                 {t}
               </span>
@@ -93,7 +93,7 @@ export default async function CircleDetailPage({
             <li key={m.id}>
               <Link
                 href={`/crew/${m.id}`}
-                className="flex items-center gap-3 px-4 py-3 hover:bg-white/[0.02]"
+                className="flex items-center gap-3 px-4 py-3 hover:bg-ink/[0.02]"
               >
                 <Avatar name={m.name} hue={m.avatarHue} size={36} />
                 <div className="flex-1">
@@ -151,7 +151,7 @@ function ActionTile({
   return (
     <Link
       href={href}
-      className={`text-bone hover:text-ink hover:bg-white/[0.04] flex flex-col items-center justify-center gap-1.5 py-5 ${
+      className={`text-bone hover:text-ink hover:bg-ink/[0.04] flex flex-col items-center justify-center gap-1.5 py-5 ${
         border ? "border-rule border-l" : ""
       }`}
     >

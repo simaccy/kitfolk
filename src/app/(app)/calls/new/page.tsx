@@ -111,7 +111,7 @@ export default function NewCallPage() {
             name="details"
             placeholder="Anything else they need to know — schedule, tone, kit constraints, travel."
             rows={4}
-            className="border-rule-strong bg-surface text-ink placeholder:text-dim w-full border px-4 py-3 text-[14px] outline-none focus:border-white/30"
+            className="border-rule-strong bg-surface text-ink placeholder:text-dim w-full border px-4 py-3 text-[14px] outline-none focus:border-ink/30"
           />
         </Step>
 
@@ -177,7 +177,7 @@ function Input({
   ...props
 }: React.InputHTMLAttributes<HTMLInputElement> & { prefix?: string }) {
   return (
-    <div className="border-rule-strong bg-surface relative flex items-center border focus-within:border-white/30">
+    <div className="border-rule-strong bg-surface relative flex items-center border focus-within:border-ink/30">
       {prefix && (
         <span className="text-mute mono pl-3 text-[14px]">{prefix}</span>
       )}

@@ -122,7 +122,9 @@ export function Hero() {
                             ? "text-go"
                             : r.status === "ON SET"
                               ? "text-flare"
-                              : "text-bone"
+                              : r.status === "VOUCHED"
+                                ? "text-go"
+                                : "text-bone"
                         }`}
                       >
                         {r.status}

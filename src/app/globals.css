@@ -1,18 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0b0b0a;
-  --color-surface: #111110;
-  --color-elev: #16161410;
-  --color-rule: #1f1f1d;
-  --color-rule-strong: #2a2a26;
-  --color-ink: #f5f1e8;
-  --color-mute: #8a857b;
-  --color-dim: #57544c;
-  --color-flare: #ff6a3d;
-  --color-bone: #d4c8a8;
-  --color-go: #6cf07a;
-  --color-rec: #ff3b30;
+  /* Warm editorial palette — KitFolk should feel premium, considered,
+     and the opposite of "dark web". Background is a warm canvas, cards
+     are clean white, text is a warm slate, trust uses moss/sage,
+     primary actions use coral. */
+  --color-bg: #f6f1e8;          /* warm canvas */
+  --color-surface: #ffffff;     /* clean white cards */
+  --color-elev: #faf6ee;        /* faintly elevated cream */
+  --color-rule: #e7dec9;        /* faint warm hairline */
+  --color-rule-strong: #d4c8b0; /* stronger warm hairline */
+  --color-ink: #273234;         /* warm slate (primary text) */
+  --color-mute: #6b6a60;        /* secondary text */
+  --color-dim: #a39b89;         /* tertiary text / labels */
+  --color-flare: #e46f5a;       /* coral — primary action accent */
+  --color-bone: #8e8270;        /* warm gold — tertiary accent */
+  --color-go: #6f8063;          /* moss / sage — trust + verified */
+  --color-rec: #c84e3f;         /* deep rust — urgent / danger */
 
   --font-display: "Instrument Serif", "Times New Roman", serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -40,7 +44,7 @@ html {
 
 ::selection {
   background: var(--color-flare);
-  color: var(--color-bg);
+  color: #ffffff;
 }
 
 /* Mono details everywhere */
@@ -65,39 +69,39 @@ html {
   line-height: 0.95;
 }
 
-/* Film grain overlay */
+/* Subtle paper grain — adds warmth/texture on the light canvas */
 .grain::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
-  opacity: 0.06;
-  mix-blend-mode: overlay;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
   z-index: 30;
 }
 
-/* Hairline grid background */
+/* Hairline grid background — soft warm slate lines on cream */
 .grid-bg {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(39, 50, 52, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(39, 50, 52, 0.04) 1px, transparent 1px);
   background-size: 80px 80px;
 }
 
 .grid-bg-fine {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(to right, rgba(39, 50, 52, 0.035) 1px, transparent 1px);
   background-size: calc(100% / 12) 100%;
 }
 
-/* Vignette */
+/* Soft vignette — adds depth at edges without darkening */
 .vignette {
   background: radial-gradient(
     ellipse at center,
     transparent 0%,
-    transparent 55%,
-    rgba(0, 0, 0, 0.65) 100%
+    transparent 60%,
+    rgba(39, 50, 52, 0.06) 100%
   );
 }
 
@@ -160,5 +164,5 @@ textarea {
   border-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-dim);
+  background: var(--color-bone);
 }

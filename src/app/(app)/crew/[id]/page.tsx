@@ -111,7 +111,7 @@ export default async function CrewDetailPage({
           {crew.companies.map((c) => (
             <span
               key={c}
-              className="border-rule text-bone label border bg-white/[0.02] px-2 py-1"
+              className="border-rule text-bone label border bg-ink/[0.02] px-2 py-1"
             >
               {c}
             </span>
@@ -239,12 +239,12 @@ export default async function CrewDetailPage({
       <div
         className="border-rule bg-bg/90 sticky bottom-16 z-20 grid grid-cols-3 border-t backdrop-blur-md"
       >
-        <button className="text-mute hover:text-ink hover:bg-white/5 label flex items-center justify-center gap-1.5 py-3.5">
+        <button className="text-mute hover:text-ink hover:bg-ink/5 label flex items-center justify-center gap-1.5 py-3.5">
           <Bookmark size={14} /> Save
         </button>
         <Link
           href={`/messages?to=${crew.id}`}
-          className="border-rule text-mute hover:text-ink hover:bg-white/5 label flex items-center justify-center gap-1.5 border-x py-3.5"
+          className="border-rule text-mute hover:text-ink hover:bg-ink/5 label flex items-center justify-center gap-1.5 border-x py-3.5"
         >
           <MessageCircle size={14} /> Message
         </Link>

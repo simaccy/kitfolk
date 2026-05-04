@@ -25,7 +25,7 @@ export function SearchBar({
 
   return (
     <div className="relative">
-      <div className="border-rule-strong bg-surface flex items-stretch border focus-within:border-white/30">
+      <div className="border-rule-strong bg-surface flex items-stretch border focus-within:border-ink/30">
         <span className="text-mute flex w-12 shrink-0 items-center justify-center">
           <Search size={16} />
         </span>
@@ -60,7 +60,7 @@ export function SearchBar({
               <li key={s}>
                 <button
                   onMouseDown={() => onChange(s)}
-                  className="text-ink hover:bg-white/5 flex w-full items-center gap-2 px-3 py-2.5 text-left text-[14px]"
+                  className="text-ink hover:bg-ink/5 flex w-full items-center gap-2 px-3 py-2.5 text-left text-[14px]"
                 >
                   <Search size={13} className="text-dim" />
                   <span>{s}</span>

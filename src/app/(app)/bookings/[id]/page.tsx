@@ -177,7 +177,7 @@ export default async function BookingDetailPage({
               })}
             </ul>
             <div className="px-4 pt-3 pb-4">
-              <button className="border-rule-strong text-ink hover:bg-white/5 label flex w-full items-center justify-center gap-2 border py-3">
+              <button className="border-rule-strong text-ink hover:bg-ink/5 label flex w-full items-center justify-center gap-2 border py-3">
                 <Camera size={13} /> Add pickup photos · {b.handover.pickupPhotos}
               </button>
             </div>
@@ -217,7 +217,7 @@ export default async function BookingDetailPage({
       <div className="border-rule bg-bg/90 sticky bottom-16 z-20 grid grid-cols-2 border-t backdrop-blur-md">
         <Link
           href="/messages"
-          className="text-mute hover:text-ink hover:bg-white/5 label flex items-center justify-center gap-1.5 py-3.5"
+          className="text-mute hover:text-ink hover:bg-ink/5 label flex items-center justify-center gap-1.5 py-3.5"
         >
           <MessageCircle size={14} /> Message {b.counterpartName.split(" ")[0]}
         </Link>

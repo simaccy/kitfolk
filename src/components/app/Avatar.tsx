@@ -39,11 +39,11 @@ export function Avatar({
       style={{
         width: size,
         height: size,
-        background: `radial-gradient(circle at 30% 30%, hsl(${hue} 60% 40% / 0.6), hsl(${hue} 50% 14% / 0.6))`,
+        background: `linear-gradient(135deg, hsl(${hue} 55% 86%), hsl(${hue} 42% 72%))`,
       }}
       aria-hidden="true"
     >
-      <span className="serif text-bone leading-none" style={{ fontSize }}>
+      <span className="serif text-ink leading-none" style={{ fontSize }}>
         {initials(name)}
       </span>
     </span>

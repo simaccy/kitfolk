@@ -65,7 +65,7 @@ export default async function SignInPage({
         >
           <button
             type="submit"
-            className="bg-ink text-bg flex w-full items-center justify-center gap-3 px-5 py-4 text-[15px] tracking-tight transition-colors hover:bg-white"
+            className="bg-ink text-bg flex w-full items-center justify-center gap-3 px-5 py-4 text-[15px] tracking-tight transition-opacity hover:opacity-90"
           >
             <GoogleMark />
             Continue with Google

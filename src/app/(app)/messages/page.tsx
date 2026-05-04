@@ -24,7 +24,7 @@ export default function MessagesPage() {
           <li key={t.id}>
             <button
               onClick={() => setActiveId(t.id)}
-              className="flex w-full items-start gap-3 px-4 py-4 text-left hover:bg-white/[0.02]"
+              className="flex w-full items-start gap-3 px-4 py-4 text-left hover:bg-ink/[0.02]"
             >
               <Avatar name={t.withName} hue={t.withHue} size={44} />
               <div className="min-w-0 flex-1">
@@ -132,7 +132,7 @@ function ThreadView({ thread, onBack }: { thread: Thread; onBack: () => void }) 
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Message…"
-          className="border-rule-strong bg-surface text-ink placeholder:text-dim flex-1 border px-3 py-2.5 text-[14px] outline-none focus:border-white/30"
+          className="border-rule-strong bg-surface text-ink placeholder:text-dim flex-1 border px-3 py-2.5 text-[14px] outline-none focus:border-ink/30"
         />
         <button
           type="submit"

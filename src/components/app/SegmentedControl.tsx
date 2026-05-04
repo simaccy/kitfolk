@@ -23,7 +23,7 @@ export function SegmentedControl<T extends string>({
             aria-selected={active}
             onClick={() => onChange(o.id)}
             className={`label flex-1 px-3 py-3 transition-colors ${
-              active ? "bg-ink text-bg" : "text-mute hover:text-ink hover:bg-white/5"
+              active ? "bg-ink text-bg" : "text-mute hover:text-ink hover:bg-ink/5"
             }`}
           >
             {o.label}

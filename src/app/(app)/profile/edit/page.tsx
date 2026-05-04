@@ -29,26 +29,26 @@ export default function EditProfilePage() {
           <Field label="Name">
             <input
               defaultValue={u.name}
-              className="border-rule-strong bg-surface text-ink w-full border px-4 py-3 text-[14px] outline-none focus:border-white/30"
+              className="border-rule-strong bg-surface text-ink w-full border px-4 py-3 text-[14px] outline-none focus:border-ink/30"
             />
           </Field>
           <Field label="Location">
             <input
               defaultValue={u.location}
-              className="border-rule-strong bg-surface text-ink w-full border px-4 py-3 text-[14px] outline-none focus:border-white/30"
+              className="border-rule-strong bg-surface text-ink w-full border px-4 py-3 text-[14px] outline-none focus:border-ink/30"
             />
           </Field>
           <Field label="Main role">
             <input
               defaultValue={u.role}
-              className="border-rule-strong bg-surface text-ink w-full border px-4 py-3 text-[14px] outline-none focus:border-white/30"
+              className="border-rule-strong bg-surface text-ink w-full border px-4 py-3 text-[14px] outline-none focus:border-ink/30"
             />
           </Field>
           <Field label="Day rate (£)">
             <input
               type="number"
               defaultValue={u.dayRate}
-              className="border-rule-strong bg-surface text-ink w-full border px-4 py-3 text-[14px] outline-none focus:border-white/30"
+              className="border-rule-strong bg-surface text-ink w-full border px-4 py-3 text-[14px] outline-none focus:border-ink/30"
             />
           </Field>
         </Section>
@@ -57,7 +57,7 @@ export default function EditProfilePage() {
           <textarea
             defaultValue={u.bio}
             rows={4}
-            className="border-rule-strong bg-surface text-ink w-full border px-4 py-3 text-[14px] outline-none focus:border-white/30"
+            className="border-rule-strong bg-surface text-ink w-full border px-4 py-3 text-[14px] outline-none focus:border-ink/30"
           />
         </Section>
 
@@ -82,7 +82,7 @@ export default function EditProfilePage() {
               <button
                 type="button"
                 key={m}
-                className="border-rule-strong text-bone hover:text-ink hover:bg-white/5 label border px-3 py-2.5"
+                className="border-rule-strong text-bone hover:text-ink hover:bg-ink/5 label border px-3 py-2.5"
               >
                 + {m.replaceAll("_", " ").toLowerCase()}
               </button>
@@ -130,7 +130,7 @@ export default function EditProfilePage() {
             <input
               defaultValue={u.showreel}
               placeholder="vimeo.com/your-reel"
-              className="border-rule-strong bg-surface text-ink w-full border px-4 py-3 text-[14px] outline-none focus:border-white/30"
+              className="border-rule-strong bg-surface text-ink w-full border px-4 py-3 text-[14px] outline-none focus:border-ink/30"
             />
           </Field>
         </Section>

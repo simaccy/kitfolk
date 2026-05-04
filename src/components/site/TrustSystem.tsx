@@ -36,7 +36,7 @@ export function TrustSystem() {
       id="trust"
       className="relative py-28 md:py-40"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(255,106,61,0.07),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(228,111,90,0.06),transparent_55%)]" />
 
       <Container className="relative">
         <SectionLabel index="04" title="TRUST SYSTEM" meta="THE DIFFERENCE" />
@@ -79,8 +79,8 @@ export function TrustSystem() {
                   <div className="md:col-span-4">
                     {/* Avatar plate */}
                     <div className="border-rule bg-bg relative aspect-[4/5] w-full overflow-hidden border">
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,106,61,0.25),transparent_55%),radial-gradient(circle_at_70%_70%,rgba(212,200,168,0.15),transparent_55%)]" />
-                      <div className="grid-bg absolute inset-0 opacity-50" />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(228,111,90,0.18),transparent_60%),radial-gradient(circle_at_75%_70%,rgba(111,128,99,0.16),transparent_60%)]" />
+                      <div className="grid-bg absolute inset-0 opacity-60" />
                       <div className="label text-mute absolute top-3 left-3">
                         ID 01184
                       </div>
@@ -100,7 +100,7 @@ export function TrustSystem() {
                       </h3>
                       <div className="text-right">
                         <p className="label text-mute">TRUST SCORE</p>
-                        <p className="serif text-flare text-4xl leading-none md:text-5xl">
+                        <p className="serif text-go text-4xl leading-none md:text-5xl">
                           94
                         </p>
                       </div>
@@ -124,7 +124,7 @@ export function TrustSystem() {
                           </div>
                           <div className="bg-rule mt-1.5 h-1 w-full">
                             <div
-                              className="bg-flare h-full"
+                              className="bg-go h-full"
                               style={{ width: `${v}%` }}
                             />
                           </div>

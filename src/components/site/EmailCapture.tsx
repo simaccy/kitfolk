@@ -74,7 +74,7 @@ export function EmailCapture({
                 className={`label flex-1 px-4 py-3 text-left transition-colors ${
                   active
                     ? "bg-ink text-bg"
-                    : "text-mute hover:text-ink hover:bg-white/5"
+                    : "text-mute hover:text-ink hover:bg-ink/5"
                 }`}
               >
                 {r.label}
@@ -84,7 +84,7 @@ export function EmailCapture({
         </div>
       )}
 
-      <div className="border-rule-strong bg-surface flex items-stretch border focus-within:border-white/30">
+      <div className="border-rule-strong bg-surface flex items-stretch border focus-within:border-ink/30">
         <input
           type="email"
           required

@@ -141,7 +141,7 @@ export function ProfileView({
             <li key={l.href}>
               <Link
                 href={l.href}
-                className="text-ink hover:bg-white/[0.02] flex items-center justify-between px-4 py-4 text-[14px]"
+                className="text-ink hover:bg-ink/[0.02] flex items-center justify-between px-4 py-4 text-[14px]"
               >
                 {l.label}
                 <ChevronRight size={16} className="text-dim" />
@@ -152,7 +152,7 @@ export function ProfileView({
             <form action={onSignOut}>
               <button
                 type="submit"
-                className="text-mute hover:text-ink hover:bg-white/[0.02] flex w-full items-center gap-2 px-4 py-4 text-left text-[14px]"
+                className="text-mute hover:text-ink hover:bg-ink/[0.02] flex w-full items-center gap-2 px-4 py-4 text-left text-[14px]"
               >
                 <LogOut size={14} /> Sign out
               </button>
@@ -290,7 +290,7 @@ function Chips({ items }: { items: string[] }) {
       {items.map((i) => (
         <span
           key={i}
-          className="border-rule text-bone label border bg-white/[0.02] px-2 py-1"
+          className="border-rule text-bone label border bg-ink/[0.02] px-2 py-1"
         >
           {i}
         </span>

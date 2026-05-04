@@ -15,7 +15,7 @@ export function CircleCard({ circle }: { circle: Circle }) {
   return (
     <Link
       href={`/circles/${circle.id}`}
-      className="border-rule-strong bg-surface group relative block border active:bg-white/[0.02]"
+      className="border-rule-strong bg-surface group relative block border active:bg-ink/[0.02]"
     >
       <div className="border-rule label text-mute flex items-center justify-between border-b px-4 py-2.5">
         <span className="text-flare">● {TYPE_LABEL[circle.type]}</span>

@@ -86,9 +86,9 @@ export function OnboardingFlow({
               />
             ) : (
               <span
-                className="border-rule-strong serif text-bone flex h-8 w-8 items-center justify-center border"
+                className="border-rule-strong serif text-ink flex h-8 w-8 items-center justify-center border"
                 style={{
-                  background: `radial-gradient(circle at 30% 30%, hsl(14 60% 40% / 0.6), hsl(14 50% 14% / 0.6))`,
+                  background: `linear-gradient(135deg, hsl(14 55% 86%), hsl(14 42% 72%))`,
                 }}
               >
                 {(defaultName || "?")[0]}
@@ -127,7 +127,7 @@ export function OnboardingFlow({
                     className={`flex items-center gap-3 border px-4 py-4 text-left transition-colors ${
                       active
                         ? "border-flare bg-flare/10"
-                        : "border-rule-strong bg-surface hover:bg-white/[0.03]"
+                        : "border-rule-strong bg-surface hover:bg-ink/[0.03]"
                     }`}
                   >
                     <o.Icon size={18} className={active ? "text-flare" : "text-bone"} />
@@ -153,23 +153,23 @@ export function OnboardingFlow({
               <Field label="Name">
                 <input
                   defaultValue={defaultName}
-                  className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-white/30"
+                  className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-ink/30"
                 />
               </Field>
               <Field label="Location">
                 <input
                   placeholder="City"
-                  className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-white/30"
+                  className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-ink/30"
                 />
               </Field>
               <Field label="Main role">
                 <input
                   placeholder="e.g. DOP, Sound Mixer, 1st AD"
-                  className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-white/30"
+                  className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-ink/30"
                 />
               </Field>
               <Field label="Industry area">
-                <select className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-white/30">
+                <select className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-ink/30">
                   <option>Drama</option>
                   <option>Documentary</option>
                   <option>Commercial</option>
@@ -235,7 +235,7 @@ export function OnboardingFlow({
                     className={`flex flex-col items-start gap-2 border px-4 py-4 text-left transition-colors ${
                       active
                         ? "border-flare bg-flare/10"
-                        : "border-rule-strong bg-surface hover:bg-white/[0.03]"
+                        : "border-rule-strong bg-surface hover:bg-ink/[0.03]"
                     }`}
                   >
                     <o.Icon
