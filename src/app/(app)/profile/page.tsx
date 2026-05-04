@@ -1,5 +1,6 @@
-import { auth, signOut } from "@/auth";
+import { auth } from "@/auth";
 import { CURRENT_USER } from "@/lib/mock/current-user";
+import { signOutAction } from "./actions";
 import { ProfileView } from "./ProfileView";
 
 export default async function ProfilePage() {
@@ -14,10 +15,5 @@ export default async function ProfilePage() {
     image: session?.user?.image ?? null,
   };
 
-  async function doSignOut() {
-    "use server";
-    await signOut({ redirectTo: "/sign-in" });
-  }
-
-  return <ProfileView user={user} onSignOut={doSignOut} />;
+  return <ProfileView user={user} onSignOut={signOutAction} />;
 }
