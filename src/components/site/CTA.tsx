@@ -24,14 +24,13 @@ export function CTA() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="text-mute mt-8 max-w-xl text-lg leading-relaxed md:text-xl">
-                Early access is curated. We&apos;re onboarding crew, production
-                companies, kit owners and space owners in waves - region by
-                region, role by role.
+                Drop your email. We&apos;ll take it from there — one message,
+                when your region opens up. No spam, no role selector, no faff.
               </p>
             </Reveal>
             <Reveal delay={0.2}>
               <div className="mt-10">
-                <EmailCapture variant="cta" withRole />
+                <EmailCapture variant="cta" />
               </div>
             </Reveal>
             <Reveal delay={0.3}>
