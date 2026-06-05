@@ -5,28 +5,23 @@ import { SectionLabel } from "./SectionLabel";
 const SIGNALS = [
   {
     code: "01",
-    name: "Trust Score",
-    desc: "A composite of credits, vouches, response time and booking history. Earned. Not self-reported.",
+    name: "Scene Circles",
+    desc: "The circles you belong to are your reputation. Being brought into the right circle by the right people is the strongest signal on the network.",
   },
   {
     code: "02",
+    name: "Your referrer",
+    desc: "Every member was brought in by someone already inside. That chain of accountability runs through every booking.",
+  },
+  {
+    code: "03",
     name: "Peer vouches",
     desc: "Real names. Real productions. Every vouch links back to who you worked with, on what, and when.",
   },
   {
-    code: "03",
+    code: "04",
     name: "Verified credits",
     desc: "IMDb sync plus peer-confirmed entries. Credit inflation gets weeded out fast.",
-  },
-  {
-    code: "04",
-    name: "Booking history",
-    desc: "Past gigs. On-time rate. Completion. Visible to the people you'd accept a job from.",
-  },
-  {
-    code: "05",
-    name: "Response rate",
-    desc: "How fast you reply. Production moves in hours, not days. We surface the people who actually answer.",
   },
 ];
 
@@ -45,18 +40,15 @@ export function TrustSystem() {
           <div className="lg:col-span-7">
             <Reveal>
               <h2 className="serif text-ink text-5xl md:text-6xl lg:text-7xl">
-                Trust isn&apos;t assumed. <br />
-                It&apos;s <span className="italic">earned, layered,</span>
-                <br />
-                and visible.
+                Trust is <span className="italic">earned.</span>
               </h2>
             </Reveal>
           </div>
           <div className="lg:col-span-5 lg:pt-8">
             <Reveal delay={0.1}>
               <p className="text-mute max-w-md text-lg leading-relaxed md:text-xl">
-                Every profile carries the receipts. We don&apos;t score people -
-                their work does.
+                No scores, no ratings. Trust comes from the circles you belong
+                to and the person who brought you in.
               </p>
             </Reveal>
           </div>
@@ -88,48 +80,39 @@ export function TrustSystem() {
                         24.05.26
                       </div>
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="serif text-ink text-7xl">AP</span>
+                        <span className="serif text-ink text-7xl">AM</span>
                       </div>
                     </div>
                   </div>
 
                   <div className="md:col-span-8">
-                    <div className="flex items-baseline justify-between">
-                      <h3 className="serif text-ink text-3xl md:text-4xl">
-                        Asha Patel
-                      </h3>
-                      <div className="text-right">
-                        <p className="label text-mute">TRUST SCORE</p>
-                        <p className="serif text-go text-4xl leading-none md:text-5xl">
-                          94
-                        </p>
-                      </div>
-                    </div>
+                    <h3 className="serif text-ink text-3xl md:text-4xl">
+                      Alex Mason
+                    </h3>
                     <p className="label text-bone mt-2">
                       DOP · LONDON · OPEN APR–JUN
                     </p>
 
-                    {/* Trust bars */}
-                    <div className="border-rule mt-6 grid grid-cols-2 gap-x-6 gap-y-3 border-t pt-5">
-                      {[
-                        ["Credits", 96],
-                        ["Vouches", 92],
-                        ["On-time", 98],
-                        ["Response", 89],
-                      ].map(([k, v]) => (
-                        <div key={k as string}>
-                          <div className="label text-mute flex justify-between">
-                            <span>{k}</span>
-                            <span className="text-bone">{v}</span>
-                          </div>
-                          <div className="bg-rule mt-1.5 h-1 w-full">
-                            <div
-                              className="bg-go h-full"
-                              style={{ width: `${v}%` }}
-                            />
-                          </div>
-                        </div>
-                      ))}
+                    <div className="border-rule mt-6 border-t pt-5">
+                      <p className="label text-mute mb-3">SCENE CIRCLES</p>
+                      <div className="flex flex-wrap gap-2">
+                        {["London DOPs", "Commercial Crew UK", "Feature Film Network"].map((c) => (
+                          <span
+                            key={c}
+                            className="border-flare/40 text-flare label border px-2.5 py-1.5"
+                          >
+                            {c}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="border-rule mt-6 border-t pt-5">
+                      <p className="label text-mute mb-2">REFERRED BY</p>
+                      <p className="text-ink text-[15px]">
+                        Simon Macson{" "}
+                        <span className="text-mute">· 1st AD</span>
+                      </p>
                     </div>
 
                     <div className="border-rule mt-6 border-t pt-5">
@@ -157,7 +140,7 @@ export function TrustSystem() {
                     <div className="border-rule mt-6 border-t pt-5">
                       <p className="label text-mute mb-3">VOUCHED BY</p>
                       <div className="flex flex-wrap gap-2">
-                        {["M. Reyes (Gaffer)", "L. Karlsson (Sound)", "D. Okafor (1st AD)", "+ 9 others"].map(
+                        {["D. Harris (Gaffer)", "F. Hart (Sound)", "S. Macson (1st AD)", "+ 9 others"].map(
                           (v) => (
                             <span
                               key={v}

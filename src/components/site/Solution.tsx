@@ -10,7 +10,7 @@ const PILLARS = [
     detail: [
       ["IMDb sync", "auto"],
       ["Peer vouches", "named"],
-      ["Trust score", "live"],
+      ["Circle verified", "live"],
     ],
   },
   {
@@ -25,8 +25,18 @@ const PILLARS = [
   },
   {
     code: "III",
+    title: "Production spaces",
+    body: "Studios, locations, houses, units - listed by the owners who actually have them. No scout required.",
+    detail: [
+      ["Owner-listed", "verified"],
+      ["Live availability", "today"],
+      ["Direct booking", "no fees"],
+    ],
+  },
+  {
+    code: "IV",
     title: "Fast hiring",
-    body: "Post a call. Get matches in minutes, not days - from people you already trust, or people your trust does.",
+    body: "Post a call. Get matches in minutes, not days - from people you already trust, or people your circle does.",
     detail: [
       ["Median match", "12 min"],
       ["Direct booking", "no fees"],
@@ -53,15 +63,15 @@ export function Solution() {
           <div className="lg:col-span-5 lg:pt-6">
             <Reveal delay={0.1}>
               <p className="text-mute max-w-md text-lg leading-relaxed md:text-xl">
-                Discovery, verification and booking - for the people and the
-                kit. No middleman. No noise. No paying to message someone you
-                already know.
+                Discovery, verification and booking - for the people, the kit
+                and the space. No middleman. No noise. No paying to message
+                someone you already know.
               </p>
             </Reveal>
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-px md:mt-20 md:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-px md:mt-20 md:grid-cols-2 lg:grid-cols-4">
           {PILLARS.map((p, i) => (
             <Reveal key={p.code} delay={i * 0.08}>
               <article className="bg-surface border-rule-strong group relative h-full overflow-hidden border p-7 md:p-9">

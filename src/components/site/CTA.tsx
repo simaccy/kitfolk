@@ -13,7 +13,7 @@ export function CTA() {
       </div>
 
       <Container className="relative">
-        <SectionLabel index="10" title="EARLY ACCESS" meta="INVITE-BASED ROLLOUT" />
+        <SectionLabel index="09" title="EARLY ACCESS" meta="INVITE-BASED ROLLOUT" />
 
         <div className="grid grid-cols-1 gap-10 pt-12 md:pt-20 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
@@ -25,8 +25,8 @@ export function CTA() {
             <Reveal delay={0.1}>
               <p className="text-mute mt-8 max-w-xl text-lg leading-relaxed md:text-xl">
                 Early access is curated. We&apos;re onboarding crew, production
-                companies and kit owners in waves - region by region, role by
-                role.
+                companies, kit owners and space owners in waves - region by
+                region, role by role.
               </p>
             </Reveal>
             <Reveal delay={0.2}>
@@ -83,7 +83,7 @@ export function CTA() {
                   <div className="border-rule grid grid-cols-3 gap-4 border-b pb-5">
                     <span className="label text-mute">ROLES</span>
                     <span className="text-ink col-span-2">
-                      Crew · Production · Kit owners
+                      Crew · Kit owners · Space owners
                     </span>
                   </div>
                   <div className="grid grid-cols-3 gap-4">

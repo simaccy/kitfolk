@@ -120,7 +120,7 @@ export const CALLS: Call[] = [
     details:
       "Single day branded shoot in Hackney. Need 2× 600D for talking head + b-roll. Pickup OK, can collect Tuesday morning.",
     postedById: "asha-patel",
-    postedByName: "Asha Patel",
+    postedByName: "Alex Mason",
     postedAt: "2026-05-02T19:02:00Z",
     responses: 3,
     verified: true,

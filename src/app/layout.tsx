@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SceneCircle - The trusted network for crew, kit and production",
     description:
-      "Production moves fast. Trust needs to move faster. Join early access.",
+      "Your Scene. Your Circle. Join the trusted network for crew, kit and production.",
     type: "website",
   },
 };

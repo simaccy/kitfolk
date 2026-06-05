@@ -3,10 +3,10 @@ import { EmailCapture } from "./EmailCapture";
 import { Reveal } from "./Reveal";
 
 const ROLES = [
-  { role: "DOP", name: "Asha P.", city: "London", status: "AVAILABLE", score: "94" },
-  { role: "GAFFER", name: "Marc R.", city: "Bristol", status: "ON SET", score: "91" },
-  { role: "SOUND MIX", name: "Lena K.", city: "Berlin", status: "AVAILABLE", score: "88" },
-  { role: "1ST AD", name: "Daniel O.", city: "Manchester", status: "VOUCHED", score: "96" },
+  { role: "DOP", name: "Alex M.", city: "London", status: "AVAILABLE", score: "" },
+  { role: "GAFFER", name: "Dan H.", city: "Bristol", status: "ON SET", score: "" },
+  { role: "SPACE", name: "Studio, SE1", city: "London", status: "AVAILABLE", score: "" },
+  { role: "1ST AD", name: "Simon M.", city: "Manchester", status: "VOUCHED", score: "" },
 ];
 
 export function Hero() {
@@ -61,17 +61,15 @@ export function Hero() {
           <div className="lg:col-span-8">
             <Reveal>
               <p className="label text-flare mb-6">
-                ● THE TRUSTED NETWORK FOR FILM &amp; TV
+                ● CREW · KIT · SPACES · FILM &amp; TV
               </p>
             </Reveal>
 
             <Reveal delay={0.05}>
               <h1 className="serif text-ink text-[44px] sm:text-6xl md:text-7xl lg:text-[88px] xl:text-[104px]">
-                Production moves fast.
-                <br />
-                <span className="text-bone italic">Trust</span> needs to move{" "}
+                Your Scene.{" "}
                 <span className="relative inline-block">
-                  faster.
+                  Your Circle.
                   <span className="bg-flare absolute right-0 -bottom-1 left-0 h-px md:-bottom-2 md:h-[2px]" />
                 </span>
               </h1>
@@ -80,8 +78,8 @@ export function Hero() {
             <Reveal delay={0.15}>
               <p className="text-mute mt-8 max-w-2xl text-lg leading-relaxed md:text-xl">
                 SceneCircle is the trusted network for finding, verifying and
-                booking crew and kit. Built by people who actually work in
-                production - not a marketplace, not a directory, not another
+                booking crew, kit and spaces. Built by people who actually work
+                in production - not a marketplace, not a directory, not another
                 group chat.
               </p>
             </Reveal>
@@ -110,14 +108,14 @@ export function Hero() {
                       <span className="label text-bone col-span-3">
                         {r.role}
                       </span>
-                      <span className="col-span-5 text-[15px] tracking-tight">
+                      <span className="col-span-6 text-[15px] tracking-tight">
                         {r.name}
                         <span className="text-dim mono ml-2 text-[11px]">
                           · {r.city}
                         </span>
                       </span>
                       <span
-                        className={`label col-span-2 ${
+                        className={`label col-span-3 text-right ${
                           r.status === "AVAILABLE"
                             ? "text-go"
                             : r.status === "ON SET"
@@ -128,9 +126,6 @@ export function Hero() {
                         }`}
                       >
                         {r.status}
-                      </span>
-                      <span className="mono text-mute col-span-2 text-right text-[12px]">
-                        TS {r.score}
                       </span>
                     </li>
                   ))}

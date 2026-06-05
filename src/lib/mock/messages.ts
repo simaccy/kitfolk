@@ -34,7 +34,7 @@ export const THREADS: Thread[] = [
   },
   {
     id: "th-3",
-    withName: "Asha Patel",
+    withName: "Alex Mason",
     withRole: "DOP · London",
     withHue: 14,
     context: "Booking · KF-2271",

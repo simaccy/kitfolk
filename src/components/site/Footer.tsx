@@ -23,6 +23,7 @@ export function Footer() {
               {[
                 ["Crew", "#solution"],
                 ["Kit", "#solution"],
+                ["Spaces", "#solution"],
                 ["Trust system", "#trust"],
                 ["Scene Circles", "#circles"],
               ].map(([l, h]) => (
@@ -76,17 +77,7 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Wordmark stretch */}
-        <div className="mt-20 overflow-hidden">
-          <p
-            className="serif text-ink/[0.06] leading-none whitespace-nowrap"
-            style={{ fontSize: "clamp(80px, 22vw, 320px)" }}
-          >
-            SCENECIRCLE
-          </p>
-        </div>
-
-        <div className="border-rule mt-8 flex flex-wrap items-center justify-between gap-4 border-t pt-6">
+        <div className="border-rule mt-20 flex flex-wrap items-center justify-between gap-4 border-t pt-6">
           <p className="label text-dim">
             © 2026 SCENECIRCLE LTD · ALL RIGHTS RESERVED
           </p>

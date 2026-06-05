@@ -6,7 +6,7 @@ export function Features() {
   return (
     <section id="features" className="relative py-28 md:py-40">
       <Container>
-        <SectionLabel index="06" title="V1 FEATURES" meta="WHAT SHIPS" />
+        <SectionLabel index="05" title="V1 FEATURES" meta="WHAT SHIPS" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
@@ -51,19 +51,17 @@ export function Features() {
                 </div>
                 <ul className="divide-rule divide-y">
                   {[
-                    ["A. Patel", "DOP", "94"],
-                    ["J. Mwangi", "DOP", "91"],
-                    ["C. Suzuki", "DOP", "89"],
-                  ].map(([n, r, s]) => (
+                    ["A. Mason", "DOP", "go"],
+                    ["J. Mwangi", "DOP", "go"],
+                    ["C. Suzuki", "DOP", "bone"],
+                  ].map(([n, r, c]) => (
                     <li
                       key={n}
                       className="grid grid-cols-12 items-center gap-3 px-4 py-2.5 text-[14px]"
                     >
-                      <span className="text-ink col-span-6">{n}</span>
-                      <span className="label text-mute col-span-3">{r}</span>
-                      <span className="mono text-bone col-span-3 text-right">
-                        TS {s}
-                      </span>
+                      <span className="text-ink col-span-7">{n}</span>
+                      <span className="label text-mute col-span-4">{r}</span>
+                      <span className={`label col-span-1 text-right ${c === "go" ? "text-go" : "text-bone"}`}>●</span>
                     </li>
                   ))}
                 </ul>
@@ -92,11 +90,11 @@ export function Features() {
                     age: "2m",
                   },
                   {
-                    text: "1st AC · Berlin · 16–18 May · commercial",
+                    text: "Studio space · London · 16–18 May · commercial",
                     age: "9m",
                   },
                   { text: "Gaffer · London · 22 May · doc", age: "31m" },
-                  { text: "Steadicam · Bristol · 1 Jun · feature", age: "1h" },
+                  { text: "Location house · Bristol · 1 Jun · feature", age: "1h" },
                 ].map((c) => (
                   <li
                     key={c.text}
@@ -159,7 +157,7 @@ export function Features() {
             </article>
           </Reveal>
 
-          {/* Map */}
+          {/* Space listings */}
           <Reveal delay={0.15} className="md:col-span-2">
             <article className="bg-surface border-rule-strong relative h-full overflow-hidden border p-7 md:min-h-[260px] md:p-9">
               <div className="label text-flare flex items-center justify-between">
@@ -167,37 +165,25 @@ export function Features() {
                 <span className="text-dim">●</span>
               </div>
               <h3 className="serif text-ink mt-6 text-2xl md:text-3xl">
-                Map discovery
+                Space listings
               </h3>
               <p className="text-mute mt-3 text-[14px] leading-relaxed">
-                Find local crew and kit without sifting through every city.
+                Studios, locations, houses, units. Owner-listed, directly bookable.
               </p>
-
-              {/* Mini map */}
-              <div className="border-rule bg-bg relative mt-5 aspect-[2/1] w-full overflow-hidden border">
-                <div className="grid-bg absolute inset-0 opacity-50" />
-                <div className="absolute inset-0">
+              <div className="border-rule mt-5 border-t pt-3">
+                <ul className="space-y-1.5">
                   {[
-                    [22, 30],
-                    [40, 55],
-                    [60, 35],
-                    [75, 60],
-                    [50, 70],
-                    [30, 65],
-                    [85, 25],
-                  ].map(([x, y], i) => (
-                    <span
-                      key={i}
-                      className="bg-flare absolute h-1.5 w-1.5 rounded-full"
-                      style={{
-                        left: `${x}%`,
-                        top: `${y}%`,
-                        opacity: 0.4 + (i % 3) * 0.2,
-                      }}
-                    />
+                    ["Studio, SE1", "£1,200 / day", "go"],
+                    ["Period house, W11", "£850 / day", "go"],
+                    ["Industrial unit, E3", "£400 / day", "bone"],
+                  ].map(([n, p, c]) => (
+                    <li key={n} className="grid grid-cols-12 gap-2 text-[13px]">
+                      <span className="text-ink col-span-7 truncate">{n}</span>
+                      <span className="text-mute mono col-span-4 text-right">{p}</span>
+                      <span className={`label col-span-1 text-right ${c === "go" ? "text-go" : "text-bone"}`}>●</span>
+                    </li>
                   ))}
-                  <span className="border-flare absolute h-3 w-3 rounded-full border-2" style={{ left: '38%', top: '52%' }} />
-                </div>
+                </ul>
               </div>
             </article>
           </Reveal>

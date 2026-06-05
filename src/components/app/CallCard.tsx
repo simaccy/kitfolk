@@ -1,5 +1,6 @@
 import { BadgeCheck, MapPin, MessageCircle, Share2 } from "lucide-react";
 import type { Call } from "@/lib/types";
+import { ClientDate } from "./ClientDate";
 import { dateRange, formatGBP, relativeTime } from "@/lib/utils";
 
 const TYPE_TONE: Record<Call["type"], string> = {
@@ -78,7 +79,7 @@ export function CallCard({ call }: { call: Call }) {
             )}
           </div>
           <span className="label text-dim">
-            {relativeTime(call.postedAt)} · {call.responses} replies
+            <ClientDate value={relativeTime(call.postedAt)} /> · {call.responses} replies
           </span>
         </div>
       </div>

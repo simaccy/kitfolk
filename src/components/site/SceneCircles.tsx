@@ -7,24 +7,33 @@ const CIRCLES = [
     name: "Bristol docs crew",
     members: 14,
     roles: ["DOP", "Sound", "1st AC", "Editor", "Producer"],
-    note: "Active · 3 jobs this month",
-    accent: "flare",
+    note: "Active",
+    jobs: "3 jobs this month",
+    accent: "flare" as const,
   },
   {
     name: "North-East commercial team",
     members: 22,
-    roles: ["DOP", "Gaffer", "Grip", "1st AD", "Producer", "Production Designer"],
-    note: "Active · 7 jobs this month",
-    accent: "bone",
+    roles: ["DOP", "Gaffer", "Grip", "1st AD", "Producer", "Prod. Designer"],
+    note: "Active",
+    jobs: "7 jobs this month",
+    accent: "bone" as const,
   },
   {
     name: "My grade & post chain",
     members: 6,
     roles: ["Editor", "Colourist", "Sound design", "VFX"],
-    note: "Quiet · invite-only",
-    accent: "go",
+    note: "Quiet",
+    jobs: "Invite-only",
+    accent: "go" as const,
   },
 ];
+
+const ACCENT_CLASSES = {
+  flare: { dot: "text-flare", ring: "border-flare/30", label: "text-flare", bg: "bg-flare/10" },
+  bone:  { dot: "text-bone",  ring: "border-bone/30",  label: "text-bone",  bg: "bg-bone/10"  },
+  go:    { dot: "text-go",    ring: "border-go/30",    label: "text-go",    bg: "bg-go/10"    },
+};
 
 export function SceneCircles() {
   return (
@@ -32,7 +41,7 @@ export function SceneCircles() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(212,200,168,0.06),transparent_50%)]" />
 
       <Container className="relative">
-        <SectionLabel index="07" title="SCENE CIRCLES" meta="PRIVATE NETWORKS" />
+        <SectionLabel index="06" title="SCENE CIRCLES" meta="PRIVATE NETWORKS" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
@@ -58,59 +67,110 @@ export function SceneCircles() {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-px md:mt-20 md:grid-cols-3">
-          {CIRCLES.map((c, i) => (
-            <Reveal key={c.name} delay={i * 0.08}>
-              <article className="bg-surface border-rule-strong relative h-full border p-7 md:p-9">
-                <div className="label text-mute flex items-center justify-between">
-                  <span className="text-flare">CIRCLE / 0{i + 1}</span>
-                  <span>{c.note}</span>
-                </div>
+        <div className="mt-16 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-3">
+          {CIRCLES.map((c, i) => {
+            const ac = ACCENT_CLASSES[c.accent];
+            const avatarCount = Math.min(8, c.members);
+            return (
+              <Reveal key={c.name} delay={i * 0.08}>
+                <article className="bg-surface border-rule-strong relative flex h-full flex-col overflow-hidden border p-7 md:p-8">
 
-                <h3 className="serif text-ink mt-7 text-2xl md:text-[28px]">
-                  {c.name}
-                </h3>
+                  {/* Card header */}
+                  <div className="label flex items-center justify-between">
+                    <span className={ac.label}>CIRCLE / 0{i + 1}</span>
+                    <span className="text-mute">{c.note}</span>
+                  </div>
 
-                {/* Member chips */}
-                <div className="mt-5 flex -space-x-2">
-                  {Array.from({ length: Math.min(6, c.members) }).map((_, k) => (
-                    <span
-                      key={k}
-                      className="border-rule-strong bg-bg flex h-9 w-9 items-center justify-center border"
-                      style={{
-                        background: k % 2 ? "#3a3a36" : "#2a2826",
-                      }}
-                    >
-                      <span className="serif text-bone text-[13px]">
-                        {String.fromCharCode(65 + ((i * 7 + k * 3) % 26))}
+                  {/* ── Circular orbit diagram ── */}
+                  <div className="relative mx-auto my-8 flex-shrink-0" style={{ width: 192, height: 192 }}>
+
+                    {/* Outer orbit ring */}
+                    <div
+                      className={`absolute inset-0 rounded-full border ${ac.ring}`}
+                    />
+                    {/* Inner dashed ring */}
+                    <div
+                      className="border-rule absolute rounded-full border border-dashed opacity-30"
+                      style={{ inset: 32 }}
+                    />
+                    {/* Faint glow */}
+                    <div
+                      className={`absolute rounded-full opacity-10 blur-2xl ${ac.bg}`}
+                      style={{ inset: 16 }}
+                    />
+
+                    {/* Center label */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+                      <span className={`label text-[10px] ${ac.label}`}>●</span>
+                      <span className="serif text-ink mt-1 text-[15px] leading-snug px-6">
+                        {c.name}
                       </span>
-                    </span>
-                  ))}
-                  {c.members > 6 && (
-                    <span className="border-rule-strong bg-bg label text-mute flex h-9 w-9 items-center justify-center border">
-                      +{c.members - 6}
-                    </span>
-                  )}
-                </div>
+                    </div>
 
-                <ul className="border-rule mt-6 flex flex-wrap gap-1.5 border-t pt-5">
-                  {c.roles.map((r) => (
-                    <li
-                      key={r}
-                      className="border-rule label text-bone border px-2 py-1"
-                    >
-                      {r}
-                    </li>
-                  ))}
-                </ul>
+                    {/* Member avatars on the orbit ring */}
+                    {Array.from({ length: avatarCount }).map((_, k) => {
+                      const angle = (k / avatarCount) * 2 * Math.PI - Math.PI / 2;
+                      const r = 90; // distance from center (px) — sits on the outer ring (r=96)
+                      const x = Math.cos(angle) * r;
+                      const y = Math.sin(angle) * r;
+                      const letter = String.fromCharCode(65 + ((i * 7 + k * 3) % 26));
+                      return (
+                        <span
+                          key={k}
+                          className="border-rule-strong absolute flex h-8 w-8 items-center justify-center rounded-full"
+                          style={{
+                            top: `calc(50% + ${y}px - 16px)`,
+                            left: `calc(50% + ${x}px - 16px)`,
+                            background: k % 2 ? "#3a3a36" : "#2a2826",
+                          }}
+                        >
+                          <span className="serif text-bone text-[11px]">{letter}</span>
+                        </span>
+                      );
+                    })}
 
-                <div className="border-rule mt-6 flex items-center justify-between border-t pt-5">
-                  <span className="label text-mute">{c.members} MEMBERS</span>
-                  <span className="label text-flare">OPEN CIRCLE →</span>
-                </div>
-              </article>
-            </Reveal>
-          ))}
+                    {/* Overflow member count — bottom of circle */}
+                    {c.members > 8 && (
+                      <span
+                        className="border-rule-strong label text-mute absolute flex h-8 w-8 items-center justify-center rounded-full text-[10px]"
+                        style={{
+                          bottom: -8,
+                          left: "50%",
+                          transform: "translateX(-50%)",
+                          background: "#1e3040",
+                        }}
+                      >
+                        +{c.members - 8}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Role pills */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {c.roles.map((r) => (
+                      <span
+                        key={r}
+                        className={`label border px-2.5 py-1 text-[11px] rounded-full ${ac.label} border-current opacity-60`}
+                      >
+                        {r}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Footer */}
+                  <div className="border-rule mt-5 flex items-center justify-between border-t pt-4">
+                    <div>
+                      <span className="label text-mute">{c.members} MEMBERS</span>
+                      <span className="label text-dim mx-2">·</span>
+                      <span className="label text-dim">{c.jobs}</span>
+                    </div>
+                    <span className={`label ${ac.label}`}>→</span>
+                  </div>
+
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
       </Container>
     </section>

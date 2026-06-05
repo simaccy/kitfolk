@@ -33,7 +33,7 @@ export const KIT: Kit[] = [
     name: "ARRI Alexa 35 - feature package",
     category: "Camera",
     ownerId: "asha-patel",
-    ownerName: "Asha Patel",
+    ownerName: "Alex Mason",
     location: "London",
     description:
       "Feature-spec Alexa 35 with Cooke S4/i set, full Trinity rig and Wireless Compact handle. Recently serviced. Drama and high-end commercial only - no event work.",
@@ -86,7 +86,7 @@ export const KIT: Kit[] = [
     name: "Aputure 600D Pro × 3",
     category: "Lighting",
     ownerId: "marc-reyes",
-    ownerName: "Marc Reyes",
+    ownerName: "Dan Harris",
     location: "Bristol",
     description:
       "Three 600D Pros with light dome SE, 6×6 frame, full grip including stands, sandbags. Built for fast interview rigs and small drama interiors.",
@@ -161,7 +161,7 @@ export const KIT: Kit[] = [
     name: "ARRI SkyPanel S60-C × 2",
     category: "Lighting",
     ownerId: "marc-reyes",
-    ownerName: "Marc Reyes",
+    ownerName: "Dan Harris",
     location: "Bristol",
     description:
       "Two S60-C with manual yoke. Recent gel pack and chimera. London-area pickup possible by arrangement.",
@@ -182,7 +182,7 @@ export const KIT: Kit[] = [
     name: "SmallHD Cine 13 director's monitor",
     category: "Monitor",
     ownerId: "asha-patel",
-    ownerName: "Asha Patel",
+    ownerName: "Alex Mason",
     location: "London",
     description:
       "13\" 4K HDR director's monitor with Teradek Bolt 6 link. Stand and shade hood included.",
