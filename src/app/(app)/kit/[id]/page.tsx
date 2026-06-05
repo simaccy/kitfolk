@@ -117,11 +117,11 @@ export default async function KitDetailPage({
           <p className="text-mute flex items-center gap-2 text-[14px]">
             <Truck size={14} className="text-bone" />
             {kit.handoverPreference === "Either"
-              ? "Pickup or delivery — owner is flexible"
+              ? "Pickup or delivery - owner is flexible"
               : `${kit.handoverPreference} preferred`}
           </p>
           <p className="text-dim text-[13px]">
-            All bookings on KitFolk include the Handover protocol — PIN-confirmed
+            All bookings on SceneCircle include the Handover protocol - PIN-confirmed
             pickup, photo checklist, and a damage dispute window.
           </p>
         </div>

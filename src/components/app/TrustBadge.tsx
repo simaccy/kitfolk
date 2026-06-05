@@ -13,7 +13,7 @@ const META: Record<TrustBadgeType, { label: string; Icon: typeof BadgeCheck }> =
   IDENTITY_VERIFIED: { label: "ID verified", Icon: UserCheck },
   CREDIT_VERIFIED: { label: "Credits verified", Icon: BadgeCheck },
   PEER_VOUCHED: { label: "Peer vouched", Icon: Users },
-  KITFOLK_TRUSTED: { label: "KitFolk Trusted", Icon: Star },
+  SCENECIRCLE_TRUSTED: { label: "SceneCircle Trusted", Icon: Star },
   PRODUCTION_READY: { label: "Production ready", Icon: ShieldCheck },
   PREMIUM_KIT_OWNER: { label: "Premium kit", Icon: PackageCheck },
   INTERNATIONAL_READY: { label: "Int. ready", Icon: Globe2 },

@@ -9,7 +9,7 @@ export const CREW: Crew[] = [
     location: "London",
     availability: "AVAILABLE_NOW",
     trustScore: 94,
-    badges: ["IDENTITY_VERIFIED", "CREDIT_VERIFIED", "PEER_VOUCHED", "KITFOLK_TRUSTED"],
+    badges: ["IDENTITY_VERIFIED", "CREDIT_VERIFIED", "PEER_VOUCHED", "SCENECIRCLE_TRUSTED"],
     credits: [
       { title: "Sundown", role: "DOP", year: 2026, company: "Northwind", type: "feature" },
       { title: "Northbound", role: "DOP", year: 2025, company: "Frame 24", type: "spot" },
@@ -110,7 +110,7 @@ export const CREW: Crew[] = [
     availability: "AVAILABLE_FROM",
     availableFrom: "2026-05-18",
     trustScore: 96,
-    badges: ["IDENTITY_VERIFIED", "CREDIT_VERIFIED", "PEER_VOUCHED", "KITFOLK_TRUSTED", "PRODUCTION_READY"],
+    badges: ["IDENTITY_VERIFIED", "CREDIT_VERIFIED", "PEER_VOUCHED", "SCENECIRCLE_TRUSTED", "PRODUCTION_READY"],
     credits: [
       { title: "After Hours", role: "1st AD", year: 2025, company: "Channel 4", type: "series" },
       { title: "Northbound", role: "1st AD", year: 2025, type: "spot" },
@@ -292,7 +292,7 @@ export const CREW: Crew[] = [
     location: "London",
     availability: "REMOTE_ONLY",
     trustScore: 95,
-    badges: ["IDENTITY_VERIFIED", "CREDIT_VERIFIED", "PEER_VOUCHED", "KITFOLK_TRUSTED"],
+    badges: ["IDENTITY_VERIFIED", "CREDIT_VERIFIED", "PEER_VOUCHED", "SCENECIRCLE_TRUSTED"],
     credits: [
       { title: "Held", role: "Colourist", year: 2024, type: "feature" },
       { title: "Sundown", role: "Colourist", year: 2026, type: "feature" },

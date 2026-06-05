@@ -16,7 +16,7 @@ const PILLARS = [
   {
     code: "II",
     title: "Trusted kit",
-    body: "Cameras, lenses, lights, grip — listed by the people who actually own them. Real availability, real prices.",
+    body: "Cameras, lenses, lights, grip - listed by the people who actually own them. Real availability, real prices.",
     detail: [
       ["Owner-listed", "verified"],
       ["Live availability", "today"],
@@ -26,7 +26,7 @@ const PILLARS = [
   {
     code: "III",
     title: "Fast hiring",
-    body: "Post a call. Get matches in minutes, not days — from people you already trust, or people your trust does.",
+    body: "Post a call. Get matches in minutes, not days - from people you already trust, or people your trust does.",
     detail: [
       ["Median match", "12 min"],
       ["Direct booking", "no fees"],
@@ -39,7 +39,7 @@ export function Solution() {
   return (
     <section id="solution" className="relative py-28 md:py-40">
       <Container>
-        <SectionLabel index="03" title="KITFOLK" meta="THE OPERATING LAYER" />
+        <SectionLabel index="03" title="SCENECIRCLE" meta="THE OPERATING LAYER" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
@@ -53,7 +53,7 @@ export function Solution() {
           <div className="lg:col-span-5 lg:pt-6">
             <Reveal delay={0.1}>
               <p className="text-mute max-w-md text-lg leading-relaxed md:text-xl">
-                Discovery, verification and booking — for the people and the
+                Discovery, verification and booking - for the people and the
                 kit. No middleman. No noise. No paying to message someone you
                 already know.
               </p>

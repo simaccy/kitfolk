@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-12">
           <div className="col-span-2 md:col-span-5">
             <p className="serif text-ink text-5xl tracking-tight md:text-6xl">
-              KitFolk
+              SceneCircle
             </p>
             <p className="text-mute mt-4 max-w-sm text-base leading-relaxed">
               The trusted network for crew, kit and production.
@@ -24,7 +24,7 @@ export function Footer() {
                 ["Crew", "#solution"],
                 ["Kit", "#solution"],
                 ["Trust system", "#trust"],
-                ["Kit Circles", "#circles"],
+                ["Scene Circles", "#circles"],
               ].map(([l, h]) => (
                 <li key={l}>
                   <a
@@ -82,13 +82,13 @@ export function Footer() {
             className="serif text-ink/[0.06] leading-none whitespace-nowrap"
             style={{ fontSize: "clamp(80px, 22vw, 320px)" }}
           >
-            KITFOLK
+            SCENECIRCLE
           </p>
         </div>
 
         <div className="border-rule mt-8 flex flex-wrap items-center justify-between gap-4 border-t pt-6">
           <p className="label text-dim">
-            © 2026 KITFOLK LTD · ALL RIGHTS RESERVED
+            © 2026 SCENECIRCLE LTD · ALL RIGHTS RESERVED
           </p>
           <div className="label text-dim flex flex-wrap gap-6">
             <a href="#" className="hover:text-bone">

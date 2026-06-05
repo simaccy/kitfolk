@@ -12,7 +12,7 @@ const QUOTES = [
   },
   {
     quote:
-      "Most of my year's bookings come from three WhatsApp groups. KitFolk is the version of that I've been waiting for.",
+      "Most of my year's bookings come from three WhatsApp groups. SceneCircle is the version of that I've been waiting for.",
     name: "Marc R.",
     role: "Producer · Bristol",
     project: "Documentary & branded",
@@ -95,7 +95,7 @@ export function SocialProof() {
             ))}
           </div>
           <p className="label text-dim mt-5 text-center md:text-left">
-            ● PARTNER PRODUCTION COMPANIES — EARLY ACCESS COHORT
+            ● PARTNER PRODUCTION COMPANIES - EARLY ACCESS COHORT
           </p>
         </Reveal>
       </Container>

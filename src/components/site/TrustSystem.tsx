@@ -55,7 +55,7 @@ export function TrustSystem() {
           <div className="lg:col-span-5 lg:pt-8">
             <Reveal delay={0.1}>
               <p className="text-mute max-w-md text-lg leading-relaxed md:text-xl">
-                Every profile carries the receipts. We don&apos;t score people —
+                Every profile carries the receipts. We don&apos;t score people -
                 their work does.
               </p>
             </Reveal>
@@ -71,7 +71,7 @@ export function TrustSystem() {
                 <div className="border-rule-strong label text-mute flex items-center justify-between border-b px-5 py-3">
                   <span className="text-bone">PROFILE / DOP</span>
                   <span>
-                    <span className="text-go">●</span> VERIFIED · KITFOLK
+                    <span className="text-go">●</span> VERIFIED · SCENECIRCLE
                   </span>
                 </div>
 

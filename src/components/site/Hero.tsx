@@ -79,9 +79,9 @@ export function Hero() {
 
             <Reveal delay={0.15}>
               <p className="text-mute mt-8 max-w-2xl text-lg leading-relaxed md:text-xl">
-                KitFolk is the trusted network for finding, verifying and
+                SceneCircle is the trusted network for finding, verifying and
                 booking crew and kit. Built by people who actually work in
-                production — not a marketplace, not a directory, not another
+                production - not a marketplace, not a directory, not another
                 group chat.
               </p>
             </Reveal>

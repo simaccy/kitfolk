@@ -26,7 +26,7 @@ export function Header() {
           href="#top"
           className="text-ink flex items-baseline gap-2 tracking-tight"
         >
-          <span className="serif text-2xl md:text-[26px]">KitFolk</span>
+          <span className="serif text-2xl md:text-[26px]">SceneCircle</span>
           <span className="label text-dim hidden md:inline">/ network</span>
         </a>
 

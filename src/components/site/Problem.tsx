@@ -11,7 +11,7 @@ const PAINS = [
   {
     code: "02",
     title: "Last-minute scrambles",
-    body: "Pre-light is in 36 hours. Your sound recordist just dropped. There is no back-up — just panic and a rate hike.",
+    body: "Pre-light is in 36 hours. Your sound recordist just dropped. There is no back-up - just panic and a rate hike.",
   },
   {
     code: "03",
@@ -29,7 +29,7 @@ export function Problem() {
   return (
     <section id="problem" className="relative py-28 md:py-40">
       <Container>
-        <SectionLabel index="02" title="THE PROBLEM" meta="EXT. SET — DAY" />
+        <SectionLabel index="02" title="THE PROBLEM" meta="EXT. SET - DAY" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">

@@ -23,12 +23,12 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KitFolk — The trusted network for crew, kit and production",
+  title: "SceneCircle - The trusted network for crew, kit and production",
   description:
     "Find, verify and book crew and equipment in film and TV. Verified professionals, real availability, built-in trust. Now opening early access.",
-  metadataBase: new URL("https://kitfolk.com"),
+  metadataBase: new URL("https://scenecircle.com"),
   openGraph: {
-    title: "KitFolk — The trusted network for crew, kit and production",
+    title: "SceneCircle - The trusted network for crew, kit and production",
     description:
       "Production moves fast. Trust needs to move faster. Join early access.",
     type: "website",

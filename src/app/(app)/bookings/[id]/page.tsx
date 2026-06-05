@@ -114,7 +114,7 @@ export default async function BookingDetailPage({
             <p className="label text-bone">02 / HANDOVER</p>
             <p className="label text-mute inline-flex items-center gap-1">
               <ShieldCheck size={11} className="text-go" />
-              KitFolk-protected
+              SceneCircle-protected
             </p>
           </div>
 
@@ -123,7 +123,7 @@ export default async function BookingDetailPage({
             <div className="border-rule border-r p-4">
               <p className="label text-mute mb-2">PIN</p>
               <p className="serif text-ink text-3xl tracking-widest">
-                {b.handover.pin ?? "— —"}
+                {b.handover.pin ?? "- -"}
               </p>
               <p className="text-dim mt-2 text-[11px]">
                 Owner reads PIN at pickup.

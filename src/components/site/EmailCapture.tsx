@@ -24,7 +24,7 @@ export function EmailCapture({
       return;
     }
     setStatus("loading");
-    // Simulate request — replace with real endpoint
+    // Simulate request - replace with real endpoint
     await new Promise((r) => setTimeout(r, 700));
     setStatus("success");
   }
@@ -39,7 +39,7 @@ export function EmailCapture({
         <div className="px-5 py-5 md:px-6 md:py-6">
           <p className="label text-go">● ON THE LIST</p>
           <p className="text-ink mt-2 text-base md:text-lg">
-            You&apos;re in. We&apos;ll only email you once — when it&apos;s your
+            You&apos;re in. We&apos;ll only email you once - when it&apos;s your
             turn.
           </p>
         </div>

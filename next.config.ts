@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       // Google account profile photos used after Google SSO.
       { protocol: "https", hostname: "lh3.googleusercontent.com" },
+      { protocol: "https", hostname: "images.unsplash.com" },
     ],
   },
 };

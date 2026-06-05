@@ -4,7 +4,7 @@ import { Footer } from "@/components/site/Footer";
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { HowItWorks } from "@/components/site/HowItWorks";
-import { KitCircles } from "@/components/site/KitCircles";
+import { SceneCircles } from "@/components/site/SceneCircles";
 import { Marquee } from "@/components/site/Marquee";
 import { Problem } from "@/components/site/Problem";
 import { SocialProof } from "@/components/site/SocialProof";
@@ -24,7 +24,7 @@ export default function Home() {
         <TrustSystem />
         <HowItWorks />
         <Features />
-        <KitCircles />
+        <SceneCircles />
         <SocialProof />
         <WhyNow />
         <CTA />

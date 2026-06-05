@@ -37,7 +37,7 @@ export const CIRCLES: Circle[] = [
   {
     id: "post-chain",
     name: "My grade & post chain",
-    description: "Trusted post chain — keeps a film looking like itself.",
+    description: "Trusted post chain - keeps a film looking like itself.",
     type: "POST",
     members: [
       { id: "sara-vidal", name: "Sara Vidal", role: "Colourist", avatarHue: 16 },

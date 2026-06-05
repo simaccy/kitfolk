@@ -79,7 +79,7 @@ export default async function CrewDetailPage({
 
       {/* Stats */}
       <section className="border-rule grid grid-cols-3 border-b">
-        <Stat label="Day rate" value={crew.dayRate ? `£${crew.dayRate}` : "—"} />
+        <Stat label="Day rate" value={crew.dayRate ? `£${crew.dayRate}` : "-"} />
         <Stat label="Reply rate" value={`${crew.responseRate}%`} border />
         <Stat label="Bookings" value={String(crew.bookingsCount)} border />
       </section>

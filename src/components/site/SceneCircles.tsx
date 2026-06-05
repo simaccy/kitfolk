@@ -26,13 +26,13 @@ const CIRCLES = [
   },
 ];
 
-export function KitCircles() {
+export function SceneCircles() {
   return (
     <section id="circles" className="relative py-28 md:py-40">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(212,200,168,0.06),transparent_50%)]" />
 
       <Container className="relative">
-        <SectionLabel index="07" title="KIT CIRCLES" meta="PRIVATE NETWORKS" />
+        <SectionLabel index="07" title="SCENE CIRCLES" meta="PRIVATE NETWORKS" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
@@ -46,7 +46,7 @@ export function KitCircles() {
           <div className="lg:col-span-5 lg:pt-8">
             <Reveal delay={0.1}>
               <p className="text-mute max-w-md text-lg leading-relaxed">
-                KitCircles are the people you actually want on your sets. Not a
+                SceneCircles are the people you actually want on your sets. Not a
                 feed. Not a public list. WhatsApp intimacy, with hiring built
                 in.
               </p>
@@ -78,9 +78,7 @@ export function KitCircles() {
                       key={k}
                       className="border-rule-strong bg-bg flex h-9 w-9 items-center justify-center border"
                       style={{
-                        background: `radial-gradient(circle at 30% 30%, ${
-                          k % 2 ? "#3a3a36" : "#2a2826"
-                        }, #16161410)`,
+                        background: k % 2 ? "#3a3a36" : "#2a2826",
                       }}
                     >
                       <span className="serif text-bone text-[13px]">

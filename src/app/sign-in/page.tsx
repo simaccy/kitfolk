@@ -6,7 +6,7 @@ type SearchParams = Promise<{ from?: string; error?: string }>;
 
 const ERROR_COPY: Record<string, string> = {
   OAuthAccountNotLinked:
-    "That email is already in KitFolk through another sign-in. Use the original method.",
+    "That email is already in SceneCircle through another sign-in. Use the original method.",
   AccessDenied: "Sign-in cancelled. Try again.",
   Configuration:
     "Sign-in isn't configured yet. Add Google credentials to .env.local.",
@@ -30,7 +30,7 @@ export default async function SignInPage({
 
       <header className="relative flex items-center justify-between px-4 py-4">
         <Link href="/" className="serif text-ink text-xl">
-          KitFolk
+          SceneCircle
         </Link>
         <span className="mono text-mute text-[11px] tracking-widest">
           EARLY ACCESS
@@ -40,10 +40,10 @@ export default async function SignInPage({
       <main className="relative mx-auto flex w-full max-w-md flex-1 flex-col justify-center px-4 pb-16">
         <p className="label text-flare">● SIGN IN</p>
         <h1 className="serif text-ink mt-3 text-4xl leading-[1.05]">
-          Welcome back to KitFolk.
+          Welcome back to SceneCircle.
         </h1>
         <p className="text-mute mt-3 text-[14px] leading-relaxed">
-          Trust isn&rsquo;t assumed. It&rsquo;s earned, layered and visible — starting with
+          Trust isn&rsquo;t assumed. It&rsquo;s earned, layered and visible - starting with
           who you say you are.
         </p>
 
@@ -82,7 +82,7 @@ export default async function SignInPage({
           disabled
           className="border-rule-strong text-mute label mt-8 w-full cursor-not-allowed border px-5 py-4 opacity-60"
         >
-          Use a work email — invite required
+          Use a work email - invite required
         </button>
 
         <p className="text-dim mt-6 text-center text-[12px] leading-relaxed">

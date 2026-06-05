@@ -57,7 +57,7 @@ export function OnboardingFlow({
       <div className="grain pointer-events-none absolute inset-0 opacity-50" />
 
       <header className="relative flex items-center justify-between px-4 py-4">
-        <span className="serif text-ink text-xl">KitFolk</span>
+        <span className="serif text-ink text-xl">SceneCircle</span>
         <span className="mono text-mute text-[11px] tracking-widest">
           STEP {String(step).padStart(2, "0")} / {String(TOTAL).padStart(2, "0")}
         </span>
@@ -110,7 +110,7 @@ export function OnboardingFlow({
           <Step
             label="01 / WHO ARE YOU?"
             title="What kind of account are you setting up?"
-            body="Pick what fits today — you can add the others later."
+            body="Pick what fits today - you can add the others later."
           >
             <div className="grid grid-cols-1 gap-2.5">
               {[
@@ -208,7 +208,7 @@ export function OnboardingFlow({
               ))}
             </ul>
             <p className="text-dim mt-4 text-[12px]">
-              You can finish trust signals later — adding two now will get you
+              You can finish trust signals later - adding two now will get you
               into Discover faster.
             </p>
           </Step>
@@ -265,7 +265,7 @@ export function OnboardingFlow({
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-flare mt-1">●</span>
-                  Build your first Circle — your go-to crew.
+                  Build your first Circle - your go-to crew.
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-flare mt-1">●</span>
@@ -282,7 +282,7 @@ export function OnboardingFlow({
             disabled={step === 1 && !accountType}
             className="bg-ink text-bg label flex w-full items-center justify-center gap-2 py-4 disabled:opacity-50"
           >
-            {step === TOTAL ? "Enter KitFolk" : "Continue"}
+            {step === TOTAL ? "Enter SceneCircle" : "Continue"}
             <ArrowRight size={14} />
           </button>
           <div className="mt-3 flex items-center justify-between">

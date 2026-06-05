@@ -25,7 +25,7 @@ export function CTA() {
             <Reveal delay={0.1}>
               <p className="text-mute mt-8 max-w-xl text-lg leading-relaxed md:text-xl">
                 Early access is curated. We&apos;re onboarding crew, production
-                companies and kit owners in waves — region by region, role by
+                companies and kit owners in waves - region by region, role by
                 role.
               </p>
             </Reveal>
@@ -65,7 +65,7 @@ export function CTA() {
                   <div className="border-rule grid grid-cols-3 gap-4 border-b pb-5">
                     <span className="label text-mute">PRODUCTION</span>
                     <span className="serif text-ink col-span-2 text-2xl">
-                      KitFolk · v1
+                      SceneCircle · v1
                     </span>
                   </div>
                   <div className="border-rule grid grid-cols-3 gap-4 border-b pb-5">
@@ -96,7 +96,7 @@ export function CTA() {
                 </div>
                 <div className="border-rule-strong label text-dim flex items-center justify-between border-t px-5 py-3">
                   <span>v1.0</span>
-                  <span>SIGNED · KITFOLK</span>
+                  <span>SIGNED · SCENECIRCLE</span>
                 </div>
               </div>
             </Reveal>

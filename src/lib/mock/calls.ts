@@ -35,7 +35,7 @@ export const CALLS: Call[] = [
     rateUnit: "day",
     requirements: ["Avid Media Composer", "Factual series", "Channel 4 credits a plus"],
     details:
-      "Three-week edit on a 3×60 factual series. Remote OK with weekly check-ins. Avid Media Composer. Sensitive material — discretion needed.",
+      "Three-week edit on a 3×60 factual series. Remote OK with weekly check-ins. Avid Media Composer. Sensitive material - discretion needed.",
     postedById: "frame24",
     postedByName: "Marcus Reilly",
     postedByCompany: "Frame 24",
@@ -56,7 +56,7 @@ export const CALLS: Call[] = [
     rateUnit: "day",
     requirements: ["GVC", "A2 CofC", "Inspire 3 or equivalent", "PL £5m+"],
     details:
-      "3-day aerial shoot for branded doc. Two locations, restricted airspace — must be GVC + own insurance. Travel covered, accommodation provided.",
+      "3-day aerial shoot for branded doc. Two locations, restricted airspace - must be GVC + own insurance. Travel covered, accommodation provided.",
     postedById: "pulse",
     postedByName: "Bea Carter",
     postedByCompany: "Pulse Films",
@@ -66,7 +66,7 @@ export const CALLS: Call[] = [
   },
   {
     id: "call-04",
-    title: "Sound recordist — interview shoot, London",
+    title: "Sound recordist - interview shoot, London",
     type: "CREW",
     location: "London",
     startDate: "2026-05-06",
@@ -86,7 +86,7 @@ export const CALLS: Call[] = [
   },
   {
     id: "call-05",
-    title: "DOP with documentary credits — feature doc, 4 weeks",
+    title: "DOP with documentary credits - feature doc, 4 weeks",
     type: "CREW",
     location: "London + travel",
     startDate: "2026-06-01",
@@ -127,7 +127,7 @@ export const CALLS: Call[] = [
   },
   {
     id: "call-07",
-    title: "Steadicam op — drama shoot Manchester",
+    title: "Steadicam op - drama shoot Manchester",
     type: "CREW",
     location: "Manchester",
     startDate: "2026-05-12",

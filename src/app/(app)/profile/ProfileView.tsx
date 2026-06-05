@@ -94,7 +94,7 @@ export function ProfileView({
 
       {/* Stats */}
       <section className="border-rule grid grid-cols-3 border-b">
-        <Stat label="Day rate" value={user.dayRate ? `£${user.dayRate}` : "—"} />
+        <Stat label="Day rate" value={user.dayRate ? `£${user.dayRate}` : "-"} />
         <Stat label="Reply rate" value={`${user.responseRate}%`} border />
         <Stat label="Bookings" value={String(user.bookingsCount)} border />
       </section>

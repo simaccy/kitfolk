@@ -3,7 +3,7 @@ import type { Kit } from "../types";
 export const KIT: Kit[] = [
   {
     id: "fx6-bristol-01",
-    name: "Sony FX6 — full doc kit",
+    name: "Sony FX6 - full doc kit",
     category: "Camera",
     ownerId: "tom-bevan",
     ownerName: "Tom Bevan",
@@ -30,13 +30,13 @@ export const KIT: Kit[] = [
   },
   {
     id: "alexa35-london-02",
-    name: "ARRI Alexa 35 — feature package",
+    name: "ARRI Alexa 35 - feature package",
     category: "Camera",
     ownerId: "asha-patel",
     ownerName: "Asha Patel",
     location: "London",
     description:
-      "Feature-spec Alexa 35 with Cooke S4/i set, full Trinity rig and Wireless Compact handle. Recently serviced. Drama and high-end commercial only — no event work.",
+      "Feature-spec Alexa 35 with Cooke S4/i set, full Trinity rig and Wireless Compact handle. Recently serviced. Drama and high-end commercial only - no event work.",
     dayRate: 950,
     weekRate: 4200,
     deposit: 2000,
@@ -57,7 +57,7 @@ export const KIT: Kit[] = [
   },
   {
     id: "inspire3-glasgow-03",
-    name: "DJI Inspire 3 — aerial package",
+    name: "DJI Inspire 3 - aerial package",
     category: "Drone",
     ownerId: "noor-h",
     ownerName: "Noor Hassan",
@@ -133,13 +133,13 @@ export const KIT: Kit[] = [
   },
   {
     id: "ronin4d-manchester-06",
-    name: "Ronin 4D-8K — operator only",
+    name: "Ronin 4D-8K - operator only",
     category: "Camera",
     ownerId: "kit-foster",
     ownerName: "Kit Foster",
     location: "Manchester",
     description:
-      "Ronin 4D 8K, available with operator only — comes with vest, range finder, all media. Ideal for drama and commercial movement work.",
+      "Ronin 4D 8K, available with operator only - comes with vest, range finder, all media. Ideal for drama and commercial movement work.",
     dayRate: 720,
     weekRate: 3000,
     deposit: 800,
