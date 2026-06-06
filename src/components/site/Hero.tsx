@@ -9,7 +9,7 @@ const ROLES = [
   { role: "1ST AD", name: "Simon M.", city: "Manchester", status: "VOUCHED", score: "" },
 ];
 
-export function Hero() {
+export function Hero({ showFilmRails = true }: { showFilmRails?: boolean }) {
   return (
     <section
       id="top"
@@ -22,26 +22,30 @@ export function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_85%_30%,rgba(212,200,168,0.07),transparent_45%)]" />
         <div className="vignette absolute inset-0" />
         {/* Film perforation rails */}
-        <div className="border-rule absolute inset-y-0 left-0 hidden w-10 border-r md:block">
-          <div className="flex h-full flex-col items-center justify-around py-10">
-            {Array.from({ length: 18 }).map((_, i) => (
-              <span
-                key={i}
-                className="bg-rule-strong block h-3 w-3 rounded-[2px]"
-              />
-            ))}
-          </div>
-        </div>
-        <div className="border-rule absolute inset-y-0 right-0 hidden w-10 border-l md:block">
-          <div className="flex h-full flex-col items-center justify-around py-10">
-            {Array.from({ length: 18 }).map((_, i) => (
-              <span
-                key={i}
-                className="bg-rule-strong block h-3 w-3 rounded-[2px]"
-              />
-            ))}
-          </div>
-        </div>
+        {showFilmRails && (
+          <>
+            <div className="border-rule absolute inset-y-0 left-0 hidden w-10 border-r md:block">
+              <div className="flex h-full flex-col items-center justify-around py-10">
+                {Array.from({ length: 18 }).map((_, i) => (
+                  <span
+                    key={i}
+                    className="bg-rule-strong block h-3 w-3 rounded-[2px]"
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="border-rule absolute inset-y-0 right-0 hidden w-10 border-l md:block">
+              <div className="flex h-full flex-col items-center justify-around py-10">
+                {Array.from({ length: 18 }).map((_, i) => (
+                  <span
+                    key={i}
+                    className="bg-rule-strong block h-3 w-3 rounded-[2px]"
+                  />
+                ))}
+              </div>
+            </div>
+          </>
+        )}
       </div>
 
       <Container className="relative">

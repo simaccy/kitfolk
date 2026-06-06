@@ -21,7 +21,7 @@ export default function V3Home() {
       <SiteShell>
         <Header />
         <main className="bg-[var(--color-bg)] text-[var(--color-ink)] relative">
-          <Hero />
+          <Hero showFilmRails={false} />
           <Problem />
           <Solution />
           <TrustSystem />
