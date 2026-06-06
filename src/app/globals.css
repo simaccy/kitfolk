@@ -47,6 +47,29 @@
   --vignette-edge: rgba(253, 251, 250, 0.55);
 }
 
+/* ─── Warm theme — designer mockup palette (Fraunces + Hanken Grotesk) ─── */
+[data-theme="warm"] {
+  --color-bg:           #F2EBDD;
+  --color-surface:      #FBF7EE;
+  --color-elev:         #ECE3D2;
+  --color-rule:         #D8CDB8;
+  --color-rule-strong:  #C4B49A;
+  --color-ink:          #23201A;
+  --color-mute:         #5C554A;
+  --color-dim:          #8C8070;
+  --color-flare:        #BC5A2E;
+  --color-bone:         #9E4622;
+  --color-go:           #6E7A5E;
+  --color-rec:          #BC5A2E;
+
+  --font-display: var(--font-fraunces);
+  --font-sans:    var(--font-hanken);
+  --font-mono:    var(--font-caveat);
+
+  --grid-line: rgba(35, 32, 26, 0.06);
+  --vignette-edge: rgba(242, 235, 221, 0.55);
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
