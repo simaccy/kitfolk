@@ -41,7 +41,7 @@ export function SceneCircles() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(212,200,168,0.06),transparent_50%)]" />
 
       <Container className="relative">
-        <SectionLabel index="06" title="SCENE CIRCLES" meta="PRIVATE NETWORKS" />
+        <SectionLabel index="07" title="SCENE CIRCLES" meta="PRIVATE NETWORKS" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">

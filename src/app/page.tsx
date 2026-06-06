@@ -1,3 +1,4 @@
+import { AppInAction } from "@/components/site/AppInAction";
 import { CTA } from "@/components/site/CTA";
 import { Features } from "@/components/site/Features";
 import { Footer } from "@/components/site/Footer";
@@ -20,6 +21,7 @@ export default function Home() {
         <Problem />
         <Solution />
         <TrustSystem />
+        <AppInAction />
         <Features />
         <SceneCircles />
         <SocialProof />

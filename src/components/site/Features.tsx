@@ -6,7 +6,7 @@ export function Features() {
   return (
     <section id="features" className="relative py-28 md:py-40">
       <Container>
-        <SectionLabel index="05" title="V1 FEATURES" meta="WHAT SHIPS" />
+        <SectionLabel index="06" title="V1 FEATURES" meta="WHAT SHIPS" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">

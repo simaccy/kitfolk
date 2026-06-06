@@ -30,7 +30,7 @@ export function SocialProof() {
   return (
     <section id="proof" className="relative py-28 md:py-40">
       <Container>
-        <SectionLabel index="07" title="FROM THE FIELD" meta="EARLY ACCESS · UK / EU" />
+        <SectionLabel index="08" title="FROM THE FIELD" meta="EARLY ACCESS · UK / EU" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
