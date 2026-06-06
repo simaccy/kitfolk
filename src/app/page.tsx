@@ -10,7 +10,6 @@ import { SiteShell } from "@/components/site/SiteShell";
 import { SocialProof } from "@/components/site/SocialProof";
 import { Solution } from "@/components/site/Solution";
 import { TrustSystem } from "@/components/site/TrustSystem";
-import { WhyNow } from "@/components/site/WhyNow";
 
 export default function Home() {
   return (
@@ -25,7 +24,6 @@ export default function Home() {
         <Features />
         <SceneCircles />
         <SocialProof />
-        <WhyNow />
         <CTA />
       </main>
       <Footer />
