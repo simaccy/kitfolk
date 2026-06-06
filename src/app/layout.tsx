@@ -50,6 +50,11 @@ export default function RootLayout({
       className={`${inter.variable} ${instrument.variable} ${mono.variable}`}
     >
       <body className="bg-bg text-ink min-h-screen overflow-x-hidden antialiased">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('sc-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})()`,
+          }}
+        />
         {children}
       </body>
     </html>

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Container } from "./Container";
 import { useRequestAccess } from "./RequestAccessContext";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -54,6 +55,7 @@ export function Header() {
             <span className="text-rec animate-rec mr-1.5 inline-block">●</span>
             EARLY ACCESS · OPEN
           </span>
+          <ThemeToggle />
           <button
             onClick={() => open()}
             className="bg-ink text-bg label hover:bg-flare px-4 py-2.5 transition-colors"

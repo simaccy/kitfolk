@@ -110,18 +110,17 @@ export function SceneCircles() {
                     {/* Member avatars on the orbit ring */}
                     {Array.from({ length: avatarCount }).map((_, k) => {
                       const angle = (k / avatarCount) * 2 * Math.PI - Math.PI / 2;
-                      const r = 90; // distance from center (px) — sits on the outer ring (r=96)
+                      const r = 90;
                       const x = Math.cos(angle) * r;
                       const y = Math.sin(angle) * r;
                       const letter = String.fromCharCode(65 + ((i * 7 + k * 3) % 26));
                       return (
                         <span
                           key={k}
-                          className="border-rule-strong absolute flex h-8 w-8 items-center justify-center rounded-full"
+                          className={`border-rule-strong absolute flex h-8 w-8 items-center justify-center rounded-full ${k % 2 ? "bg-elev" : "bg-surface"}`}
                           style={{
                             top: `calc(50% + ${y}px - 16px)`,
                             left: `calc(50% + ${x}px - 16px)`,
-                            background: k % 2 ? "#3a3a36" : "#2a2826",
                           }}
                         >
                           <span className="serif text-bone text-[11px]">{letter}</span>
@@ -132,12 +131,11 @@ export function SceneCircles() {
                     {/* Overflow member count — bottom of circle */}
                     {c.members > 8 && (
                       <span
-                        className="border-rule-strong label text-mute absolute flex h-8 w-8 items-center justify-center rounded-full text-[10px]"
+                        className="border-rule-strong bg-rule label text-mute absolute flex h-8 w-8 items-center justify-center rounded-full text-[10px]"
                         style={{
                           bottom: -8,
                           left: "50%",
                           transform: "translateX(-50%)",
-                          background: "#1e3040",
                         }}
                       >
                         +{c.members - 8}
