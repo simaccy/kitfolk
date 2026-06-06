@@ -163,6 +163,24 @@ html {
   animation: marquee 60s linear infinite;
 }
 
+/* Hero figure drift + sweep (v3 warm hero) */
+@keyframes hero-drift {
+  0%   { transform: translateX(-2.5%) scale(1.04); }
+  50%  { transform: translateX(2.5%)  scale(1.08); }
+  100% { transform: translateX(-2.5%) scale(1.04); }
+}
+.animate-hero-drift {
+  animation: hero-drift 22s ease-in-out infinite;
+}
+
+@keyframes hero-sweep {
+  0%   { transform: translateX(0)    rotate(8deg); }
+  100% { transform: translateX(430%) rotate(8deg); }
+}
+.animate-hero-sweep > div {
+  animation: hero-sweep 7s linear infinite;
+}
+
 /* REC pulse */
 @keyframes rec-pulse {
   0%,
