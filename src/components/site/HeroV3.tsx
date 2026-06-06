@@ -9,7 +9,7 @@ export function HeroV3() {
   return (
     <section
       id="top"
-      className="relative min-h-[88vh] overflow-hidden flex items-end"
+      className="relative min-h-[88vh] overflow-hidden"
     >
       {/* ── Video background ── */}
       <video
@@ -55,15 +55,7 @@ export function HeroV3() {
       </div>
 
       {/* ── Content ── */}
-      <Container className="relative z-10 pb-16 md:pb-24">
-        {/* Slate header */}
-        <div className="border-rule label text-mute flex flex-wrap items-center justify-between gap-y-2 border-b pb-3 mb-12 md:mb-20">
-          <span className="text-bone">
-            SCENE 01 <span className="text-dim mx-2">/</span> INTRO
-          </span>
-          <span className="hidden md:inline">ROLL A · TAKE 01 · 24FPS</span>
-        </div>
-
+      <Container className="relative z-10 pt-36 pb-20 md:pt-44 md:pb-28">
         <div className="max-w-3xl">
           <Reveal>
             <p className="label text-flare mb-6">

@@ -5,7 +5,7 @@ import { Container } from "./Container";
 import { useRequestAccess } from "./RequestAccessContext";
 import { ThemeToggle } from "./ThemeToggle";
 
-export function Header() {
+export function Header({ hideThemeToggle = false }: { hideThemeToggle?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const { open } = useRequestAccess();
 
@@ -55,7 +55,7 @@ export function Header() {
             <span className="text-rec animate-rec mr-1.5 inline-block">●</span>
             EARLY ACCESS · OPEN
           </span>
-          <ThemeToggle />
+          {!hideThemeToggle && <ThemeToggle />}
           <button
             onClick={() => open()}
             className="bg-ink text-bg label hover:bg-flare px-4 py-2.5 transition-colors"
