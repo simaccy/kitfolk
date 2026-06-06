@@ -48,8 +48,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${instrument.variable} ${mono.variable}`}
+      suppressHydrationWarning
     >
-      <body className="bg-bg text-ink min-h-screen overflow-x-hidden antialiased">
+      <body className="bg-bg text-ink min-h-screen overflow-x-hidden antialiased" suppressHydrationWarning>
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('sc-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})()`,
