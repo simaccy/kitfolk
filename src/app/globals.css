@@ -174,11 +174,11 @@ html {
 }
 
 @keyframes hero-sweep {
-  0%   { transform: translateX(0)    rotate(8deg); }
-  100% { transform: translateX(430%) rotate(8deg); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(290%); }
 }
 .animate-hero-sweep > div {
-  animation: hero-sweep 7s linear infinite;
+  animation: hero-sweep 9s ease-in-out infinite alternate;
 }
 
 /* REC pulse */

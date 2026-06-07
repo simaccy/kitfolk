@@ -32,18 +32,18 @@ export function HeroV3() {
       {/* ── Grain texture ── */}
       <div className="grain pointer-events-none absolute inset-0" />
 
-      {/* ── Light sweep ── */}
+      {/* ── Light orb sweep ── */}
       <div className="animate-hero-sweep pointer-events-none absolute inset-0 overflow-hidden">
         <div
           style={{
             position: "absolute",
-            top: "-30%",
-            left: "-40%",
-            width: "36%",
-            height: "160%",
+            top: "5%",
+            left: "-45%",
+            width: "55%",
+            aspectRatio: "1",
+            borderRadius: "50%",
             background:
-              "linear-gradient(105deg, transparent, rgba(251,247,238,0.45), transparent)",
-            transform: "rotate(8deg)",
+              "radial-gradient(circle, rgba(251,247,238,0.38) 0%, rgba(251,247,238,0.18) 40%, transparent 70%)",
           }}
         />
       </div>
