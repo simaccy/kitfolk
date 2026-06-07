@@ -32,18 +32,18 @@ export function HeroV3() {
       {/* ── Grain texture ── */}
       <div className="grain pointer-events-none absolute inset-0" />
 
-      {/* ── Light orb — grows from small to large and drifts ── */}
+      {/* ── Light orb — grows from a tiny dot to full screen ── */}
       <div className="animate-hero-orb pointer-events-none absolute inset-0 overflow-hidden">
         <div
           style={{
             position: "absolute",
-            top: "10%",
-            left: "20%",
-            width: "60%",
-            aspectRatio: "1",
+            top: "45%",
+            left: "50%",
+            width: "150vmax",
+            height: "150vmax",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(251,247,238,0.40) 0%, rgba(251,247,238,0.18) 40%, transparent 70%)",
+              "radial-gradient(circle, rgba(251,247,238,0.60) 0%, rgba(251,247,238,0.28) 35%, transparent 65%)",
             transformOrigin: "center center",
           }}
         />

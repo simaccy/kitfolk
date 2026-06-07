@@ -174,14 +174,12 @@ html {
 }
 
 @keyframes hero-orb {
-  0%   { transform: scale(0.15) translate(-30%, 20%); opacity: 0; }
-  15%  { opacity: 1; }
-  60%  { transform: scale(1)    translate(10%, -10%);  opacity: 1; }
-  85%  { opacity: 0.6; }
-  100% { transform: scale(1.4)  translate(30%, -20%);  opacity: 0; }
+  0%   { transform: translate(-50%, -50%) scale(0.01); opacity: 1; }
+  65%  { transform: translate(-50%, -50%) scale(0.75); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(1);    opacity: 0; }
 }
 .animate-hero-orb > div {
-  animation: hero-orb 12s ease-in-out infinite;
+  animation: hero-orb 10s ease-out infinite;
 }
 
 /* REC pulse */
