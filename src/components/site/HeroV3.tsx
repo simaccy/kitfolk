@@ -32,26 +32,21 @@ export function HeroV3() {
       {/* ── Grain texture ── */}
       <div className="grain pointer-events-none absolute inset-0" />
 
-      {/* ── Light orb sweep ── */}
-      <div className="animate-hero-sweep pointer-events-none absolute inset-0 overflow-hidden">
+      {/* ── Light orb — grows from small to large and drifts ── */}
+      <div className="animate-hero-orb pointer-events-none absolute inset-0 overflow-hidden">
         <div
           style={{
             position: "absolute",
-            top: "5%",
-            left: "-45%",
-            width: "55%",
+            top: "10%",
+            left: "20%",
+            width: "60%",
             aspectRatio: "1",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(251,247,238,0.38) 0%, rgba(251,247,238,0.18) 40%, transparent 70%)",
+              "radial-gradient(circle, rgba(251,247,238,0.40) 0%, rgba(251,247,238,0.18) 40%, transparent 70%)",
+            transformOrigin: "center center",
           }}
         />
-      </div>
-
-      {/* ── REC indicator ── */}
-      <div className="absolute top-24 right-9 z-10 flex items-center gap-2">
-        <span className="animate-rec bg-rec h-2 w-2 rounded-full" />
-        <span className="label text-[rgba(35,32,26,0.55)] text-[13px] tracking-[0.16em]">REC</span>
       </div>
 
       {/* ── Content ── */}

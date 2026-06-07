@@ -173,12 +173,15 @@ html {
   animation: hero-drift 22s ease-in-out infinite;
 }
 
-@keyframes hero-sweep {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(290%); }
+@keyframes hero-orb {
+  0%   { transform: scale(0.15) translate(-30%, 20%); opacity: 0; }
+  15%  { opacity: 1; }
+  60%  { transform: scale(1)    translate(10%, -10%);  opacity: 1; }
+  85%  { opacity: 0.6; }
+  100% { transform: scale(1.4)  translate(30%, -20%);  opacity: 0; }
 }
-.animate-hero-sweep > div {
-  animation: hero-sweep 9s ease-in-out infinite alternate;
+.animate-hero-orb > div {
+  animation: hero-orb 12s ease-in-out infinite;
 }
 
 /* REC pulse */
