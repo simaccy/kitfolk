@@ -5,23 +5,23 @@ import { SectionLabel } from "./SectionLabel";
 const SIGNALS = [
   {
     code: "01",
-    name: "Scene Circles",
-    desc: "The circles you belong to are your reputation. Being brought into the right circle by the right people is the strongest signal on the network.",
+    name: "Circles",
+    desc: "The people you belong to, work with and are introduced by become part of your professional context.",
   },
   {
     code: "02",
-    name: "Your referrer",
-    desc: "Every member was brought in by someone already inside. That chain of accountability runs through every booking.",
+    name: "Peer vouches",
+    desc: "Recommendations link back to real people, productions and working relationships.",
   },
   {
     code: "03",
-    name: "Peer vouches",
-    desc: "Real names. Real productions. Every vouch links back to who you worked with, on what, and when.",
+    name: "Verified profiles",
+    desc: "Profiles can show credits, links, availability, kit, recent work and references.",
   },
   {
     code: "04",
-    name: "Verified credits",
-    desc: "IMDb sync plus peer-confirmed entries. Credit inflation gets weeded out fast.",
+    name: "Safer hiring",
+    desc: "Kit inventory, insurance, check-in/check-out and rate guidance help make transactions clearer and safer.",
   },
 ];
 
@@ -34,21 +34,24 @@ export function TrustSystem() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(228,111,90,0.06),transparent_55%)]" />
 
       <Container className="relative">
-        <SectionLabel index="04" title="TRUST SYSTEM" meta="THE DIFFERENCE" />
+        <SectionLabel index="04" title="TRUST YOU CAN SEE" meta="THE DIFFERENCE" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <Reveal>
               <h2 className="serif text-ink text-5xl md:text-6xl lg:text-7xl">
-                Trust is <span className="italic">earned.</span>
+                Trust should not be hidden <br />
+                in <span className="italic">private chats.</span>
               </h2>
             </Reveal>
           </div>
           <div className="lg:col-span-5 lg:pt-8">
             <Reveal delay={0.1}>
               <p className="text-mute max-w-md text-lg leading-relaxed md:text-xl">
-                No scores, no ratings. Trust comes from the circles you belong
-                to and the person who brought you in.
+                SceneCircle makes trust visible through circles, referrals,
+                peer vouches, credits, profiles and working relationships. Not
+                anonymous ratings. Not self-written claims. Real people, real
+                work, real context.
               </p>
             </Reveal>
           </div>

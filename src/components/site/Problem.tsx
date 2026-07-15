@@ -12,24 +12,24 @@ export function Problem() {
           <div className="lg:col-span-6">
             <Reveal>
               <h2 className="serif text-ink text-5xl md:text-6xl lg:text-7xl">
-                The way crew gets <br />
-                <span className="italic">hired</span> is broken.
+                The way production finds people, kit and spaces is too{" "}
+                <span className="italic">fragmented.</span>
               </h2>
             </Reveal>
           </div>
           <div className="lg:col-span-6 lg:pt-6">
             <Reveal delay={0.1}>
               <p className="text-mute max-w-xl text-lg leading-relaxed md:text-xl">
-                Production runs on group chats and gut feel. Your go-to gaffer
-                is booked, pre-light is in 36 hours, and you&apos;re DM-ing
-                strangers at midnight hoping their reel is real.
+                Production runs on recommendations, favours, group chats and
+                gut feel. The right person, kit or space is usually out there
+                — but the trust is trapped in WhatsApp threads, Facebook
+                groups, phonebooks, talent managers, cold DMs and old
+                conversations.
               </p>
               <p className="text-dim mt-6 max-w-xl text-base leading-relaxed">
-                A LinkedIn name isn&apos;t a credit. A nice portfolio isn&apos;t
-                a reference. And the answer isn&apos;t another job board, rental
-                site, locations database, or half-finished spreadsheet. The
-                talent is out there. The kit is out there. The spaces are out
-                there. The trust is trapped in a hundred private threads.
+                SceneCircle brings that trust into one place, so production
+                people can find answers, make connections and move faster
+                without starting from zero every time.
               </p>
             </Reveal>
           </div>

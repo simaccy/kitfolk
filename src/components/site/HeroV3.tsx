@@ -70,8 +70,9 @@ export function HeroV3() {
 
           <Reveal delay={0.15}>
             <p className="text-mute mt-8 max-w-xl text-lg leading-relaxed md:text-xl">
-              The trusted network for finding, verifying and booking crew, kit
-              and spaces — built by people who actually work in production.
+              SceneCircle helps production people find crew, source kit,
+              discover spaces, ask for recommendations and connect through
+              people they actually trust.
             </p>
           </Reveal>
 

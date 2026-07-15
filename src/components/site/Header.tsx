@@ -60,7 +60,7 @@ export function Header({ hideThemeToggle = false }: { hideThemeToggle?: boolean 
             onClick={() => open()}
             className="bg-ink text-bg label hover:bg-flare px-4 py-2.5 transition-colors"
           >
-            Join the network →
+            Request access →
           </button>
         </div>
       </Container>

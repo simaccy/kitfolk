@@ -5,18 +5,18 @@ import { SectionLabel } from "./SectionLabel";
 const PILLARS = [
   {
     code: "I",
-    title: "Verified crew",
-    body: "Real credits. Real references. Real peers vouching with their name attached. Not a self-written bio.",
+    title: "Find people",
+    body: "Find crew, collaborators, peers and last-minute recommendations through people connected to the work.",
     detail: [
-      ["IMDb sync", "auto"],
       ["Peer vouches", "named"],
       ["Circle verified", "live"],
+      ["Direct booking", "no fees"],
     ],
   },
   {
     code: "II",
-    title: "Trusted kit",
-    body: "Cameras, lenses, lights, grip - listed by the people who actually own them. Real availability, real prices.",
+    title: "Source kit",
+    body: "Rent equipment directly from working freelancers and kit owners, with clearer availability, pricing and ownership.",
     detail: [
       ["Owner-listed", "verified"],
       ["Live availability", "today"],
@@ -25,8 +25,8 @@ const PILLARS = [
   },
   {
     code: "III",
-    title: "Production spaces",
-    body: "Studios, locations, houses, units - listed by the owners who actually have them. No scout required.",
+    title: "Find spaces",
+    body: "Discover studios, locations, houses and production spaces through trusted owners and working recommendations.",
     detail: [
       ["Owner-listed", "verified"],
       ["Live availability", "today"],
@@ -35,12 +35,22 @@ const PILLARS = [
   },
   {
     code: "IV",
-    title: "Fast hiring",
-    body: "Post a call. Get matches in minutes, not days - from people you already trust, or people your circle does.",
+    title: "Ask the circle",
+    body: "Post questions, ask for advice, solve problems, share opportunities and open up conversations.",
     detail: [
-      ["Median match", "12 min"],
-      ["Direct booking", "no fees"],
-      ["Replies", "tracked"],
+      ["Responses", "trusted"],
+      ["From circles", "you know"],
+      ["Or wider network", "opt-in"],
+    ],
+  },
+  {
+    code: "V",
+    title: "Promote your work",
+    body: "Create a profile that represents who you are, what you do, what you offer and where people can see your work.",
+    detail: [
+      ["Credits", "verified"],
+      ["Kit listings", "live"],
+      ["Availability", "shown"],
     ],
   },
 ];
@@ -49,35 +59,34 @@ export function Solution() {
   return (
     <section id="solution" className="relative py-28 md:py-40">
       <Container>
-        <SectionLabel index="03" title="SCENECIRCLE" meta="THE OPERATING LAYER" />
+        <SectionLabel index="03" title="WHAT YOUR CIRCLE CAN HELP WITH" meta="USER JOBS" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <Reveal>
               <h2 className="serif text-ink text-5xl md:text-6xl lg:text-7xl">
-                One trusted layer <br />
-                for <span className="italic">production.</span>
+                What your circle <br />
+                can <span className="italic">help with.</span>
               </h2>
             </Reveal>
           </div>
           <div className="lg:col-span-5 lg:pt-6">
             <Reveal delay={0.1}>
               <p className="text-mute max-w-md text-lg leading-relaxed md:text-xl">
-                Discovery, verification and booking - for the people, the kit
-                and the space. No middleman. No noise. No paying to message
-                someone you already know.
+                SceneCircle brings the things production people already ask
+                each other for into one trusted place.
               </p>
             </Reveal>
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-px md:mt-20 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid grid-cols-1 gap-px md:mt-20 md:grid-cols-2 lg:grid-cols-5">
           {PILLARS.map((p, i) => (
             <Reveal key={p.code} delay={i * 0.08}>
               <article className="bg-surface border-rule-strong group relative h-full overflow-hidden border p-7 md:p-9">
                 <div className="from-flare/8 absolute inset-x-0 top-0 h-px bg-gradient-to-r via-transparent to-transparent" />
                 <div className="label text-flare flex items-center justify-between">
-                  <span>PILLAR {p.code}</span>
+                  <span>{p.code}</span>
                   <span className="text-dim">●</span>
                 </div>
                 <h3 className="serif text-ink mt-8 text-3xl md:text-4xl">

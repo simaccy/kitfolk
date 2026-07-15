@@ -24,29 +24,19 @@ export function CTA() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="text-mute mt-8 max-w-xl text-lg leading-relaxed md:text-xl">
-                Drop your email. We&apos;ll take it from there — one message,
-                when your region opens up. No spam, no role selector, no faff.
+                SceneCircle is rolling out by region, role and circle. Request
+                access now and we&apos;ll be in touch when it&apos;s your turn.
+              </p>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <p className="text-dim mt-4 max-w-xl text-[15px] leading-relaxed">
+                UK and EU first — crew, kit owners and space owners. Curated
+                rollout. No spam.
               </p>
             </Reveal>
             <Reveal delay={0.2}>
               <div className="mt-10">
                 <EmailCapture variant="cta" />
-              </div>
-            </Reveal>
-            <Reveal delay={0.3}>
-              <div className="border-rule mt-12 grid grid-cols-3 border-t pt-6">
-                {[
-                  ["WAITLIST", "2,184"],
-                  ["CITIES", "37"],
-                  ["NEXT WAVE", "OPEN"],
-                ].map(([k, v]) => (
-                  <div key={k}>
-                    <p className="label text-mute">{k}</p>
-                    <p className="serif text-ink mt-2 text-3xl md:text-4xl">
-                      {v}
-                    </p>
-                  </div>
-                ))}
               </div>
             </Reveal>
           </div>

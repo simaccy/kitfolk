@@ -41,27 +41,30 @@ export function SceneCircles() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(212,200,168,0.06),transparent_50%)]" />
 
       <Container className="relative">
-        <SectionLabel index="07" title="SCENE CIRCLES" meta="PRIVATE NETWORKS" />
+        <SectionLabel index="07" title="CIRCLES, NOT COLD SEARCHES" meta="THE BRAND IDEA" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <Reveal>
               <h2 className="serif text-ink text-5xl md:text-6xl lg:text-7xl">
-                Your trusted crew. <br />
-                Now <span className="italic">structured.</span>
+                Circles, not <br />
+                <span className="italic">cold searches.</span>
               </h2>
             </Reveal>
           </div>
           <div className="lg:col-span-5 lg:pt-8">
             <Reveal delay={0.1}>
               <p className="text-mute max-w-md text-lg leading-relaxed">
-                SceneCircles are the people you actually want on your sets. Not a
-                feed. Not a public list. WhatsApp intimacy, with hiring built
-                in.
+                Circles are the people you already trust, the people they
+                trust, and the groups you build around projects, places, roles
+                or recommendations. Keep conversations private, open them up
+                to wider circles, or connect through friends of friends when
+                you need to go beyond your immediate contacts.
               </p>
               <p className="text-dim mt-4 max-w-md text-[15px] leading-relaxed">
-                Spin one up for a project, a region, or just &quot;the people I
-                trust on a 5am call.&quot;
+                Message members directly, create group conversations, ask for
+                recommendations, pitch yourself, source kit, find spaces and
+                build opportunities through the people around you.
               </p>
             </Reveal>
           </div>
