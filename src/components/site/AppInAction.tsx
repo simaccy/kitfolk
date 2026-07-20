@@ -214,7 +214,7 @@ export function AppInAction() {
   return (
     <section className="relative overflow-hidden py-28 md:py-40">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_80%,rgba(212,148,58,0.08),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_50%,rgba(212,148,58,0.06),transparent_55%)]" />
       </div>
 
       <Container className="relative">
