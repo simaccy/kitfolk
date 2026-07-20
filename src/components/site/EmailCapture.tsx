@@ -53,7 +53,7 @@ export function EmailCapture({
                 onClick={() => setRole(r.id)}
                 className={`label flex-1 px-4 py-3 text-left transition-colors ${
                   active
-                    ? "bg-ink text-bg"
+                    ? "bg-ink !text-bg"
                     : "text-mute hover:text-ink hover:bg-ink/5"
                 }`}
               >
@@ -79,7 +79,7 @@ export function EmailCapture({
         />
         <button
           type="submit"
-          className="bg-ink text-bg label hover:bg-flare px-5 py-4 transition-colors md:px-6"
+          className="bg-ink !text-bg label hover:bg-flare px-5 py-4 transition-colors md:px-6"
         >
           Request access →
         </button>

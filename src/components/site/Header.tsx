@@ -58,7 +58,7 @@ export function Header({ hideThemeToggle = false }: { hideThemeToggle?: boolean 
           {!hideThemeToggle && <ThemeToggle />}
           <button
             onClick={() => open()}
-            className="bg-ink text-bg label hover:bg-flare px-4 py-2.5 transition-colors"
+            className="bg-ink !text-bg label hover:bg-flare px-4 py-2.5 transition-colors"
           >
             Request access →
           </button>
