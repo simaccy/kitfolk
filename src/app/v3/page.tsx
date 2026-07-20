@@ -7,7 +7,6 @@ import { HeroV3 } from "@/components/site/HeroV3";
 import { SceneCircles } from "@/components/site/SceneCircles";
 import { Problem } from "@/components/site/Problem";
 import { SiteShell } from "@/components/site/SiteShell";
-import { SocialProof } from "@/components/site/SocialProof";
 import { Solution } from "@/components/site/Solution";
 import { TrustSystem } from "@/components/site/TrustSystem";
 
@@ -28,8 +27,7 @@ export default function V3Home() {
           <TrustSystem />
           <AppInAction />
           <Features />
-          <SocialProof />
-          <CTA />
+<CTA />
         </main>
         <Footer />
       </SiteShell>
