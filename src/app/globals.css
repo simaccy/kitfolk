@@ -1,24 +1,73 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0b0b0a;
-  --color-surface: #111110;
-  --color-elev: #16161410;
-  --color-rule: #1f1f1d;
-  --color-rule-strong: #2a2a26;
-  --color-ink: #f5f1e8;
-  --color-mute: #8a857b;
-  --color-dim: #57544c;
-  --color-flare: #ff6a3d;
-  --color-bone: #d4c8a8;
-  --color-go: #6cf07a;
-  --color-rec: #ff3b30;
+  /* Rushes palette - deep navy ground, amber accent, mint-teal trust */
+  --color-bg: #0d1520;          /* deep navy */
+  --color-surface: #13202e;     /* card navy */
+  --color-elev: #182838;        /* elevated navy */
+  --color-rule: #1e3040;        /* faint hairline */
+  --color-rule-strong: #2a4055; /* stronger hairline */
+  --color-ink: #e8dfc8;         /* warm ivory (primary text) */
+  --color-mute: #7a8fa0;        /* slate-blue (secondary text) */
+  --color-dim: #4a5f70;         /* tertiary text / labels */
+  --color-flare: #d4943a;       /* amber - primary action accent */
+  --color-bone: #c08840;        /* deep amber - tertiary accent */
+  --color-go: #5aaa8a;          /* mint-teal - trust + verified */
+  --color-rec: #e05a3a;         /* burnt orange - urgent / danger */
 
   --font-display: "Instrument Serif", "Times New Roman", serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --container-page: 1400px;
+}
+
+/* ─── Theme-sensitive utility vars (not Tailwind tokens) ─── */
+:root {
+  --grid-line: rgba(232, 223, 200, 0.04);
+  --vignette-edge: rgba(13, 21, 32, 0.5);
+}
+
+/* ─── Light theme — Service Works palette ─── */
+[data-theme="light"] {
+  --color-bg:           #fdfbfa;
+  --color-surface:      #f7efeb;
+  --color-elev:         #ede5de;
+  --color-rule:         #e8e0d8;
+  --color-rule-strong:  #d0c4b8;
+  --color-ink:          #333029;
+  --color-mute:         #7a6f60;
+  --color-dim:          #a89880;
+  --color-flare:        #e5a064;
+  --color-bone:         #b87c38;
+  --color-go:           #3d8a68;
+  --color-rec:          #c03820;
+
+  --grid-line: rgba(51, 48, 41, 0.07);
+  --vignette-edge: rgba(253, 251, 250, 0.55);
+}
+
+/* ─── Warm theme — designer mockup palette (Fraunces + Hanken Grotesk) ─── */
+[data-theme="warm"] {
+  --color-bg:           #F2EBDD;
+  --color-surface:      #FBF7EE;
+  --color-elev:         #ECE3D2;
+  --color-rule:         #D8CDB8;
+  --color-rule-strong:  #C4B49A;
+  --color-ink:          #23201A;
+  --color-mute:         #5C554A;
+  --color-dim:          #8C8070;
+  --color-flare:        #BC5A2E;
+  --color-bone:         #9E4622;
+  --color-go:           #6E7A5E;
+  --color-rec:          #BC5A2E;
+
+  --font-display: var(--font-fraunces);
+  --font-sans:    var(--font-hanken);
+  --font-mono:    var(--font-caveat);
+
+  --grid-line: rgba(35, 32, 26, 0.06);
+  --vignette-edge: rgba(242, 235, 221, 0.55);
 }
 
 * {
@@ -40,7 +89,7 @@ html {
 
 ::selection {
   background: var(--color-flare);
-  color: var(--color-bg);
+  color: #ffffff;
 }
 
 /* Mono details everywhere */
@@ -65,39 +114,39 @@ html {
   line-height: 0.95;
 }
 
-/* Film grain overlay */
+/* Subtle paper grain — adds warmth/texture on the light canvas */
 .grain::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.55 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
-  opacity: 0.06;
-  mix-blend-mode: overlay;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
   z-index: 30;
 }
 
-/* Hairline grid background */
+/* Hairline grid background — colour driven by --grid-line for theme switching */
 .grid-bg {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   background-size: 80px 80px;
 }
 
 .grid-bg-fine {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px);
   background-size: calc(100% / 12) 100%;
 }
 
-/* Vignette */
+/* Soft vignette — colour driven by --vignette-edge for theme switching */
 .vignette {
   background: radial-gradient(
     ellipse at center,
     transparent 0%,
-    transparent 55%,
-    rgba(0, 0, 0, 0.65) 100%
+    transparent 60%,
+    var(--vignette-edge) 100%
   );
 }
 
@@ -112,6 +161,25 @@ html {
 }
 .animate-marquee {
   animation: marquee 60s linear infinite;
+}
+
+/* Hero figure drift + sweep (v3 warm hero) */
+@keyframes hero-drift {
+  0%   { transform: translateX(-2.5%) scale(1.04); }
+  50%  { transform: translateX(2.5%)  scale(1.08); }
+  100% { transform: translateX(-2.5%) scale(1.04); }
+}
+.animate-hero-drift {
+  animation: hero-drift 22s ease-in-out infinite;
+}
+
+@keyframes hero-orb {
+  0%   { transform: translate(-50%, -50%) scale(0.01); opacity: 1; }
+  65%  { transform: translate(-50%, -50%) scale(0.75); opacity: 0.5; }
+  100% { transform: translate(-50%, -50%) scale(1);    opacity: 0; }
+}
+.animate-hero-orb > div {
+  animation: hero-orb 10s ease-out infinite;
 }
 
 /* REC pulse */
@@ -160,5 +228,5 @@ textarea {
   border-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-dim);
+  background: var(--color-bone);
 }

@@ -5,28 +5,23 @@ import { SectionLabel } from "./SectionLabel";
 const SIGNALS = [
   {
     code: "01",
-    name: "Trust Score",
-    desc: "A composite of credits, vouches, response time and booking history. Earned. Not self-reported.",
+    name: "Circles",
+    desc: "The people you belong to, work with and are introduced by become part of your professional context.",
   },
   {
     code: "02",
     name: "Peer vouches",
-    desc: "Real names. Real productions. Every vouch links back to who you worked with, on what, and when.",
+    desc: "Recommendations link back to real people, productions and working relationships.",
   },
   {
     code: "03",
-    name: "Verified credits",
-    desc: "IMDb sync plus peer-confirmed entries. Credit inflation gets weeded out fast.",
+    name: "Verified profiles",
+    desc: "Profiles can show credits, links, availability, kit, recent work and references.",
   },
   {
     code: "04",
-    name: "Booking history",
-    desc: "Past gigs. On-time rate. Completion. Visible to the people you'd accept a job from.",
-  },
-  {
-    code: "05",
-    name: "Response rate",
-    desc: "How fast you reply. Production moves in hours, not days. We surface the people who actually answer.",
+    name: "Safer hiring",
+    desc: "Kit inventory, insurance, check-in/check-out and rate guidance help make transactions clearer and safer.",
   },
 ];
 
@@ -36,27 +31,27 @@ export function TrustSystem() {
       id="trust"
       className="relative py-28 md:py-40"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(255,106,61,0.07),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(228,111,90,0.06),transparent_55%)]" />
 
       <Container className="relative">
-        <SectionLabel index="04" title="TRUST SYSTEM" meta="THE DIFFERENCE" />
+        <SectionLabel index="05" title="TRUST YOU CAN SEE" meta="THE DIFFERENCE" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <Reveal>
               <h2 className="serif text-ink text-5xl md:text-6xl lg:text-7xl">
-                Trust isn&apos;t assumed. <br />
-                It&apos;s <span className="italic">earned, layered,</span>
-                <br />
-                and visible.
+                Trust should not be hidden <br />
+                in <span className="italic">private chats.</span>
               </h2>
             </Reveal>
           </div>
           <div className="lg:col-span-5 lg:pt-8">
             <Reveal delay={0.1}>
               <p className="text-mute max-w-md text-lg leading-relaxed md:text-xl">
-                Every profile carries the receipts. We don&apos;t score people —
-                their work does.
+                SceneCircle makes trust visible through circles, referrals,
+                peer vouches, credits, profiles and working relationships. Not
+                anonymous ratings. Not self-written claims. Real people, real
+                work, real context.
               </p>
             </Reveal>
           </div>
@@ -71,7 +66,7 @@ export function TrustSystem() {
                 <div className="border-rule-strong label text-mute flex items-center justify-between border-b px-5 py-3">
                   <span className="text-bone">PROFILE / DOP</span>
                   <span>
-                    <span className="text-go">●</span> VERIFIED · KITFOLK
+                    <span className="text-go">●</span> VERIFIED · SCENECIRCLE
                   </span>
                 </div>
 
@@ -79,57 +74,49 @@ export function TrustSystem() {
                   <div className="md:col-span-4">
                     {/* Avatar plate */}
                     <div className="border-rule bg-bg relative aspect-[4/5] w-full overflow-hidden border">
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,106,61,0.25),transparent_55%),radial-gradient(circle_at_70%_70%,rgba(212,200,168,0.15),transparent_55%)]" />
-                      <div className="grid-bg absolute inset-0 opacity-50" />
-                      <div className="label text-mute absolute top-3 left-3">
+                      <img
+                        src="/profile-alex-mason.jpg"
+                        alt="Alex Mason — DOP"
+                        className="absolute inset-0 h-full w-full object-cover object-top"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.35)_0%,transparent_40%)]" />
+                      <div className="label text-white/70 absolute top-3 left-3">
                         ID 01184
                       </div>
-                      <div className="label text-mute absolute right-3 bottom-3">
+                      <div className="label text-white/70 absolute right-3 bottom-3">
                         24.05.26
-                      </div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="serif text-ink text-7xl">AP</span>
                       </div>
                     </div>
                   </div>
 
                   <div className="md:col-span-8">
-                    <div className="flex items-baseline justify-between">
-                      <h3 className="serif text-ink text-3xl md:text-4xl">
-                        Asha Patel
-                      </h3>
-                      <div className="text-right">
-                        <p className="label text-mute">TRUST SCORE</p>
-                        <p className="serif text-flare text-4xl leading-none md:text-5xl">
-                          94
-                        </p>
-                      </div>
-                    </div>
+                    <h3 className="serif text-ink text-3xl md:text-4xl">
+                      Alex Mason
+                    </h3>
                     <p className="label text-bone mt-2">
                       DOP · LONDON · OPEN APR–JUN
                     </p>
 
-                    {/* Trust bars */}
-                    <div className="border-rule mt-6 grid grid-cols-2 gap-x-6 gap-y-3 border-t pt-5">
-                      {[
-                        ["Credits", 96],
-                        ["Vouches", 92],
-                        ["On-time", 98],
-                        ["Response", 89],
-                      ].map(([k, v]) => (
-                        <div key={k as string}>
-                          <div className="label text-mute flex justify-between">
-                            <span>{k}</span>
-                            <span className="text-bone">{v}</span>
-                          </div>
-                          <div className="bg-rule mt-1.5 h-1 w-full">
-                            <div
-                              className="bg-flare h-full"
-                              style={{ width: `${v}%` }}
-                            />
-                          </div>
-                        </div>
-                      ))}
+                    <div className="border-rule mt-6 border-t pt-5">
+                      <p className="label text-mute mb-3">SCENE CIRCLES</p>
+                      <div className="flex flex-wrap gap-2">
+                        {["London DOPs", "Commercial Crew UK", "Feature Film Network"].map((c) => (
+                          <span
+                            key={c}
+                            className="border-flare/40 text-flare label border px-2.5 py-1.5"
+                          >
+                            {c}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="border-rule mt-6 border-t pt-5">
+                      <p className="label text-mute mb-2">REFERRED BY</p>
+                      <p className="text-ink text-[15px]">
+                        Simon Macson{" "}
+                        <span className="text-mute">· 1st AD</span>
+                      </p>
                     </div>
 
                     <div className="border-rule mt-6 border-t pt-5">
@@ -157,7 +144,7 @@ export function TrustSystem() {
                     <div className="border-rule mt-6 border-t pt-5">
                       <p className="label text-mute mb-3">VOUCHED BY</p>
                       <div className="flex flex-wrap gap-2">
-                        {["M. Reyes (Gaffer)", "L. Karlsson (Sound)", "D. Okafor (1st AD)", "+ 9 others"].map(
+                        {["D. Harris (Gaffer)", "F. Hart (Sound)", "S. Macson (1st AD)", "+ 9 others"].map(
                           (v) => (
                             <span
                               key={v}

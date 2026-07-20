@@ -61,7 +61,7 @@ export default function BookingsPage() {
           <li key={b.id}>
             <Link
               href={`/bookings/${b.id}`}
-              className="border-rule-strong bg-surface block border hover:bg-white/[0.02]"
+              className="border-rule-strong bg-surface block border hover:bg-ink/[0.02]"
             >
               <div className="border-rule label flex items-center justify-between border-b px-4 py-2.5">
                 <span className="text-bone">{b.ref}</span>

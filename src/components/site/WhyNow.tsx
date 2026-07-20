@@ -15,7 +15,7 @@ const REASONS = [
   },
   {
     n: "03",
-    title: "Kit is more expensive — and sits idle most of the year.",
+    title: "Kit is more expensive - and sits idle most of the year.",
     body: "An owner with a serious package is essentially running a small business. They need real demand, not Instagram DMs.",
   },
   {

@@ -13,7 +13,7 @@ export function CTA() {
       </div>
 
       <Container className="relative">
-        <SectionLabel index="10" title="EARLY ACCESS" meta="INVITE-BASED ROLLOUT" />
+        <SectionLabel index="08" title="EARLY ACCESS" meta="INVITE-BASED ROLLOUT" />
 
         <div className="grid grid-cols-1 gap-10 pt-12 md:pt-20 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
@@ -24,30 +24,19 @@ export function CTA() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="text-mute mt-8 max-w-xl text-lg leading-relaxed md:text-xl">
-                Early access is curated. We&apos;re onboarding crew, production
-                companies and kit owners in waves — region by region, role by
-                role.
+                SceneCircle is rolling out by region, role and circle. Request
+                access now and we&apos;ll be in touch when it&apos;s your turn.
+              </p>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <p className="text-dim mt-4 max-w-xl text-[15px] leading-relaxed">
+                UK and EU first - crew, kit owners and space owners. Curated
+                rollout. No spam.
               </p>
             </Reveal>
             <Reveal delay={0.2}>
               <div className="mt-10">
-                <EmailCapture variant="cta" withRole />
-              </div>
-            </Reveal>
-            <Reveal delay={0.3}>
-              <div className="border-rule mt-12 grid grid-cols-3 border-t pt-6">
-                {[
-                  ["WAITLIST", "2,184"],
-                  ["CITIES", "37"],
-                  ["NEXT WAVE", "OPEN"],
-                ].map(([k, v]) => (
-                  <div key={k}>
-                    <p className="label text-mute">{k}</p>
-                    <p className="serif text-ink mt-2 text-3xl md:text-4xl">
-                      {v}
-                    </p>
-                  </div>
-                ))}
+                <EmailCapture variant="cta" />
               </div>
             </Reveal>
           </div>
@@ -65,7 +54,7 @@ export function CTA() {
                   <div className="border-rule grid grid-cols-3 gap-4 border-b pb-5">
                     <span className="label text-mute">PRODUCTION</span>
                     <span className="serif text-ink col-span-2 text-2xl">
-                      KitFolk · v1
+                      SceneCircle · v1
                     </span>
                   </div>
                   <div className="border-rule grid grid-cols-3 gap-4 border-b pb-5">
@@ -83,7 +72,7 @@ export function CTA() {
                   <div className="border-rule grid grid-cols-3 gap-4 border-b pb-5">
                     <span className="label text-mute">ROLES</span>
                     <span className="text-ink col-span-2">
-                      Crew · Production · Kit owners
+                      Crew · Kit owners · Space owners
                     </span>
                   </div>
                   <div className="grid grid-cols-3 gap-4">
@@ -96,7 +85,7 @@ export function CTA() {
                 </div>
                 <div className="border-rule-strong label text-dim flex items-center justify-between border-t px-5 py-3">
                   <span>v1.0</span>
-                  <span>SIGNED · KITFOLK</span>
+                  <span>SIGNED · SCENECIRCLE</span>
                 </div>
               </div>
             </Reveal>

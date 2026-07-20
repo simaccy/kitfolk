@@ -27,14 +27,14 @@ export const CURRENT_USER: Crew = {
   avatarHue: 14,
   vouches: [
     {
-      fromName: "Asha Patel",
+      fromName: "Alex Mason",
       fromRole: "DOP",
       tags: ["Worked with", "Technically reliable", "Would hire again"],
       note: "Steady operator, fast on his feet, never grumbles when the schedule shifts.",
       date: "2026-02-14",
     },
     {
-      fromName: "Marc Reyes",
+      fromName: "Dan Harris",
       fromRole: "Gaffer",
       tags: ["Hired before", "Safe pair of hands"],
       date: "2025-11-09",

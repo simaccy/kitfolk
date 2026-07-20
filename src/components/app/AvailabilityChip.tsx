@@ -1,4 +1,5 @@
 import type { AvailabilityMode } from "@/lib/types";
+import { ClientDate } from "./ClientDate";
 
 const META: Record<
   AvailabilityMode | "BOOKED",
@@ -42,7 +43,7 @@ export function AvailabilityChip({
     <span className={`label inline-flex items-center gap-1.5 ${TONE_CLASS[meta.tone]}`}>
       <span className="text-current">●</span>
       {meta.label}
-      {dateSuffix}
+      {dateSuffix && <ClientDate value={dateSuffix} />}
     </span>
   );
 }

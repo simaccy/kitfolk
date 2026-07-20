@@ -2,14 +2,14 @@ import type { Crew } from "../types";
 
 export const CREW: Crew[] = [
   {
-    id: "asha-patel",
-    name: "Asha Patel",
+    id: "alex-mason",
+    name: "Alex Mason",
     role: "DOP",
     secondaryRoles: ["Camera Operator"],
     location: "London",
     availability: "AVAILABLE_NOW",
     trustScore: 94,
-    badges: ["IDENTITY_VERIFIED", "CREDIT_VERIFIED", "PEER_VOUCHED", "KITFOLK_TRUSTED"],
+    badges: ["IDENTITY_VERIFIED", "CREDIT_VERIFIED", "PEER_VOUCHED", "SCENECIRCLE_TRUSTED"],
     credits: [
       { title: "Sundown", role: "DOP", year: 2026, company: "Northwind", type: "feature" },
       { title: "Northbound", role: "DOP", year: 2025, company: "Frame 24", type: "spot" },
@@ -21,7 +21,7 @@ export const CREW: Crew[] = [
     skills: ["Handheld", "Anamorphic", "Low light", "Mixed format"],
     certifications: ["Public liability £5m", "First aid"],
     kitOwned: ["Sony FX6", "Sigma 18-35"],
-    showreel: "vimeo.com/asha-patel",
+    showreel: "vimeo.com/alex-mason",
     bio: "London-based DOP. Drama features, longform doc, commercial. Comfortable on long doc rigs and tight commercial schedules.",
     dayRate: 750,
     responseRate: 89,
@@ -29,20 +29,20 @@ export const CREW: Crew[] = [
     avatarHue: 14,
     vouches: [
       {
-        fromName: "Marc Reyes",
+        fromName: "Dan Harris",
         fromRole: "Gaffer",
         tags: ["Worked with", "Good under pressure", "Would hire again"],
         note: "Held a 14h handheld day on Sundown without losing the eye. Just calm.",
         date: "2026-03-12",
       },
       {
-        fromName: "Lena Karlsson",
+        fromName: "Ferne Hart",
         fromRole: "Sound Mixer",
         tags: ["Worked with", "Specialist knowledge"],
         date: "2026-02-04",
       },
       {
-        fromName: "Daniel Okafor",
+        fromName: "Simon Macson",
         fromRole: "1st AD",
         tags: ["Hired before", "Safe pair of hands", "Would hire again"],
         date: "2025-11-28",
@@ -50,8 +50,8 @@ export const CREW: Crew[] = [
     ],
   },
   {
-    id: "marc-reyes",
-    name: "Marc Reyes",
+    id: "dan-harris",
+    name: "Dan Harris",
     role: "Gaffer",
     location: "Bristol",
     availability: "ON_SET",
@@ -72,7 +72,7 @@ export const CREW: Crew[] = [
     avatarHue: 200,
     vouches: [
       {
-        fromName: "Asha Patel",
+        fromName: "Alex Mason",
         fromRole: "DOP",
         tags: ["Worked with", "Technically reliable", "Would hire again"],
         date: "2026-03-15",
@@ -80,8 +80,8 @@ export const CREW: Crew[] = [
     ],
   },
   {
-    id: "lena-karlsson",
-    name: "Lena Karlsson",
+    id: "ferne-hart",
+    name: "Ferne Hart",
     role: "Sound Mixer",
     location: "Berlin",
     availability: "AVAILABLE_NOW",
@@ -103,14 +103,14 @@ export const CREW: Crew[] = [
     vouches: [],
   },
   {
-    id: "daniel-okafor",
-    name: "Daniel Okafor",
+    id: "simon-macson",
+    name: "Simon Macson",
     role: "1st AD",
     location: "Manchester",
     availability: "AVAILABLE_FROM",
     availableFrom: "2026-05-18",
     trustScore: 96,
-    badges: ["IDENTITY_VERIFIED", "CREDIT_VERIFIED", "PEER_VOUCHED", "KITFOLK_TRUSTED", "PRODUCTION_READY"],
+    badges: ["IDENTITY_VERIFIED", "CREDIT_VERIFIED", "PEER_VOUCHED", "SCENECIRCLE_TRUSTED", "PRODUCTION_READY"],
     credits: [
       { title: "After Hours", role: "1st AD", year: 2025, company: "Channel 4", type: "series" },
       { title: "Northbound", role: "1st AD", year: 2025, type: "spot" },
@@ -292,7 +292,7 @@ export const CREW: Crew[] = [
     location: "London",
     availability: "REMOTE_ONLY",
     trustScore: 95,
-    badges: ["IDENTITY_VERIFIED", "CREDIT_VERIFIED", "PEER_VOUCHED", "KITFOLK_TRUSTED"],
+    badges: ["IDENTITY_VERIFIED", "CREDIT_VERIFIED", "PEER_VOUCHED", "SCENECIRCLE_TRUSTED"],
     credits: [
       { title: "Held", role: "Colourist", year: 2024, type: "feature" },
       { title: "Sundown", role: "Colourist", year: 2026, type: "feature" },

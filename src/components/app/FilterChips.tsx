@@ -21,7 +21,7 @@ export function FilterChips({
             className={`label inline-flex items-center gap-1.5 border px-3 py-2 transition-colors ${
               c.active
                 ? "border-flare/50 bg-flare/10 text-ink"
-                : "border-rule-strong text-mute hover:text-ink hover:border-white/30"
+                : "border-rule-strong text-mute hover:text-ink hover:border-ink/30"
             }`}
           >
             {c.label}

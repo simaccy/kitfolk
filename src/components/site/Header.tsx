@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { Container } from "./Container";
+import { useRequestAccess } from "./RequestAccessContext";
+import { ThemeToggle } from "./ThemeToggle";
 
-export function Header() {
+export function Header({ hideThemeToggle = false }: { hideThemeToggle?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
+  const { open } = useRequestAccess();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -26,16 +29,16 @@ export function Header() {
           href="#top"
           className="text-ink flex items-baseline gap-2 tracking-tight"
         >
-          <span className="serif text-2xl md:text-[26px]">KitFolk</span>
-          <span className="label text-dim hidden md:inline">/ network</span>
+          <span className="serif text-2xl md:text-[26px]">SceneCircle</span>
+          <span className="label text-dim hidden md:inline">/ TV</span>
         </a>
 
         <nav className="hidden items-center gap-8 md:flex">
           {[
             ["Problem", "#problem"],
             ["Product", "#solution"],
-            ["Trust", "#trust"],
             ["Circles", "#circles"],
+            ["Trust", "#trust"],
           ].map(([label, href]) => (
             <a
               key={href}
@@ -52,12 +55,13 @@ export function Header() {
             <span className="text-rec animate-rec mr-1.5 inline-block">●</span>
             EARLY ACCESS · OPEN
           </span>
-          <a
-            href="#cta"
-            className="bg-ink text-bg label hover:bg-bone px-4 py-2.5 transition-colors"
+          {!hideThemeToggle && <ThemeToggle />}
+          <button
+            onClick={() => open()}
+            className="bg-ink !text-bg label hover:bg-flare px-4 py-2.5 transition-colors"
           >
-            Join the network →
-          </a>
+            Request access →
+          </button>
         </div>
       </Container>
     </header>

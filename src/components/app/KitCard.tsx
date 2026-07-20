@@ -8,17 +8,17 @@ export function KitCard({ kit }: { kit: Kit }) {
     <article className="border-rule-strong bg-surface block border">
       <Link
         href={`/kit/${kit.id}`}
-        className="block px-4 pt-4 pb-3 active:bg-white/[0.02]"
+        className="block px-4 pt-4 pb-3 active:bg-ink/[0.02]"
       >
         <div className="flex items-start gap-3">
           <span
             className="border-rule-strong relative flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden border"
             style={{
-              background: `radial-gradient(circle at 30% 30%, hsl(${kit.hue} 60% 35% / 0.45), hsl(${kit.hue} 30% 12% / 0.7))`,
+              background: `linear-gradient(135deg, hsl(${kit.hue} 50% 88%), hsl(${kit.hue} 38% 74%))`,
             }}
             aria-hidden
           >
-            <Package size={20} className="text-bone" />
+            <Package size={20} className="text-ink/70" />
           </span>
           <div className="min-w-0 flex-1">
             <div className="flex items-baseline justify-between gap-2">
@@ -70,14 +70,14 @@ export function KitCard({ kit }: { kit: Kit }) {
       <div className="border-rule grid grid-cols-2 border-t">
         <Link
           href={`/kit/${kit.id}`}
-          className="text-mute hover:text-ink hover:bg-white/5 label flex items-center justify-center gap-1.5 py-2.5"
+          className="text-mute hover:text-ink hover:bg-ink/5 label flex items-center justify-center gap-1.5 py-2.5"
         >
           View
           <ArrowRight size={13} />
         </Link>
         <Link
           href={`/kit/${kit.id}#book`}
-          className="border-rule text-ink bg-white/[0.04] hover:bg-white/10 label flex items-center justify-center border-l py-2.5"
+          className="border-rule text-ink bg-ink/[0.04] hover:bg-ink/10 label flex items-center justify-center border-l py-2.5"
         >
           Request →
         </Link>

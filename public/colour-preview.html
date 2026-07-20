@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SceneCircle — Colour Scheme Options</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #111;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    padding: 40px 24px 80px;
+  }
+  h1 {
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 48px;
+    font-family: ui-monospace, monospace;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .scheme {
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+
+  .scheme-label {
+    padding: 10px 14px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .scheme-label span:first-child {
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #666;
+  }
+  .scheme-label span:last-child {
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: #444;
+  }
+
+  /* ── MOCK SITE INSIDE EACH CARD ── */
+  .mock {
+    padding: 0;
+  }
+
+  /* Header */
+  .mock-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .mock-logo {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+  }
+  .mock-nav {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .mock-nav span {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-family: ui-monospace, monospace;
+    color: var(--mute);
+  }
+  .mock-nav .btn {
+    background: var(--flare);
+    color: #fff;
+    padding: 5px 12px;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: ui-monospace, monospace;
+  }
+
+  /* Hero */
+  .mock-hero {
+    padding: 28px 20px 24px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .mock-hero-label {
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--flare);
+    margin-bottom: 12px;
+  }
+  .mock-h1 {
+    font-size: 32px;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .mock-h1 em {
+    font-style: italic;
+    color: var(--bone);
+  }
+  .mock-sub {
+    font-size: 12px;
+    color: var(--mute);
+    line-height: 1.6;
+    max-width: 280px;
+    margin-bottom: 18px;
+  }
+  .mock-input-row {
+    display: flex;
+    gap: 8px;
+  }
+  .mock-input {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    color: var(--mute);
+    font-size: 11px;
+    padding: 8px 12px;
+    font-family: ui-monospace, monospace;
+  }
+  .mock-cta {
+    background: var(--flare);
+    color: #fff;
+    font-size: 10px;
+    padding: 8px 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: ui-monospace, monospace;
+    white-space: nowrap;
+  }
+  /* Crew card in hero */
+  .mock-crew-card {
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    font-size: 10px;
+    margin-top: 16px;
+  }
+  .mock-crew-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--rule);
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .mock-crew-row {
+    display: grid;
+    grid-template-columns: 70px 1fr 60px 40px;
+    gap: 8px;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--rule);
+    align-items: center;
+  }
+  .mock-crew-row:last-child { border-bottom: none; }
+  .mock-role {
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bone);
+  }
+  .mock-name { font-size: 11px; color: var(--ink); }
+  .mock-status-go {
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--go);
+  }
+  .mock-status-flare {
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--flare);
+  }
+  .mock-ts {
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    color: var(--mute);
+    text-align: right;
+  }
+
+  /* Section divider */
+  .mock-marquee {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 8px 0;
+    background: var(--elev);
+    overflow: hidden;
+  }
+  .mock-marquee-inner {
+    display: flex;
+    gap: 32px;
+    white-space: nowrap;
+  }
+  .mock-marquee-inner span {
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mute);
+  }
+  .mock-marquee-inner .dot { color: var(--flare); }
+
+  /* Pain cards */
+  .mock-section {
+    padding: 20px 20px 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .mock-section-label {
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 14px;
+    display: flex;
+    gap: 12px;
+  }
+  .mock-section-label .idx { color: var(--flare); }
+  .mock-h2 {
+    font-size: 22px;
+    font-family: 'Georgia', serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .mock-h2 em { font-style: italic; color: var(--bone); }
+  .mock-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .mock-card {
+    padding: 12px 14px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .mock-card:nth-child(even) { border-right: none; }
+  .mock-card-code {
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--flare);
+    margin-bottom: 6px;
+  }
+  .mock-card-title {
+    font-family: 'Georgia', serif;
+    font-size: 13px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .mock-card-body {
+    font-size: 10px;
+    color: var(--mute);
+    line-height: 1.5;
+  }
+
+  /* Trust profile */
+  .mock-profile {
+    background: var(--surface);
+    border: 1px solid var(--rule-strong);
+    margin-top: 14px;
+  }
+  .mock-profile-head {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 10px;
+    border-bottom: 1px solid var(--rule);
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .mock-profile-head span:first-child { color: var(--bone); }
+  .mock-profile-head span:last-child { color: var(--go); }
+  .mock-profile-body {
+    display: flex;
+    gap: 14px;
+    padding: 12px;
+  }
+  .mock-avatar {
+    width: 52px;
+    height: 66px;
+    background: var(--elev);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    color: var(--ink);
+  }
+  .mock-profile-details { flex: 1; }
+  .mock-profile-name {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .mock-score {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    color: var(--go);
+    line-height: 1;
+  }
+  .mock-profile-sub {
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bone);
+    margin-bottom: 10px;
+  }
+  .mock-bars {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .mock-bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-family: ui-monospace, monospace;
+    font-size: 9px;
+    color: var(--mute);
+    margin-bottom: 2px;
+  }
+  .mock-bar-track {
+    height: 3px;
+    background: var(--rule);
+  }
+  .mock-bar-fill {
+    height: 100%;
+    background: var(--go);
+  }
+
+  /* Swatches */
+  .swatches {
+    display: flex;
+    gap: 0;
+    margin-top: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .swatch {
+    flex: 1;
+    height: 18px;
+  }
+
+  /* ─── SCHEME VARS ─── */
+
+  /* 1. Projection Booth */
+  .s1 {
+    --bg: #141210;
+    --surface: #1e1b18;
+    --elev: #252118;
+    --rule: #2e2a25;
+    --rule-strong: #3a3530;
+    --ink: #f0e8d8;
+    --mute: #7a7060;
+    --dim: #50483c;
+    --bone: #c8a84a;
+    --flare: #e8a840;
+    --go: #4a9b8a;
+    background: var(--bg);
+  }
+
+  /* 2. Silver Halide */
+  .s2 {
+    --bg: #f4f2ef;
+    --surface: #ffffff;
+    --elev: #f8f7f5;
+    --rule: #e2e0dc;
+    --rule-strong: #cbc9c4;
+    --ink: #111111;
+    --mute: #666666;
+    --dim: #999999;
+    --bone: #b09060;
+    --flare: #b09060;
+    --go: #888888;
+    background: var(--bg);
+  }
+
+  /* 3. Rushes */
+  .s3 {
+    --bg: #0d1520;
+    --surface: #13202e;
+    --elev: #182838;
+    --rule: #1e3040;
+    --rule-strong: #2a4055;
+    --ink: #e8dfc8;
+    --mute: #7a8fa0;
+    --dim: #4a5f70;
+    --bone: #c08840;
+    --flare: #d4943a;
+    --go: #5aaa8a;
+    background: var(--bg);
+  }
+
+  /* 4. Contact Sheet */
+  .s4 {
+    --bg: #1a1610;
+    --surface: #232018;
+    --elev: #2a2620;
+    --rule: #302c24;
+    --rule-strong: #403c30;
+    --ink: #ede5d0;
+    --mute: #8a8070;
+    --dim: #5a5448;
+    --bone: #c4a870;
+    --flare: #e46f5a;
+    --go: #7aaa60;
+    background: var(--bg);
+  }
+</style>
+</head>
+<body>
+
+<h1>SceneCircle — Colour Scheme Options</h1>
+
+<div class="grid">
+
+  <!-- SCHEME 1: Projection Booth -->
+  <div class="scheme s1">
+    <div class="scheme-label">
+      <span>01 — Projection Booth</span>
+      <span>Dark · Amber · Teal</span>
+    </div>
+    <div class="mock" style="background: var(--bg);">
+
+      <div class="mock-header" style="background:var(--bg); border-color:var(--rule);">
+        <span class="mock-logo" style="color:var(--ink);">SCENECIRCLE</span>
+        <div class="mock-nav">
+          <span>Crew</span>
+          <span>Kit</span>
+          <span>Trust</span>
+          <span class="btn">Join</span>
+        </div>
+      </div>
+
+      <div class="mock-hero" style="background:var(--bg); border-color:var(--rule);">
+        <div class="mock-hero-label">● The trusted network for film &amp; TV</div>
+        <div class="mock-h1">Production moves fast.<br><em>Trust</em> needs to<br>move faster.</div>
+        <div class="mock-sub">SceneCircle is the trusted network for finding, verifying and booking crew and kit.</div>
+        <div class="mock-input-row">
+          <div class="mock-input" style="background:var(--surface);border-color:var(--rule-strong);color:var(--mute);">your@email.com</div>
+          <div class="mock-cta" style="background:var(--flare);">Request access</div>
+        </div>
+        <div class="mock-crew-card" style="background:var(--surface);border-color:var(--rule-strong);">
+          <div class="mock-crew-header" style="border-color:var(--rule);color:var(--mute);">
+            <span>● LIVE · UK / EU</span><span style="color:var(--bone);">04 ONLINE</span>
+          </div>
+          <div class="mock-crew-row" style="border-color:var(--rule);">
+            <span class="mock-role">DOP</span>
+            <span class="mock-name" style="color:var(--ink);">Asha P.</span>
+            <span class="mock-status-go" style="color:var(--go);">AVAILABLE</span>
+            <span class="mock-ts">TS 94</span>
+          </div>
+          <div class="mock-crew-row" style="border-color:var(--rule);">
+            <span class="mock-role">GAFFER</span>
+            <span class="mock-name" style="color:var(--ink);">Marc R.</span>
+            <span class="mock-status-flare" style="color:var(--flare);">ON SET</span>
+            <span class="mock-ts">TS 91</span>
+          </div>
+          <div class="mock-crew-row" style="border-color:var(--rule);">
+            <span class="mock-role">SOUND</span>
+            <span class="mock-name" style="color:var(--ink);">Lena K.</span>
+            <span class="mock-status-go" style="color:var(--go);">AVAILABLE</span>
+            <span class="mock-ts">TS 88</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock-marquee" style="background:var(--elev);border-color:var(--rule);">
+        <div class="mock-marquee-inner">
+          <span><span class="dot" style="color:var(--flare);">●</span> VERIFIED CREW</span>
+          <span>·</span><span>TRUSTED KIT</span>
+          <span>·</span><span>DIRECT BOOKING</span>
+          <span>·</span><span>PEER VOUCHED</span>
+          <span>·</span><span>TRUST SCORE</span>
+        </div>
+      </div>
+
+      <div class="mock-section" style="border-color:var(--rule);">
+        <div class="mock-section-label">
+          <span class="idx">02 /</span><span>THE PROBLEM</span>
+        </div>
+        <div class="mock-h2">The way crew gets<br><em>hired</em> is broken.</div>
+        <div class="mock-cards" style="border-color:var(--rule);">
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code">01 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">WhatsApp roulette</div><div class="mock-card-body">DM-ing strangers at midnight, hoping for a screenshot of their reel.</div></div>
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code">02 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">Last-minute scrambles</div><div class="mock-card-body">Pre-light is in 36 hours. Your recordist just dropped.</div></div>
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code">03 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">Unverified profiles</div><div class="mock-card-body">A name on LinkedIn isn't a credit. You find out on day one.</div></div>
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code">04 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">Tools everywhere</div><div class="mock-card-body">Three group chats and a half-finished spreadsheet.</div></div>
+        </div>
+      </div>
+
+      <div class="mock-section" style="border-color:var(--rule);">
+        <div class="mock-section-label"><span class="idx">04 /</span><span>TRUST SYSTEM</span></div>
+        <div class="mock-h2">Trust is <em>earned,<br>layered</em> and visible.</div>
+        <div class="mock-profile" style="background:var(--surface);border-color:var(--rule-strong);">
+          <div class="mock-profile-head" style="border-color:var(--rule);">
+            <span>PROFILE / DOP</span><span>● VERIFIED</span>
+          </div>
+          <div class="mock-profile-body">
+            <div class="mock-avatar" style="background:var(--elev);border-color:var(--rule);color:var(--ink);">AP</div>
+            <div class="mock-profile-details">
+              <div class="mock-profile-name" style="color:var(--ink);">Asha Patel <span class="mock-score" style="color:var(--go);">94</span></div>
+              <div class="mock-profile-sub">DOP · London · Open Apr–Jun</div>
+              <div class="mock-bars">
+                <div><div class="mock-bar-label"><span>Credits</span><span style="color:var(--bone);">96</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:96%;background:var(--go);"></div></div></div>
+                <div><div class="mock-bar-label"><span>Vouches</span><span style="color:var(--bone);">92</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:92%;background:var(--go);"></div></div></div>
+                <div><div class="mock-bar-label"><span>On-time</span><span style="color:var(--bone);">98</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:98%;background:var(--go);"></div></div></div>
+                <div><div class="mock-bar-label"><span>Response</span><span style="color:var(--bone);">89</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:89%;background:var(--go);"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatches" style="border-color:var(--rule);">
+        <div class="swatch" style="background:#141210;" title="bg"></div>
+        <div class="swatch" style="background:#1e1b18;" title="surface"></div>
+        <div class="swatch" style="background:#f0e8d8;" title="ink"></div>
+        <div class="swatch" style="background:#7a7060;" title="mute"></div>
+        <div class="swatch" style="background:#e8a840;" title="flare"></div>
+        <div class="swatch" style="background:#c8a84a;" title="bone"></div>
+        <div class="swatch" style="background:#4a9b8a;" title="go"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCHEME 2: Silver Halide -->
+  <div class="scheme s2">
+    <div class="scheme-label">
+      <span>02 — Silver Halide</span>
+      <span>Light · Monochrome · Gold</span>
+    </div>
+    <div class="mock" style="background: var(--bg);">
+
+      <div class="mock-header" style="background:var(--bg); border-color:var(--rule);">
+        <span class="mock-logo" style="color:var(--ink);">SCENECIRCLE</span>
+        <div class="mock-nav">
+          <span>Crew</span>
+          <span>Kit</span>
+          <span>Trust</span>
+          <span class="btn" style="background:var(--flare);">Join</span>
+        </div>
+      </div>
+
+      <div class="mock-hero" style="background:var(--bg); border-color:var(--rule);">
+        <div class="mock-hero-label" style="color:var(--flare);">● The trusted network for film &amp; TV</div>
+        <div class="mock-h1" style="color:var(--ink);">Production moves fast.<br><em style="color:var(--bone);">Trust</em> needs to<br>move faster.</div>
+        <div class="mock-sub" style="color:var(--mute);">SceneCircle is the trusted network for finding, verifying and booking crew and kit.</div>
+        <div class="mock-input-row">
+          <div class="mock-input" style="background:var(--surface);border-color:var(--rule-strong);color:var(--mute);">your@email.com</div>
+          <div class="mock-cta" style="background:var(--flare);">Request access</div>
+        </div>
+        <div class="mock-crew-card" style="background:var(--surface);border-color:var(--rule-strong);">
+          <div class="mock-crew-header" style="border-color:var(--rule);color:var(--mute);">
+            <span>● LIVE · UK / EU</span><span style="color:var(--bone);">04 ONLINE</span>
+          </div>
+          <div class="mock-crew-row" style="border-color:var(--rule);">
+            <span class="mock-role" style="color:var(--bone);">DOP</span>
+            <span class="mock-name" style="color:var(--ink);">Asha P.</span>
+            <span class="mock-status-go" style="color:var(--go);">AVAILABLE</span>
+            <span class="mock-ts" style="color:var(--mute);">TS 94</span>
+          </div>
+          <div class="mock-crew-row" style="border-color:var(--rule);">
+            <span class="mock-role" style="color:var(--bone);">GAFFER</span>
+            <span class="mock-name" style="color:var(--ink);">Marc R.</span>
+            <span class="mock-status-flare" style="color:var(--flare);">ON SET</span>
+            <span class="mock-ts" style="color:var(--mute);">TS 91</span>
+          </div>
+          <div class="mock-crew-row" style="border-color:var(--rule);">
+            <span class="mock-role" style="color:var(--bone);">SOUND</span>
+            <span class="mock-name" style="color:var(--ink);">Lena K.</span>
+            <span class="mock-status-go" style="color:var(--go);">AVAILABLE</span>
+            <span class="mock-ts" style="color:var(--mute);">TS 88</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock-marquee" style="background:var(--elev);border-color:var(--rule);">
+        <div class="mock-marquee-inner">
+          <span><span class="dot" style="color:var(--flare);">●</span> VERIFIED CREW</span>
+          <span>·</span><span>TRUSTED KIT</span>
+          <span>·</span><span>DIRECT BOOKING</span>
+          <span>·</span><span>PEER VOUCHED</span>
+          <span>·</span><span>TRUST SCORE</span>
+        </div>
+      </div>
+
+      <div class="mock-section" style="border-color:var(--rule);">
+        <div class="mock-section-label">
+          <span class="idx" style="color:var(--flare);">02 /</span><span style="color:var(--mute);">THE PROBLEM</span>
+        </div>
+        <div class="mock-h2" style="color:var(--ink);">The way crew gets<br><em style="color:var(--bone);">hired</em> is broken.</div>
+        <div class="mock-cards" style="border-color:var(--rule);">
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code" style="color:var(--flare);">01 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">WhatsApp roulette</div><div class="mock-card-body" style="color:var(--mute);">DM-ing strangers at midnight, hoping for a screenshot of their reel.</div></div>
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code" style="color:var(--flare);">02 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">Last-minute scrambles</div><div class="mock-card-body" style="color:var(--mute);">Pre-light is in 36 hours. Your recordist just dropped.</div></div>
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code" style="color:var(--flare);">03 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">Unverified profiles</div><div class="mock-card-body" style="color:var(--mute);">A name on LinkedIn isn't a credit. You find out on day one.</div></div>
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code" style="color:var(--flare);">04 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">Tools everywhere</div><div class="mock-card-body" style="color:var(--mute);">Three group chats and a half-finished spreadsheet.</div></div>
+        </div>
+      </div>
+
+      <div class="mock-section" style="border-color:var(--rule);">
+        <div class="mock-section-label"><span class="idx" style="color:var(--flare);">04 /</span><span style="color:var(--mute);">TRUST SYSTEM</span></div>
+        <div class="mock-h2" style="color:var(--ink);">Trust is <em style="color:var(--bone);">earned,<br>layered</em> and visible.</div>
+        <div class="mock-profile" style="background:var(--surface);border-color:var(--rule-strong);">
+          <div class="mock-profile-head" style="border-color:var(--rule);">
+            <span style="color:var(--bone);">PROFILE / DOP</span><span style="color:var(--go);">● VERIFIED</span>
+          </div>
+          <div class="mock-profile-body">
+            <div class="mock-avatar" style="background:var(--elev);border-color:var(--rule);color:var(--ink);">AP</div>
+            <div class="mock-profile-details">
+              <div class="mock-profile-name" style="color:var(--ink);">Asha Patel <span class="mock-score" style="color:var(--go);">94</span></div>
+              <div class="mock-profile-sub" style="color:var(--bone);">DOP · London · Open Apr–Jun</div>
+              <div class="mock-bars">
+                <div><div class="mock-bar-label"><span style="color:var(--mute);">Credits</span><span style="color:var(--bone);">96</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:96%;background:var(--go);"></div></div></div>
+                <div><div class="mock-bar-label"><span style="color:var(--mute);">Vouches</span><span style="color:var(--bone);">92</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:92%;background:var(--go);"></div></div></div>
+                <div><div class="mock-bar-label"><span style="color:var(--mute);">On-time</span><span style="color:var(--bone);">98</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:98%;background:var(--go);"></div></div></div>
+                <div><div class="mock-bar-label"><span style="color:var(--mute);">Response</span><span style="color:var(--bone);">89</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:89%;background:var(--go);"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatches" style="border-color:var(--rule);">
+        <div class="swatch" style="background:#f4f2ef;"></div>
+        <div class="swatch" style="background:#ffffff;border-left:1px solid #e2e0dc;"></div>
+        <div class="swatch" style="background:#111111;"></div>
+        <div class="swatch" style="background:#666666;"></div>
+        <div class="swatch" style="background:#b09060;"></div>
+        <div class="swatch" style="background:#b09060;opacity:0.6;"></div>
+        <div class="swatch" style="background:#888888;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCHEME 3: Rushes -->
+  <div class="scheme s3">
+    <div class="scheme-label">
+      <span>03 — Rushes</span>
+      <span>Deep Navy · Amber · Mint</span>
+    </div>
+    <div class="mock" style="background: var(--bg);">
+
+      <div class="mock-header" style="background:var(--bg); border-color:var(--rule);">
+        <span class="mock-logo" style="color:var(--ink);">SCENECIRCLE</span>
+        <div class="mock-nav">
+          <span style="color:var(--mute);">Crew</span>
+          <span style="color:var(--mute);">Kit</span>
+          <span style="color:var(--mute);">Trust</span>
+          <span class="btn" style="background:var(--flare);">Join</span>
+        </div>
+      </div>
+
+      <div class="mock-hero" style="background:var(--bg); border-color:var(--rule);">
+        <div class="mock-hero-label" style="color:var(--flare);">● The trusted network for film &amp; TV</div>
+        <div class="mock-h1" style="color:var(--ink);">Production moves fast.<br><em style="color:var(--bone);">Trust</em> needs to<br>move faster.</div>
+        <div class="mock-sub" style="color:var(--mute);">SceneCircle is the trusted network for finding, verifying and booking crew and kit.</div>
+        <div class="mock-input-row">
+          <div class="mock-input" style="background:var(--surface);border-color:var(--rule-strong);color:var(--mute);">your@email.com</div>
+          <div class="mock-cta" style="background:var(--flare);">Request access</div>
+        </div>
+        <div class="mock-crew-card" style="background:var(--surface);border-color:var(--rule-strong);">
+          <div class="mock-crew-header" style="border-color:var(--rule);color:var(--mute);">
+            <span>● LIVE · UK / EU</span><span style="color:var(--bone);">04 ONLINE</span>
+          </div>
+          <div class="mock-crew-row" style="border-color:var(--rule);">
+            <span class="mock-role" style="color:var(--bone);">DOP</span>
+            <span class="mock-name" style="color:var(--ink);">Asha P.</span>
+            <span class="mock-status-go" style="color:var(--go);">AVAILABLE</span>
+            <span class="mock-ts" style="color:var(--mute);">TS 94</span>
+          </div>
+          <div class="mock-crew-row" style="border-color:var(--rule);">
+            <span class="mock-role" style="color:var(--bone);">GAFFER</span>
+            <span class="mock-name" style="color:var(--ink);">Marc R.</span>
+            <span class="mock-status-flare" style="color:var(--flare);">ON SET</span>
+            <span class="mock-ts" style="color:var(--mute);">TS 91</span>
+          </div>
+          <div class="mock-crew-row" style="border-color:var(--rule);">
+            <span class="mock-role" style="color:var(--bone);">SOUND</span>
+            <span class="mock-name" style="color:var(--ink);">Lena K.</span>
+            <span class="mock-status-go" style="color:var(--go);">AVAILABLE</span>
+            <span class="mock-ts" style="color:var(--mute);">TS 88</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock-marquee" style="background:var(--elev);border-color:var(--rule);">
+        <div class="mock-marquee-inner">
+          <span><span class="dot" style="color:var(--flare);">●</span> VERIFIED CREW</span>
+          <span style="color:var(--mute);">·</span><span>TRUSTED KIT</span>
+          <span style="color:var(--mute);">·</span><span>DIRECT BOOKING</span>
+          <span style="color:var(--mute);">·</span><span>PEER VOUCHED</span>
+          <span style="color:var(--mute);">·</span><span>TRUST SCORE</span>
+        </div>
+      </div>
+
+      <div class="mock-section" style="border-color:var(--rule);">
+        <div class="mock-section-label">
+          <span class="idx" style="color:var(--flare);">02 /</span><span style="color:var(--mute);">THE PROBLEM</span>
+        </div>
+        <div class="mock-h2" style="color:var(--ink);">The way crew gets<br><em style="color:var(--bone);">hired</em> is broken.</div>
+        <div class="mock-cards" style="border-color:var(--rule);">
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code" style="color:var(--flare);">01 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">WhatsApp roulette</div><div class="mock-card-body" style="color:var(--mute);">DM-ing strangers at midnight, hoping for a screenshot of their reel.</div></div>
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code" style="color:var(--flare);">02 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">Last-minute scrambles</div><div class="mock-card-body" style="color:var(--mute);">Pre-light is in 36 hours. Your recordist just dropped.</div></div>
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code" style="color:var(--flare);">03 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">Unverified profiles</div><div class="mock-card-body" style="color:var(--mute);">A name on LinkedIn isn't a credit. You find out on day one.</div></div>
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code" style="color:var(--flare);">04 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">Tools everywhere</div><div class="mock-card-body" style="color:var(--mute);">Three group chats and a half-finished spreadsheet.</div></div>
+        </div>
+      </div>
+
+      <div class="mock-section" style="border-color:var(--rule);">
+        <div class="mock-section-label"><span class="idx" style="color:var(--flare);">04 /</span><span style="color:var(--mute);">TRUST SYSTEM</span></div>
+        <div class="mock-h2" style="color:var(--ink);">Trust is <em style="color:var(--bone);">earned,<br>layered</em> and visible.</div>
+        <div class="mock-profile" style="background:var(--surface);border-color:var(--rule-strong);">
+          <div class="mock-profile-head" style="border-color:var(--rule);">
+            <span style="color:var(--bone);">PROFILE / DOP</span><span style="color:var(--go);">● VERIFIED</span>
+          </div>
+          <div class="mock-profile-body">
+            <div class="mock-avatar" style="background:var(--elev);border-color:var(--rule);color:var(--ink);">AP</div>
+            <div class="mock-profile-details">
+              <div class="mock-profile-name" style="color:var(--ink);">Asha Patel <span class="mock-score" style="color:var(--go);">94</span></div>
+              <div class="mock-profile-sub" style="color:var(--bone);">DOP · London · Open Apr–Jun</div>
+              <div class="mock-bars">
+                <div><div class="mock-bar-label"><span style="color:var(--mute);">Credits</span><span style="color:var(--bone);">96</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:96%;background:var(--go);"></div></div></div>
+                <div><div class="mock-bar-label"><span style="color:var(--mute);">Vouches</span><span style="color:var(--bone);">92</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:92%;background:var(--go);"></div></div></div>
+                <div><div class="mock-bar-label"><span style="color:var(--mute);">On-time</span><span style="color:var(--bone);">98</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:98%;background:var(--go);"></div></div></div>
+                <div><div class="mock-bar-label"><span style="color:var(--mute);">Response</span><span style="color:var(--bone);">89</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:89%;background:var(--go);"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatches" style="border-color:var(--rule);">
+        <div class="swatch" style="background:#0d1520;"></div>
+        <div class="swatch" style="background:#13202e;"></div>
+        <div class="swatch" style="background:#e8dfc8;"></div>
+        <div class="swatch" style="background:#7a8fa0;"></div>
+        <div class="swatch" style="background:#d4943a;"></div>
+        <div class="swatch" style="background:#c08840;"></div>
+        <div class="swatch" style="background:#5aaa8a;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCHEME 4: Contact Sheet -->
+  <div class="scheme s4">
+    <div class="scheme-label">
+      <span>04 — Contact Sheet</span>
+      <span>Warm Dark · Coral · Sage</span>
+    </div>
+    <div class="mock" style="background: var(--bg);">
+
+      <div class="mock-header" style="background:var(--bg); border-color:var(--rule);">
+        <span class="mock-logo" style="color:var(--ink);">SCENECIRCLE</span>
+        <div class="mock-nav">
+          <span style="color:var(--mute);">Crew</span>
+          <span style="color:var(--mute);">Kit</span>
+          <span style="color:var(--mute);">Trust</span>
+          <span class="btn" style="background:var(--flare);">Join</span>
+        </div>
+      </div>
+
+      <div class="mock-hero" style="background:var(--bg); border-color:var(--rule);">
+        <div class="mock-hero-label" style="color:var(--flare);">● The trusted network for film &amp; TV</div>
+        <div class="mock-h1" style="color:var(--ink);">Production moves fast.<br><em style="color:var(--bone);">Trust</em> needs to<br>move faster.</div>
+        <div class="mock-sub" style="color:var(--mute);">SceneCircle is the trusted network for finding, verifying and booking crew and kit.</div>
+        <div class="mock-input-row">
+          <div class="mock-input" style="background:var(--surface);border-color:var(--rule-strong);color:var(--mute);">your@email.com</div>
+          <div class="mock-cta" style="background:var(--flare);">Request access</div>
+        </div>
+        <div class="mock-crew-card" style="background:var(--surface);border-color:var(--rule-strong);">
+          <div class="mock-crew-header" style="border-color:var(--rule);color:var(--mute);">
+            <span>● LIVE · UK / EU</span><span style="color:var(--bone);">04 ONLINE</span>
+          </div>
+          <div class="mock-crew-row" style="border-color:var(--rule);">
+            <span class="mock-role" style="color:var(--bone);">DOP</span>
+            <span class="mock-name" style="color:var(--ink);">Asha P.</span>
+            <span class="mock-status-go" style="color:var(--go);">AVAILABLE</span>
+            <span class="mock-ts" style="color:var(--mute);">TS 94</span>
+          </div>
+          <div class="mock-crew-row" style="border-color:var(--rule);">
+            <span class="mock-role" style="color:var(--bone);">GAFFER</span>
+            <span class="mock-name" style="color:var(--ink);">Marc R.</span>
+            <span class="mock-status-flare" style="color:var(--flare);">ON SET</span>
+            <span class="mock-ts" style="color:var(--mute);">TS 91</span>
+          </div>
+          <div class="mock-crew-row" style="border-color:var(--rule);">
+            <span class="mock-role" style="color:var(--bone);">SOUND</span>
+            <span class="mock-name" style="color:var(--ink);">Lena K.</span>
+            <span class="mock-status-go" style="color:var(--go);">AVAILABLE</span>
+            <span class="mock-ts" style="color:var(--mute);">TS 88</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mock-marquee" style="background:var(--elev);border-color:var(--rule);">
+        <div class="mock-marquee-inner">
+          <span><span class="dot" style="color:var(--flare);">●</span> VERIFIED CREW</span>
+          <span style="color:var(--mute);">·</span><span>TRUSTED KIT</span>
+          <span style="color:var(--mute);">·</span><span>DIRECT BOOKING</span>
+          <span style="color:var(--mute);">·</span><span>PEER VOUCHED</span>
+          <span style="color:var(--mute);">·</span><span>TRUST SCORE</span>
+        </div>
+      </div>
+
+      <div class="mock-section" style="border-color:var(--rule);">
+        <div class="mock-section-label">
+          <span class="idx" style="color:var(--flare);">02 /</span><span style="color:var(--mute);">THE PROBLEM</span>
+        </div>
+        <div class="mock-h2" style="color:var(--ink);">The way crew gets<br><em style="color:var(--bone);">hired</em> is broken.</div>
+        <div class="mock-cards" style="border-color:var(--rule);">
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code" style="color:var(--flare);">01 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">WhatsApp roulette</div><div class="mock-card-body" style="color:var(--mute);">DM-ing strangers at midnight, hoping for a screenshot of their reel.</div></div>
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code" style="color:var(--flare);">02 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">Last-minute scrambles</div><div class="mock-card-body" style="color:var(--mute);">Pre-light is in 36 hours. Your recordist just dropped.</div></div>
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code" style="color:var(--flare);">03 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">Unverified profiles</div><div class="mock-card-body" style="color:var(--mute);">A name on LinkedIn isn't a credit. You find out on day one.</div></div>
+          <div class="mock-card" style="border-color:var(--rule);"><div class="mock-card-code" style="color:var(--flare);">04 / PAIN</div><div class="mock-card-title" style="color:var(--ink);">Tools everywhere</div><div class="mock-card-body" style="color:var(--mute);">Three group chats and a half-finished spreadsheet.</div></div>
+        </div>
+      </div>
+
+      <div class="mock-section" style="border-color:var(--rule);">
+        <div class="mock-section-label"><span class="idx" style="color:var(--flare);">04 /</span><span style="color:var(--mute);">TRUST SYSTEM</span></div>
+        <div class="mock-h2" style="color:var(--ink);">Trust is <em style="color:var(--bone);">earned,<br>layered</em> and visible.</div>
+        <div class="mock-profile" style="background:var(--surface);border-color:var(--rule-strong);">
+          <div class="mock-profile-head" style="border-color:var(--rule);">
+            <span style="color:var(--bone);">PROFILE / DOP</span><span style="color:var(--go);">● VERIFIED</span>
+          </div>
+          <div class="mock-profile-body">
+            <div class="mock-avatar" style="background:var(--elev);border-color:var(--rule);color:var(--ink);">AP</div>
+            <div class="mock-profile-details">
+              <div class="mock-profile-name" style="color:var(--ink);">Asha Patel <span class="mock-score" style="color:var(--go);">94</span></div>
+              <div class="mock-profile-sub" style="color:var(--bone);">DOP · London · Open Apr–Jun</div>
+              <div class="mock-bars">
+                <div><div class="mock-bar-label"><span style="color:var(--mute);">Credits</span><span style="color:var(--bone);">96</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:96%;background:var(--go);"></div></div></div>
+                <div><div class="mock-bar-label"><span style="color:var(--mute);">Vouches</span><span style="color:var(--bone);">92</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:92%;background:var(--go);"></div></div></div>
+                <div><div class="mock-bar-label"><span style="color:var(--mute);">On-time</span><span style="color:var(--bone);">98</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:98%;background:var(--go);"></div></div></div>
+                <div><div class="mock-bar-label"><span style="color:var(--mute);">Response</span><span style="color:var(--bone);">89</span></div><div class="mock-bar-track" style="background:var(--rule);"><div class="mock-bar-fill" style="width:89%;background:var(--go);"></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="swatches" style="border-color:var(--rule);">
+        <div class="swatch" style="background:#1a1610;"></div>
+        <div class="swatch" style="background:#232018;"></div>
+        <div class="swatch" style="background:#ede5d0;"></div>
+        <div class="swatch" style="background:#8a8070;"></div>
+        <div class="swatch" style="background:#e46f5a;"></div>
+        <div class="swatch" style="background:#c4a870;"></div>
+        <div class="swatch" style="background:#7aaa60;"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

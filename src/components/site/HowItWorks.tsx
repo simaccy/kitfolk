@@ -6,7 +6,7 @@ const STEPS = [
   {
     n: "01",
     title: "Build your profile",
-    body: "Credits, kit, day rates, availability — pulled from work you've already done. Five minutes, not an afternoon.",
+    body: "Credits, kit, day rates, availability - pulled from work you've already done. Five minutes, not an afternoon.",
     aside: "AVG. 4 MIN",
   },
   {

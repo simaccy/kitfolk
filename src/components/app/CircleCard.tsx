@@ -2,6 +2,7 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import type { Circle } from "@/lib/types";
 import { Avatar } from "./Avatar";
+import { ClientDate } from "./ClientDate";
 import { relativeTime } from "@/lib/utils";
 
 const TYPE_LABEL: Record<Circle["type"], string> = {
@@ -15,11 +16,11 @@ export function CircleCard({ circle }: { circle: Circle }) {
   return (
     <Link
       href={`/circles/${circle.id}`}
-      className="border-rule-strong bg-surface group relative block border active:bg-white/[0.02]"
+      className="border-rule-strong bg-surface group relative block border active:bg-ink/[0.02]"
     >
       <div className="border-rule label text-mute flex items-center justify-between border-b px-4 py-2.5">
         <span className="text-flare">● {TYPE_LABEL[circle.type]}</span>
-        <span className="text-dim">{relativeTime(circle.lastActiveISO)}</span>
+        <ClientDate value={relativeTime(circle.lastActiveISO)} className="text-dim" />
       </div>
 
       <div className="px-4 pt-4 pb-4">

@@ -4,7 +4,7 @@ import Google from "next-auth/providers/google";
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     Google({
-      // KitFolk early access is curated. We allow Google as the only provider
+      // SceneCircle early access is curated. We allow Google as the only provider
       // for now, then collect the rest in onboarding.
       authorization: {
         params: {

@@ -57,7 +57,7 @@ export function OnboardingFlow({
       <div className="grain pointer-events-none absolute inset-0 opacity-50" />
 
       <header className="relative flex items-center justify-between px-4 py-4">
-        <span className="serif text-ink text-xl">KitFolk</span>
+        <span className="serif text-ink text-xl">SceneCircle</span>
         <span className="mono text-mute text-[11px] tracking-widest">
           STEP {String(step).padStart(2, "0")} / {String(TOTAL).padStart(2, "0")}
         </span>
@@ -86,9 +86,9 @@ export function OnboardingFlow({
               />
             ) : (
               <span
-                className="border-rule-strong serif text-bone flex h-8 w-8 items-center justify-center border"
+                className="border-rule-strong serif text-ink flex h-8 w-8 items-center justify-center border"
                 style={{
-                  background: `radial-gradient(circle at 30% 30%, hsl(14 60% 40% / 0.6), hsl(14 50% 14% / 0.6))`,
+                  background: `linear-gradient(135deg, hsl(14 55% 86%), hsl(14 42% 72%))`,
                 }}
               >
                 {(defaultName || "?")[0]}
@@ -110,7 +110,7 @@ export function OnboardingFlow({
           <Step
             label="01 / WHO ARE YOU?"
             title="What kind of account are you setting up?"
-            body="Pick what fits today — you can add the others later."
+            body="Pick what fits today - you can add the others later."
           >
             <div className="grid grid-cols-1 gap-2.5">
               {[
@@ -127,7 +127,7 @@ export function OnboardingFlow({
                     className={`flex items-center gap-3 border px-4 py-4 text-left transition-colors ${
                       active
                         ? "border-flare bg-flare/10"
-                        : "border-rule-strong bg-surface hover:bg-white/[0.03]"
+                        : "border-rule-strong bg-surface hover:bg-ink/[0.03]"
                     }`}
                   >
                     <o.Icon size={18} className={active ? "text-flare" : "text-bone"} />
@@ -153,23 +153,23 @@ export function OnboardingFlow({
               <Field label="Name">
                 <input
                   defaultValue={defaultName}
-                  className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-white/30"
+                  className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-ink/30"
                 />
               </Field>
               <Field label="Location">
                 <input
                   placeholder="City"
-                  className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-white/30"
+                  className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-ink/30"
                 />
               </Field>
               <Field label="Main role">
                 <input
                   placeholder="e.g. DOP, Sound Mixer, 1st AD"
-                  className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-white/30"
+                  className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-ink/30"
                 />
               </Field>
               <Field label="Industry area">
-                <select className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-white/30">
+                <select className="border-rule-strong bg-surface text-ink w-full border px-4 py-3.5 text-[15px] outline-none focus:border-ink/30">
                   <option>Drama</option>
                   <option>Documentary</option>
                   <option>Commercial</option>
@@ -208,7 +208,7 @@ export function OnboardingFlow({
               ))}
             </ul>
             <p className="text-dim mt-4 text-[12px]">
-              You can finish trust signals later — adding two now will get you
+              You can finish trust signals later - adding two now will get you
               into Discover faster.
             </p>
           </Step>
@@ -235,7 +235,7 @@ export function OnboardingFlow({
                     className={`flex flex-col items-start gap-2 border px-4 py-4 text-left transition-colors ${
                       active
                         ? "border-flare bg-flare/10"
-                        : "border-rule-strong bg-surface hover:bg-white/[0.03]"
+                        : "border-rule-strong bg-surface hover:bg-ink/[0.03]"
                     }`}
                   >
                     <o.Icon
@@ -265,7 +265,7 @@ export function OnboardingFlow({
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-flare mt-1">●</span>
-                  Build your first Circle — your go-to crew.
+                  Build your first Circle - your go-to crew.
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-flare mt-1">●</span>
@@ -282,7 +282,7 @@ export function OnboardingFlow({
             disabled={step === 1 && !accountType}
             className="bg-ink text-bg label flex w-full items-center justify-center gap-2 py-4 disabled:opacity-50"
           >
-            {step === TOTAL ? "Enter KitFolk" : "Continue"}
+            {step === TOTAL ? "Enter SceneCircle" : "Continue"}
             <ArrowRight size={14} />
           </button>
           <div className="mt-3 flex items-center justify-between">

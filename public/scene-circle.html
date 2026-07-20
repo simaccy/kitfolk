@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>scene.co — mockup</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600&family=Caveat:wght@500;600&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+<style>
+
+  :root{
+
+    --paper:#F2EBDD;
+
+    --paper-2:#ECE3D2;
+
+    --ink:#23201A;
+
+    --ink-soft:#5C554A;
+
+    --rust:#BC5A2E;
+
+    --rust-deep:#9E4622;
+
+    --sage:#6E7A5E;
+
+    --line:#D8CDB8;
+
+    --night:#1C1A16;
+
+    --night-2:#262219;
+
+    --cream-on-night:#EEE6D6;
+
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  html{scroll-behavior:smooth}
+
+  body{
+
+    background:var(--paper);
+
+    color:var(--ink);
+
+    font-family:'Hanken Grotesk',sans-serif;
+
+    font-size:18px;
+
+    line-height:1.55;
+
+    -webkit-font-smoothing:antialiased;
+
+    overflow-x:hidden;
+
+  }
+
+  /* paper grain */
+
+  body::before{
+
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.5;
+
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+
+    mix-blend-mode:multiply;
+
+  }
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+
+  .serif{font-family:'Fraunces',serif}
+
+  em{font-style:italic}
+
+  a{color:inherit}
+
+
+
+  /* ---------- NAV ---------- */
+
+  nav{
+
+    position:sticky;top:0;z-index:50;
+
+    background:rgba(242,235,221,.82);
+
+    backdrop-filter:blur(8px);
+
+    border-bottom:1px solid var(--line);
+
+  }
+
+  .nav-in{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto}
+
+  .logo{display:inline-block;width:60px;height:60px;line-height:0;text-decoration:none}
+
+  .logo svg{width:100%;height:100%;display:block}
+
+  .nav-cta{
+
+    font-family:'Hanken Grotesk',sans-serif;font-weight:600;font-size:15px;
+
+    background:var(--ink);color:var(--paper);padding:11px 20px;border-radius:999px;text-decoration:none;
+
+    transition:transform .2s ease,background .2s ease;
+
+  }
+
+  .nav-cta:hover{background:var(--rust);transform:translateY(-1px)}
+
+
+
+  /* ---------- HERO ---------- */
+
+  header{padding:88px 0 76px}
+
+  .kicker{
+
+    font-family:'Caveat',cursive;font-size:27px;color:var(--rust);transform:rotate(-2deg);
+
+    display:inline-block;margin-bottom:14px;
+
+  }
+
+  h1{
+
+    font-family:'Fraunces',serif;font-weight:500;
+
+    font-size:clamp(52px,8.5vw,108px);line-height:.96;letter-spacing:-.025em;
+
+    max-width:13ch;
+
+  }
+
+  h1 em{color:var(--rust)}
+
+  .lede{
+
+    font-size:clamp(19px,2.2vw,24px);color:var(--ink-soft);max-width:30ch;margin:30px 0 38px;line-height:1.45;
+
+  }
+
+  .lede strong{color:var(--ink);font-weight:600}
+
+
+
+  .signup-row{display:flex;gap:10px;max-width:520px;flex-wrap:wrap}
+
+  .signup-row input{
+
+    flex:1;min-width:240px;font-family:inherit;font-size:17px;color:var(--ink);
+
+    background:#FBF7EE;border:1.5px solid var(--line);border-radius:12px;padding:16px 18px;
+
+  }
+
+  .signup-row input::placeholder{color:#A99E89}
+
+  .signup-row input:focus{outline:none;border-color:var(--rust)}
+
+  .btn{
+
+    font-family:inherit;font-weight:600;font-size:16px;cursor:pointer;border:none;
+
+    background:var(--rust);color:#FBF7EE;padding:16px 26px;border-radius:12px;
+
+    display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .2s;white-space:nowrap;
+
+  }
+
+  .btn:hover{background:var(--rust-deep);transform:translateY(-1px)}
+
+  .reassure{font-size:14.5px;color:var(--ink-soft);margin-top:14px}
+
+  .reassure b{color:var(--ink);font-weight:600}
+
+
+
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+
+
+
+  /* photo cluster */
+
+  .photos{position:relative;height:520px}
+
+  .pic{
+
+    position:absolute;border-radius:4px;overflow:hidden;background:var(--paper-2);
+
+    box-shadow:0 18px 40px rgba(35,32,26,.16);border:7px solid #FBF7EE;
+
+  }
+
+  .pic .cap{
+
+    position:absolute;left:0;right:0;bottom:0;z-index:2;font-family:'Caveat',cursive;font-size:21px;color:#FBF7EE;
+
+    padding:10px 14px;background:linear-gradient(transparent,rgba(28,26,22,.7));
+
+  }
+
+  .pic.a{width:240px;height:300px;top:10px;left:10px;transform:rotate(-3deg)}
+
+  .pic.b{width:210px;height:260px;top:70px;right:0;transform:rotate(4deg);z-index:3}
+
+  .pic.c{width:200px;height:200px;bottom:0;left:90px;transform:rotate(2deg);z-index:2}
+
+  .ph{width:100%;height:100%;display:block;object-fit:cover}
+
+  .portrait{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+  .photo{position:absolute;inset:0;background-size:cover;background-position:center top}
+
+
+
+  /* ---------- WHAT IT IS ---------- */
+
+  section{padding:78px 0}
+
+  .sec-label{font-family:'Caveat',cursive;font-size:24px;color:var(--rust);transform:rotate(-1.5deg);display:inline-block;margin-bottom:10px}
+
+  h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(34px,5vw,56px);line-height:1.02;letter-spacing:-.02em;max-width:18ch}
+
+  h2 em{color:var(--rust)}
+
+
+
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:54px}
+
+  .card{
+
+    background:#FBF7EE;border:1.5px solid var(--line);border-radius:16px;padding:34px 30px 36px;
+
+    transition:transform .25s ease,box-shadow .25s ease;
+
+  }
+
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(35,32,26,.1)}
+
+  .card .num{font-family:'Fraunces',serif;font-style:italic;font-size:34px;color:var(--rust);line-height:1}
+
+  .card h3{font-family:'Fraunces',serif;font-weight:500;font-size:25px;margin:16px 0 10px;letter-spacing:-.01em}
+
+  .card p{color:var(--ink-soft);font-size:16.5px;line-height:1.5}
+
+
+
+  /* ---------- CIRCLE / BRANDS (dark) ---------- */
+
+  .night{background:var(--night);color:var(--cream-on-night);position:relative;z-index:2}
+
+  .night .sec-label{color:#E0A06B}
+
+  .night h2{color:var(--cream-on-night)}
+
+  .night h2 em{color:#E0A06B}
+
+  .night .col-lede{color:#B9B09E;font-size:19px;max-width:34ch;margin-top:22px;line-height:1.5}
+
+  .brand-aside{color:#8c8473;font-size:16px;margin-top:26px;line-height:1.5;max-width:36ch}
+
+  .brand-aside a{color:#E0A06B;text-decoration:none;white-space:nowrap}
+
+  .brand-aside a:hover{text-decoration:underline}
+
+  .ring-foot{display:flex;justify-content:space-between;padding-top:18px;border-top:1px solid #322d24;font-size:14px;color:#8c8473;letter-spacing:.02em}
+
+  .graph{margin:6px 0 22px}
+
+  .graph svg{width:100%;height:auto;display:block}
+
+  .circle-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+
+
+
+  .members{
+
+    background:var(--night-2);border:1px solid #38332a;border-radius:18px;padding:38px;position:relative;
+
+  }
+
+  .members .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:26px}
+
+  .members .head .name{font-family:'Fraunces',serif;font-size:23px;color:var(--cream-on-night)}
+
+  .members .head .live{font-family:'Hanken Grotesk';font-size:12px;letter-spacing:.12em;color:#8c8473;display:flex;align-items:center;gap:7px}
+
+  .members .head .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sage)}
+
+  .ring{position:relative;height:200px;margin:8px 0 30px}
+
+  .node{
+
+    position:absolute;width:42px;height:42px;border-radius:50%;background:#322d24;border:1px solid #45402f;
+
+    display:grid;place-items:center;font-family:'Fraunces',serif;font-size:16px;color:#E0A06B;
+
+  }
+
+  .ring .center{
+
+    left:50%;top:50%;transform:translate(-50%,-50%);width:auto;height:auto;background:none;border:none;
+
+    font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:#cfc6b3;white-space:nowrap;
+
+  }
+
+  .perk-row{display:flex;align-items:center;gap:14px;padding:15px 0;border-top:1px solid #322d24}
+
+  .perk-row:last-child{padding-bottom:0}
+
+  .perk-logo{font-family:'Fraunces',serif;font-size:17px;color:var(--cream-on-night);width:120px;flex-shrink:0}
+
+  .perk-row p{color:#9a917f;font-size:15px}
+
+
+
+  /* ---------- SIGNUP STRIP ---------- */
+
+  .join{background:var(--rust);color:#FBF7EE;text-align:center;padding:96px 0}
+
+  .join .sec-label{color:#FBE7D5}
+
+  .join h2{color:#FBF7EE;margin:0 auto;text-align:center;max-width:20ch}
+
+  .join .profile{
+
+    max-width:540px;margin:42px auto 0;background:#FBF7EE;border-radius:18px;padding:34px;text-align:left;color:var(--ink);
+
+    box-shadow:0 24px 60px rgba(28,26,22,.25);
+
+  }
+
+  .profile .row{margin-bottom:16px}
+
+  .profile label{display:block;font-size:13px;letter-spacing:.04em;color:var(--ink-soft);margin-bottom:7px;font-weight:600}
+
+  .profile input{width:100%;font-family:inherit;font-size:16px;padding:13px 15px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+
+  .profile input:focus{outline:none;border-color:var(--rust)}
+
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+
+  .chip{
+
+    font-family:inherit;font-size:14.5px;padding:9px 15px;border-radius:999px;border:1.5px solid var(--line);
+
+    background:#fff;cursor:pointer;transition:all .15s;color:var(--ink-soft)
+
+  }
+
+  .chip:hover{border-color:var(--rust);color:var(--ink)}
+
+  .chip.on{background:var(--ink);color:#FBF7EE;border-color:var(--ink)}
+
+  .profile .btn{width:100%;justify-content:center;margin-top:8px;background:var(--ink)}
+
+  .profile .btn:hover{background:var(--night-2)}
+
+
+
+  /* ---------- FOOTER ---------- */
+
+  footer{background:var(--paper-2);border-top:1px solid var(--line);padding:46px 0;position:relative;z-index:2}
+
+  .foot-in{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+
+  .foot-in .sign{font-family:'Caveat',cursive;font-size:22px;color:var(--ink-soft)}
+
+  .foot-links{display:flex;gap:26px;font-size:15px;color:var(--ink-soft)}
+
+  .foot-links a{text-decoration:none}
+
+  .foot-links a:hover{color:var(--rust)}
+
+
+
+  @media(max-width:880px){
+
+    .hero-grid{grid-template-columns:1fr;gap:10px}
+
+    .photos{height:380px;margin-top:20px}
+
+    .three{grid-template-columns:1fr}
+
+    .circle-grid{grid-template-columns:1fr;gap:34px}
+
+    .pic.a{width:180px;height:225px}.pic.b{width:160px;height:200px}.pic.c{width:150px;height:150px}
+
+  }
+
+
+
+  /* ---------- HERO VIDEO ---------- */
+
+  .hero{position:relative;overflow:hidden;min-height:86vh;display:flex;align-items:flex-end;color:#F4ECDD;padding:0}
+
+  .hero-bg{position:absolute;inset:0;z-index:0}
+
+  .hero-anim{position:absolute;inset:0;background:radial-gradient(120% 90% at 32% 38%, #3a2a1e 0%, #241a14 46%, #14100c 100%)}
+
+  .hero-anim::before{content:"";position:absolute;left:-12%;top:-12%;width:62%;height:82%;background:radial-gradient(closest-side, rgba(224,160,107,.32), transparent 70%);filter:blur(46px);animation:leak1 15s ease-in-out infinite}
+
+  .hero-anim::after{content:"";position:absolute;right:-12%;bottom:-16%;width:58%;height:78%;background:radial-gradient(closest-side, rgba(110,122,94,.26), transparent 70%);filter:blur(52px);animation:leak2 19s ease-in-out infinite}
+
+  @keyframes leak1{0%,100%{transform:translate(0,0)}50%{transform:translate(12%,8%)}}
+
+  @keyframes leak2{0%,100%{transform:translate(0,0)}50%{transform:translate(-10%,-7%)}}
+
+  .hero-figure{position:absolute;inset:0;width:100%;height:100%;opacity:.92;animation:breathe 10s ease-in-out infinite;transform-origin:60% 50%}
+
+  @keyframes breathe{0%,100%{transform:scale(1.03)}50%{transform:scale(1.07)}}
+
+  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+
+  .hero-scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg, rgba(18,14,10,.5) 0%, rgba(18,14,10,.22) 38%, rgba(18,14,10,.88) 100%)}
+
+  .hero-inner{position:relative;z-index:3;padding:130px 0 70px}
+
+  .hero-rec{position:absolute;top:92px;right:36px;z-index:3;font-family:'Hanken Grotesk',sans-serif;font-size:13px;letter-spacing:.18em;color:#E6C9A8;display:flex;align-items:center;gap:9px}
+
+  .rec-dot{width:9px;height:9px;border-radius:50%;background:#e0563a;animation:blink 1.4s steps(1) infinite}
+
+  @keyframes blink{50%{opacity:.25}}
+
+  .hero .kicker{color:#E6A86F}
+
+  .hero h1{color:#F6EEDF}
+
+  .hero .lede{color:#E4DAC8;max-width:34ch}
+
+  .hero .lede strong{color:#fff}
+
+  .hero .reassure{color:#CDBFA9}
+
+  .hero .reassure b{color:#fff}
+
+
+
+  /* ---------- BRAND PICK ---------- */
+
+  .brands-pick{background:var(--paper-2);border-top:1px solid var(--line)}
+
+  .pick-lede{font-size:19px;color:var(--ink-soft);max-width:62ch;margin-top:20px;line-height:1.55}
+
+  .pick-lede strong{color:var(--ink);font-weight:600}
+
+  .pick-sub{margin-top:30px;font-weight:600;color:var(--ink);font-size:16px}
+
+  .brand-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;max-width:780px}
+
+  .pick-note{margin-top:20px;font-size:14.5px;color:var(--ink-soft);max-width:60ch}
+
+  .unlock{margin-top:34px;max-width:520px;background:#FBF7EE;border:1.5px solid var(--line);border-radius:14px;padding:22px 24px}
+
+  .unlock .ulab{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.1em;color:var(--ink-soft);margin-bottom:12px;font-weight:600}
+
+  .unlock .bar{height:8px;border-radius:99px;background:#E6DCC8;overflow:hidden}
+
+  .unlock .fill{height:100%;width:38%;background:var(--rust);border-radius:99px}
+
+  .unlock .umsg{margin-top:13px;font-size:14.5px;color:var(--ink)}
+
+  .unlock .umsg b{color:var(--rust)}
+
+
+
+  .hero-anim{animation:flick 6s ease-in-out infinite}
+
+  @keyframes flick{0%,100%{filter:brightness(1)}45%{filter:brightness(1.07)}55%{filter:brightness(.95)}}
+
+  .hero-figure{animation:drift 22s ease-in-out infinite}
+
+  @keyframes drift{0%{transform:translateX(-2.5%) scale(1.06)}50%{transform:translateX(2.5%) scale(1.1)}100%{transform:translateX(-2.5%) scale(1.06)}}
+
+  .hero-sweep{position:absolute;top:-30%;left:-40%;width:45%;height:160%;background:linear-gradient(105deg,transparent,rgba(255,228,193,.16),transparent);transform:rotate(8deg);animation:sweep 6.5s linear infinite;pointer-events:none}
+
+  @keyframes sweep{0%{transform:translateX(0) rotate(8deg)}100%{transform:translateX(420%) rotate(8deg)}}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<nav>
+
+  <div class="nav-in">
+
+    <div class="logo"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="scene co"><g fill="#161310"><circle cx="90.5" cy="50.0" r="6.6"/><circle cx="88.3" cy="63.2" r="6.6"/><circle cx="82.0" cy="74.9" r="6.6"/><circle cx="72.2" cy="83.9" r="6.6"/><circle cx="59.9" cy="89.3" r="6.6"/><circle cx="46.7" cy="90.4" r="6.6"/><circle cx="33.7" cy="87.1" r="6.6"/><circle cx="22.6" cy="79.8" r="6.6"/><circle cx="14.4" cy="69.3" r="6.6"/><circle cx="10.1" cy="56.7" r="6.6"/><circle cx="10.1" cy="43.3" r="6.6"/><circle cx="14.4" cy="30.7" r="6.6"/><circle cx="22.6" cy="20.2" r="6.6"/><circle cx="33.7" cy="12.9" r="6.6"/><circle cx="46.7" cy="9.6" r="6.6"/><circle cx="59.9" cy="10.7" r="6.6"/><circle cx="72.2" cy="16.1" r="6.6"/><circle cx="82.0" cy="25.1" r="6.6"/><circle cx="88.3" cy="36.8" r="6.6"/><circle cx="50" cy="50" r="41"/></g><text x="50" y="49" text-anchor="middle" fill="#F4ECDD" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="17" letter-spacing="0.3">scene</text><text x="50" y="65" text-anchor="middle" fill="#F4ECDD" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="10.5" letter-spacing="4">co</text></svg></div>
+
+    <a href="#join" class="nav-cta">Join your scene</a>
+
+  </div>
+
+</nav>
+
+
+
+<header class="hero">
+
+  <div class="hero-bg">
+
+    <div class="hero-anim">
+
+      <svg class="hero-figure" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice">
+
+        <g fill="#0d0a07">
+
+          <circle cx="250" cy="300" r="34"/>
+
+          <path d="M198 600 C198 392 222 352 250 352 C278 352 302 392 302 600 Z"/>
+
+          <circle cx="1070" cy="232" r="48"/>
+
+          <path d="M992 600 C992 372 1030 312 1075 312 C1120 312 1158 372 1158 600 Z"/>
+
+          <path d="M1095 360 C1060 330 1010 280 980 250 L1010 214 C1050 250 1095 300 1120 332 Z"/>
+
+          <rect x="876" y="196" width="120" height="74" rx="10"/>
+
+          <rect x="858" y="214" width="34" height="40" rx="6"/>
+
+        </g>
+
+        <circle cx="918" cy="233" r="20" fill="#1a1410"/>
+
+        <circle cx="918" cy="233" r="11" fill="#2a2018"/>
+
+        <g fill="none" stroke="#e7ab73" stroke-width="3" opacity=".5" stroke-linecap="round">
+
+          <path d="M1027 250 q-22 36 -30 90"/>
+
+          <path d="M1042 300 q-30 120 -34 300"/>
+
+        </g>
+
+      </svg>
+
+      <div class="hero-sweep"></div>
+
+    </div>
+
+    <video class="hero-video" autoplay muted loop playsinline poster="https://images.pexels.com/videos/1998560/free-video-1998560.jpg?auto=compress&cs=tinysrgb&w=1400">
+
+      <source src="https://videos.pexels.com/video-files/1998560/1998560-hd_1920_1080_24fps.mp4" type="video/mp4">
+
+    </video>
+
+    <div class="hero-scrim"></div>
+
+  </div>
+
+  <div class="hero-rec"><span class="rec-dot"></span> REC <span id="tc">00:00:14</span></div>
+
+  <div class="wrap hero-inner">
+
+    <span class="kicker">welcome to scene.co</span>
+
+    <h1 class="serif">Your scene.</h1>
+
+    <p class="lede">The people you trust, the kit you need, the kit you have, the work that needs doing, the makers making it, <strong>in one place.</strong></p>
+
+    <div class="signup-row">
+
+      <input type="email" placeholder="you@yourwork.co" aria-label="email">
+
+      <button class="btn">Get in &rarr;</button>
+
+    </div>
+
+    <p class="reassure"><b>Invite only for now.</b></p>
+
+  </div>
+
+</header>
+
+
+
+<section>
+
+  <div class="wrap">
+
+    <span class="sec-label">how it works</span>
+
+    <h2 class="serif">Made by makers. <em>Made for makers.</em></h2>
+
+    <div class="three">
+
+      <div class="card">
+
+        <div class="num">01</div>
+
+        <h3 class="serif">Earn from what you own</h3>
+
+        <p>Your gear is expensive and it sits idle between jobs. List it, lend it, get it working for you. You keep it, it pays for itself.</p>
+
+      </div>
+
+      <div class="card">
+
+        <div class="num">02</div>
+
+        <h3 class="serif">Find people you'd actually call</h3>
+
+        <p>Not a directory of strangers. Real credits, real references, the people your people already trust. Hire in minutes, not days.</p>
+
+      </div>
+
+      <div class="card">
+
+        <div class="num">03</div>
+
+        <h3 class="serif">Keep your circle close</h3>
+
+        <p>The crew you come back to, the makers you swap notes with, the regulars on your 5am calls. Now somewhere you can find them.</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="night">
+
+  <div class="wrap circle-grid">
+
+    <div>
+
+      <span class="sec-label">your scenes</span>
+
+      <h2 class="serif">You're not in one scene. <em>You're in a few.</em></h2>
+
+      <p class="col-lede">A scene is the people you actually want on your jobs. The regulars, the ones you'd vouch for. You'll be in a handful, the Bristol docs crew, the colourists you swap notes with, the mates from the festival run.</p>
+
+      <p class="col-lede" style="font-size:16px;color:#8c8473">Belong to as many scenes as you like. People move between them, same as they do in real life.</p>
+
+      <p class="brand-aside">Every scene comes with a few good brands worth knowing, real perks, no adverts. <a href="brands.html">For brands &rarr;</a></p>
+
+    </div>
+
+    <div class="members">
+
+      <div class="head">
+
+        <span class="name serif">Your scenes</span>
+
+        <span class="live">3 SCENES · ACTIVE</span>
+
+      </div>
+
+      <div class="graph">
+
+        <svg viewBox="0 0 460 320" preserveAspectRatio="xMidYMid meet">
+
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+
+            <!-- hand-drawn circles -->
+
+            <path d="M175 52 C116 50 71 96 70 155 C69 216 119 263 179 260 C239 257 283 209 280 151 C277 95 233 54 175 52" stroke="#4a4536" stroke-width="1.6"/>
+
+            <path d="M300 72 C251 70 209 111 208 165 C207 223 253 263 306 260 C361 257 399 213 396 159 C393 107 350 73 300 72" stroke="#5a4a36" stroke-width="1.6"/>
+
+            <!-- faint connections -->
+
+            <g stroke="#3a352a" stroke-width="1.3">
+
+              <path d="M176 70 q40 28 70 44"/>
+
+              <path d="M250 132 q44 -28 78 -44"/>
+
+              <path d="M252 196 q-40 34 -70 52"/>
+
+              <path d="M250 200 q50 22 88 38"/>
+
+              <path d="M96 150 q4 50 92 96"/>
+
+            </g>
+
+          </g>
+
+          <!-- circle labels -->
+
+          <text x="92" y="44" font-family="Fraunces,serif" font-style="italic" font-size="15" fill="#9a917f">Bristol docs</text>
+
+          <text x="318" y="60" font-family="Fraunces,serif" font-style="italic" font-size="15" fill="#b78a5e">colourists</text>
+
+          <!-- nodes -->
+
+          <g font-family="Fraunces,serif" font-size="15" text-anchor="middle">
+
+            <g><circle cx="176" cy="62" r="15" fill="#322d24" stroke="#45402f"/><text x="176" y="67" fill="#E0A06B">A</text></g>
+
+            <g><circle cx="78" cy="140" r="15" fill="#322d24" stroke="#45402f"/><text x="78" y="145" fill="#E0A06B">V</text></g>
+
+            <g><circle cx="96" cy="235" r="15" fill="#322d24" stroke="#45402f"/><text x="96" y="240" fill="#E0A06B">S</text></g>
+
+            <g><circle cx="185" cy="256" r="15" fill="#322d24" stroke="#45402f"/><text x="185" y="261" fill="#E0A06B">P</text></g>
+
+            <!-- shared, sitting in the overlap -->
+
+            <g><circle cx="250" cy="122" r="16" fill="#3d3220" stroke="#7a5a30"/><text x="250" y="127" fill="#F0C28B">D</text></g>
+
+            <g><circle cx="250" cy="202" r="16" fill="#3d3220" stroke="#7a5a30"/><text x="250" y="207" fill="#F0C28B">J</text></g>
+
+            <g><circle cx="332" cy="84" r="15" fill="#322d24" stroke="#45402f"/><text x="332" y="89" fill="#E0A06B">K</text></g>
+
+            <g><circle cx="390" cy="162" r="15" fill="#322d24" stroke="#45402f"/><text x="390" y="167" fill="#E0A06B">N</text></g>
+
+            <g><circle cx="346" cy="244" r="15" fill="#322d24" stroke="#45402f"/><text x="346" y="249" fill="#E0A06B">Q</text></g>
+
+            <g><circle cx="132" cy="188" r="15" fill="#2a2620" stroke="#3a352a"/><text x="132" y="193" fill="#8c8473" font-size="12">+6</text></g>
+
+          </g>
+
+        </svg>
+
+      </div>
+
+      <div class="ring-foot">
+
+        <span>2 shared with the colourists</span>
+
+        <span>1 invite waiting</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="join" id="join">
+
+  <div class="wrap">
+
+    <span class="sec-label">come in</span>
+
+    <h2 class="serif">Set up your profile. Takes a minute.</h2>
+
+    <div class="profile">
+
+      <div class="row">
+
+        <label>Your name</label>
+
+        <input type="text" placeholder="First name, last name">
+
+      </div>
+
+      <div class="row">
+
+        <label>What you do</label>
+
+        <input type="text" placeholder="e.g. DOP, sound, ceramicist, printmaker…">
+
+      </div>
+
+      <div class="row">
+
+        <label>Where you're based</label>
+
+        <input type="text" placeholder="Town or city">
+
+      </div>
+
+      <div class="row">
+
+        <label>What you're here for</label>
+
+        <div class="chips">
+
+          <button class="chip on" type="button">I own kit</button>
+
+          <button class="chip" type="button">I'm for hire</button>
+
+          <button class="chip" type="button">I'm hiring</button>
+
+          <button class="chip" type="button">Just looking</button>
+
+        </div>
+
+      </div>
+
+      <button class="btn" type="button">Join your scene &rarr;</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="brands-pick">
+
+  <div class="wrap">
+
+    <span class="sec-label">how we keep this free</span>
+
+    <h2 class="serif">Funded by brands. <em>Chosen by you.</em></h2>
+
+    <p class="pick-lede">The world has changed, so here's the straight version. scene stays free because good brands pay to sit inside your scenes. <strong>You choose which ones.</strong> The more you work, the more you unlock, real affiliate discounts and perks with the brands you picked. No banners. No selling your details.</p>
+
+    <p class="pick-sub">Pick the brands you'd be happy to sponsor your scene:</p>
+
+    <div class="chips brand-chips">
+
+      <button class="chip" type="button">Carhartt</button>
+
+      <button class="chip" type="button">Service Works</button>
+
+      <button class="chip" type="button">Blank Street</button>
+
+      <button class="chip" type="button">Dr Martens</button>
+
+      <button class="chip" type="button">Saucony</button>
+
+      <button class="chip" type="button">Patagonia</button>
+
+      <button class="chip" type="button">a good coffee</button>
+
+    </div>
+
+    <div class="unlock">
+
+      <div class="ulab"><span>YOUR UNLOCKS</span><span>3 OF 8 DAYS WORKED</span></div>
+
+      <div class="bar"><div class="fill"></div></div>
+
+      <p class="umsg">Carhartt <b>15% unlocked</b>. Keep working and more opens up.</p>
+
+    </div>
+
+    <p class="pick-note">Change these anytime. This is how scene stays free for you, not the other way round.</p>
+
+  </div>
+
+</section>
+
+
+
+<footer>
+
+  <div class="wrap foot-in">
+
+    <div class="logo"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="scene co"><g fill="#161310"><circle cx="90.5" cy="50.0" r="6.6"/><circle cx="88.3" cy="63.2" r="6.6"/><circle cx="82.0" cy="74.9" r="6.6"/><circle cx="72.2" cy="83.9" r="6.6"/><circle cx="59.9" cy="89.3" r="6.6"/><circle cx="46.7" cy="90.4" r="6.6"/><circle cx="33.7" cy="87.1" r="6.6"/><circle cx="22.6" cy="79.8" r="6.6"/><circle cx="14.4" cy="69.3" r="6.6"/><circle cx="10.1" cy="56.7" r="6.6"/><circle cx="10.1" cy="43.3" r="6.6"/><circle cx="14.4" cy="30.7" r="6.6"/><circle cx="22.6" cy="20.2" r="6.6"/><circle cx="33.7" cy="12.9" r="6.6"/><circle cx="46.7" cy="9.6" r="6.6"/><circle cx="59.9" cy="10.7" r="6.6"/><circle cx="72.2" cy="16.1" r="6.6"/><circle cx="82.0" cy="25.1" r="6.6"/><circle cx="88.3" cy="36.8" r="6.6"/><circle cx="50" cy="50" r="41"/></g><text x="50" y="49" text-anchor="middle" fill="#F4ECDD" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="17" letter-spacing="0.3">scene</text><text x="50" y="65" text-anchor="middle" fill="#F4ECDD" font-family="Helvetica,Arial,sans-serif" font-weight="700" font-size="10.5" letter-spacing="4">co</text></svg></div>
+
+    <span class="sign">the culture makers</span>
+
+    <div class="foot-links">
+
+      <a href="#">About</a>
+
+      <a href="#">For brands</a>
+
+      <a href="#">Contact</a>
+
+      <a href="#">Instagram</a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<script>
+
+  (function(){var sec=14,el=document.getElementById('tc');var p=n=>String(n).padStart(2,'0');setInterval(function(){sec++;el&&(el.textContent=p(Math.floor(sec/3600))+':'+p(Math.floor(sec%3600/60))+':'+p(sec%60))},1000);})();
+
+  document.querySelectorAll('.chip').forEach(c=>{
+
+    c.addEventListener('click',()=>c.classList.toggle('on'));
+
+  });
+
+</script>
+
+</body>
+
+</html>

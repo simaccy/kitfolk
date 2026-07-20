@@ -1,5 +1,6 @@
 import { BadgeCheck, MapPin, MessageCircle, Share2 } from "lucide-react";
 import type { Call } from "@/lib/types";
+import { ClientDate } from "./ClientDate";
 import { dateRange, formatGBP, relativeTime } from "@/lib/utils";
 
 const TYPE_TONE: Record<Call["type"], string> = {
@@ -17,7 +18,7 @@ export function CallCard({ call }: { call: Call }) {
   const u = URGENCY_TONE[call.urgency];
   return (
     <article className="border-rule-strong bg-surface relative border">
-      <div className="flex items-center justify-between border-b border-white/[0.04] px-4 py-2.5">
+      <div className="flex items-center justify-between border-b border-ink/[0.04] px-4 py-2.5">
         <span className={`label ${TYPE_TONE[call.type]}`}>
           ● {call.type === "BOTH" ? "CREW + KIT" : call.type}
         </span>
@@ -56,7 +57,7 @@ export function CallCard({ call }: { call: Call }) {
             {call.requirements.slice(0, 4).map((r) => (
               <li
                 key={r}
-                className="border-rule text-bone label border bg-white/[0.02] px-1.5 py-0.5"
+                className="border-rule text-bone label border bg-ink/[0.02] px-1.5 py-0.5"
                 style={{ fontSize: 9 }}
               >
                 {r}
@@ -78,19 +79,19 @@ export function CallCard({ call }: { call: Call }) {
             )}
           </div>
           <span className="label text-dim">
-            {relativeTime(call.postedAt)} · {call.responses} replies
+            <ClientDate value={relativeTime(call.postedAt)} /> · {call.responses} replies
           </span>
         </div>
       </div>
 
       <div className="border-rule grid grid-cols-3 border-t">
-        <button className="text-ink bg-white/[0.04] hover:bg-white/10 label col-span-1 flex items-center justify-center gap-1.5 py-2.5">
+        <button className="text-ink bg-ink/[0.04] hover:bg-ink/10 label col-span-1 flex items-center justify-center gap-1.5 py-2.5">
           <MessageCircle size={13} /> Respond
         </button>
-        <button className="border-rule text-mute hover:text-ink hover:bg-white/5 label flex items-center justify-center border-l py-2.5">
+        <button className="border-rule text-mute hover:text-ink hover:bg-ink/5 label flex items-center justify-center border-l py-2.5">
           Save
         </button>
-        <button className="border-rule text-mute hover:text-ink hover:bg-white/5 label flex items-center justify-center gap-1.5 border-l py-2.5">
+        <button className="border-rule text-mute hover:text-ink hover:bg-ink/5 label flex items-center justify-center gap-1.5 border-l py-2.5">
           <Share2 size={13} /> Share
         </button>
       </div>

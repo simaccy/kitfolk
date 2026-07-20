@@ -58,7 +58,7 @@ export async function proxy(req: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  // ── On app.kitfolk.com, root → app
+  // ── On app.scenecircle.com, root → app
   if (isApp && pathname === "/") {
     const url = req.nextUrl.clone();
     if (!session) {

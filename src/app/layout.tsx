@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
+import { Caveat, Fraunces, Hanken_Grotesk, Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -22,15 +22,37 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "KitFolk — The trusted network for crew, kit and production",
+  title: "SceneCircle - The trusted network for crew, kit and production",
   description:
     "Find, verify and book crew and equipment in film and TV. Verified professionals, real availability, built-in trust. Now opening early access.",
-  metadataBase: new URL("https://kitfolk.com"),
+  metadataBase: new URL("https://scenecircle.com"),
   openGraph: {
-    title: "KitFolk — The trusted network for crew, kit and production",
+    title: "SceneCircle - The trusted network for crew, kit and production",
     description:
-      "Production moves fast. Trust needs to move faster. Join early access.",
+      "Your Scene. Your Circle. Join the trusted network for crew, kit and production.",
     type: "website",
   },
 };
@@ -47,9 +69,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrument.variable} ${mono.variable}`}
+      className={`${inter.variable} ${instrument.variable} ${mono.variable} ${fraunces.variable} ${hanken.variable} ${caveat.variable}`}
+      suppressHydrationWarning
     >
-      <body className="bg-bg text-ink min-h-screen overflow-x-hidden antialiased">
+      <body className="bg-bg text-ink min-h-screen overflow-x-hidden antialiased" suppressHydrationWarning>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('sc-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})()`,
+          }}
+        />
         {children}
       </body>
     </html>

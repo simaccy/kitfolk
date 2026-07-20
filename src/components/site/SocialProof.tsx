@@ -6,21 +6,21 @@ const QUOTES = [
   {
     quote:
       "It's the first thing I've seen that feels like it was built by someone who's actually been on a set at 5am.",
-    name: "Asha P.",
+    name: "Alex M.",
     role: "DOP · London",
     project: "Currently shooting feature, indie",
   },
   {
     quote:
-      "Most of my year's bookings come from three WhatsApp groups. KitFolk is the version of that I've been waiting for.",
-    name: "Marc R.",
+      "Most of my year's bookings come from three WhatsApp groups. SceneCircle is the version of that I've been waiting for.",
+    name: "Dan H.",
     role: "Producer · Bristol",
     project: "Documentary & branded",
   },
   {
     quote:
-      "If trust scores work the way they're describing, this changes how I crew up films.",
-    name: "Daniel O.",
+      "Finding a trusted location used to mean weeks of scouting and cold DMs. Having it in the same place as crew and kit changes everything.",
+    name: "Simon M.",
     role: "1st AD · Berlin",
     project: "Long-form drama",
   },
@@ -44,8 +44,8 @@ export function SocialProof() {
           <div className="lg:col-span-5 lg:pt-8">
             <Reveal delay={0.1}>
               <p className="text-mute max-w-md text-lg leading-relaxed">
-                We&apos;ve been talking to crew, producers and kit owners since
-                day one. Here&apos;s what came back.
+                We&apos;ve been talking to crew, producers, kit owners and space
+                owners since day one. Here&apos;s what came back.
               </p>
             </Reveal>
           </div>
@@ -95,7 +95,7 @@ export function SocialProof() {
             ))}
           </div>
           <p className="label text-dim mt-5 text-center md:text-left">
-            ● PARTNER PRODUCTION COMPANIES — EARLY ACCESS COHORT
+            ● PARTNER PRODUCTION COMPANIES - EARLY ACCESS COHORT
           </p>
         </Reveal>
       </Container>

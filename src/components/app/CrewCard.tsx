@@ -10,7 +10,7 @@ export function CrewCard({ crew }: { crew: Crew }) {
     <article className="border-rule-strong bg-surface group relative border">
       <Link
         href={`/crew/${crew.id}`}
-        className="block px-4 pt-4 pb-3 active:bg-white/[0.02]"
+        className="block px-4 pt-4 pb-3 active:bg-ink/[0.02]"
       >
         <div className="flex items-start gap-3">
           <Avatar name={crew.name} hue={crew.avatarHue} size={48} />
@@ -75,14 +75,14 @@ export function CrewCard({ crew }: { crew: Crew }) {
 
       <div className="border-rule grid grid-cols-2 border-t">
         <button
-          className="text-mute hover:text-ink hover:bg-white/5 label flex items-center justify-center gap-1.5 py-2.5"
+          className="text-mute hover:text-ink hover:bg-ink/5 label flex items-center justify-center gap-1.5 py-2.5"
           aria-label="Message"
         >
           <MessageCircle size={13} />
           Message
         </button>
         <button
-          className="border-rule text-mute hover:text-ink hover:bg-white/5 label flex items-center justify-center gap-1.5 border-l py-2.5"
+          className="border-rule text-mute hover:text-ink hover:bg-ink/5 label flex items-center justify-center gap-1.5 border-l py-2.5"
           aria-label="Save"
         >
           <Bookmark size={13} />

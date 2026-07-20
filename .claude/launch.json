@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "kitfolk",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 3000,
+      "autoPort": true
+    },
+    {
+      "name": "colour-preview",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "public"],
+      "port": 3001,
+      "autoPort": true
+    }
+  ]
+}

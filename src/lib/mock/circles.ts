@@ -8,7 +8,7 @@ export const CIRCLES: Circle[] = [
     type: "CREW",
     members: [
       { id: "tom-bevan", name: "Tom Bevan", role: "Sound Mixer", avatarHue: 100 },
-      { id: "marc-reyes", name: "Marc Reyes", role: "Gaffer", avatarHue: 200 },
+      { id: "dan-harris", name: "Dan Harris", role: "Gaffer", avatarHue: 200 },
       { id: "j-mwangi", name: "Joel Mwangi", role: "DOP", avatarHue: 130 },
       { id: "harriet-lowe", name: "Harriet Lowe", role: "Editor", avatarHue: 250 },
       { id: "noor-h", name: "Noor Hassan", role: "Drone Operator", avatarHue: 175 },
@@ -26,9 +26,9 @@ export const CIRCLES: Circle[] = [
     type: "REGION",
     members: [
       { id: "kit-foster", name: "Kit Foster", role: "Steadicam Op", avatarHue: 60 },
-      { id: "daniel-okafor", name: "Daniel Okafor", role: "1st AD", avatarHue: 36 },
-      { id: "asha-patel", name: "Asha Patel", role: "DOP", avatarHue: 14 },
-      { id: "marc-reyes", name: "Marc Reyes", role: "Gaffer", avatarHue: 200 },
+      { id: "simon-macson", name: "Simon Macson", role: "1st AD", avatarHue: 36 },
+      { id: "alex-mason", name: "Alex Mason", role: "DOP", avatarHue: 14 },
+      { id: "dan-harris", name: "Dan Harris", role: "Gaffer", avatarHue: 200 },
     ],
     kitIds: ["ronin4d-manchester-06", "alexa35-london-02"],
     tags: ["Commercial", "North-East", "Quick turnaround"],
@@ -37,7 +37,7 @@ export const CIRCLES: Circle[] = [
   {
     id: "post-chain",
     name: "My grade & post chain",
-    description: "Trusted post chain — keeps a film looking like itself.",
+    description: "Trusted post chain - keeps a film looking like itself.",
     type: "POST",
     members: [
       { id: "sara-vidal", name: "Sara Vidal", role: "Colourist", avatarHue: 16 },
@@ -54,9 +54,9 @@ export const CIRCLES: Circle[] = [
     description: "Quiet list of people I'd rebook without thinking.",
     type: "CREW",
     members: [
-      { id: "asha-patel", name: "Asha Patel", role: "DOP", avatarHue: 14 },
-      { id: "lena-karlsson", name: "Lena Karlsson", role: "Sound Mixer", avatarHue: 280 },
-      { id: "daniel-okafor", name: "Daniel Okafor", role: "1st AD", avatarHue: 36 },
+      { id: "alex-mason", name: "Alex Mason", role: "DOP", avatarHue: 14 },
+      { id: "ferne-hart", name: "Ferne Hart", role: "Sound Mixer", avatarHue: 280 },
+      { id: "simon-macson", name: "Simon Macson", role: "1st AD", avatarHue: 36 },
       { id: "sara-vidal", name: "Sara Vidal", role: "Colourist", avatarHue: 16 },
     ],
     kitIds: [],

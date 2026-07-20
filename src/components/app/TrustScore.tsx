@@ -21,7 +21,7 @@ export function TrustScore({
           cy={dim / 2}
           r={r}
           fill="none"
-          stroke="rgba(255,255,255,0.08)"
+          stroke="var(--color-rule)"
           strokeWidth={stroke}
         />
         <circle
@@ -29,7 +29,7 @@ export function TrustScore({
           cy={dim / 2}
           r={r}
           fill="none"
-          stroke="var(--color-flare)"
+          stroke="var(--color-go)"
           strokeWidth={stroke}
           strokeDasharray={`${dash} ${c}`}
           strokeLinecap="butt"
