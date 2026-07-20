@@ -86,8 +86,8 @@ function ScreenProfile() {
       </div>
 
       {/* Avatar */}
-      <div className="border-rule bg-elev relative mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full border">
-        <span className="font-serif text-ink text-xl leading-none">AM</span>
+      <div className="border-rule relative mx-auto mb-3 h-16 w-16 overflow-hidden rounded-full border">
+        <img src="/profile-alex-mason.jpg" alt="Alex Mason" className="h-full w-full object-cover object-top" />
       </div>
 
       <div className="text-center mb-3">
