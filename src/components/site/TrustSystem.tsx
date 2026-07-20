@@ -34,7 +34,7 @@ export function TrustSystem() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(228,111,90,0.06),transparent_55%)]" />
 
       <Container className="relative">
-        <SectionLabel index="04" title="TRUST YOU CAN SEE" meta="THE DIFFERENCE" />
+        <SectionLabel index="05" title="TRUST YOU CAN SEE" meta="THE DIFFERENCE" />
 
         <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">

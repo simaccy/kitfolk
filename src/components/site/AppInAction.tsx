@@ -218,7 +218,7 @@ export function AppInAction() {
       </div>
 
       <Container className="relative">
-        <SectionLabel index="05" title="IN YOUR POCKET" meta="WEB APP · IOS · ANDROID" />
+        <SectionLabel index="06" title="IN YOUR POCKET" meta="WEB APP · IOS · ANDROID" />
 
         <div className="grid grid-cols-1 gap-16 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-12">
 
