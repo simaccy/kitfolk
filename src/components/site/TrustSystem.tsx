@@ -74,16 +74,17 @@ export function TrustSystem() {
                   <div className="md:col-span-4">
                     {/* Avatar plate */}
                     <div className="border-rule bg-bg relative aspect-[4/5] w-full overflow-hidden border">
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(228,111,90,0.18),transparent_60%),radial-gradient(circle_at_75%_70%,rgba(111,128,99,0.16),transparent_60%)]" />
-                      <div className="grid-bg absolute inset-0 opacity-60" />
-                      <div className="label text-mute absolute top-3 left-3">
+                      <img
+                        src="/profile-alex-mason.jpg"
+                        alt="Alex Mason — DOP"
+                        className="absolute inset-0 h-full w-full object-cover object-top"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.35)_0%,transparent_40%)]" />
+                      <div className="label text-white/70 absolute top-3 left-3">
                         ID 01184
                       </div>
-                      <div className="label text-mute absolute right-3 bottom-3">
+                      <div className="label text-white/70 absolute right-3 bottom-3">
                         24.05.26
-                      </div>
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="serif text-ink text-7xl">AM</span>
                       </div>
                     </div>
                   </div>
