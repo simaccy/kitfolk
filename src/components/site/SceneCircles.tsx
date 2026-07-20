@@ -37,13 +37,13 @@ const ACCENT_CLASSES = {
 
 export function SceneCircles() {
   return (
-    <section id="circles" className="relative py-28 md:py-40">
+    <section id="circles" className="relative py-20 md:py-28">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(212,200,168,0.06),transparent_50%)]" />
 
       <Container className="relative">
         <SectionLabel index="07" title="CIRCLES, NOT COLD SEARCHES" meta="THE BRAND IDEA" />
 
-        <div className="grid grid-cols-1 gap-10 pt-10 md:pt-16 lg:grid-cols-12 lg:gap-16">
+        <div className="grid grid-cols-1 gap-10 pt-8 md:pt-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <Reveal>
               <h2 className="serif text-ink text-5xl md:text-6xl lg:text-7xl">
@@ -70,7 +70,7 @@ export function SceneCircles() {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-6 md:mt-20 md:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-6 md:mt-10 md:grid-cols-3">
           {CIRCLES.map((c, i) => {
             const ac = ACCENT_CLASSES[c.accent];
             const avatarCount = Math.min(8, c.members);

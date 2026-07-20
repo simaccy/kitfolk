@@ -24,10 +24,10 @@ export default function V3Home() {
           <HeroV3 />
           <Problem />
           <Solution />
+          <SceneCircles />
           <TrustSystem />
           <AppInAction />
           <Features />
-          <SceneCircles />
           <SocialProof />
           <CTA />
         </main>
