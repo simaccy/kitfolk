@@ -30,7 +30,7 @@ export function CTA() {
             </Reveal>
             <Reveal delay={0.15}>
               <p className="text-dim mt-4 max-w-xl text-[15px] leading-relaxed">
-                UK and EU first — crew, kit owners and space owners. Curated
+                UK and EU first - crew, kit owners and space owners. Curated
                 rollout. No spam.
               </p>
             </Reveal>

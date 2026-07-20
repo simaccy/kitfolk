@@ -22,7 +22,7 @@ export function Problem() {
               <p className="text-mute max-w-xl text-lg leading-relaxed md:text-xl">
                 Production runs on recommendations, favours, group chats and
                 gut feel. The right person, kit or space is usually out there
-                — but the trust is trapped in WhatsApp threads, Facebook
+                - but the trust is trapped in WhatsApp threads, Facebook
                 groups, phonebooks, talent managers, cold DMs and old
                 conversations.
               </p>
