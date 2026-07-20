@@ -37,8 +37,8 @@ export function Header({ hideThemeToggle = false }: { hideThemeToggle?: boolean 
           {[
             ["Problem", "#problem"],
             ["Product", "#solution"],
-            ["Trust", "#trust"],
             ["Circles", "#circles"],
+            ["Trust", "#trust"],
           ].map(([label, href]) => (
             <a
               key={href}
